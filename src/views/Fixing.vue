@@ -2,8 +2,11 @@
   <div class="website-fixing-svg">
     <Logo/>
     <RotatingIcon/>
+    <div>
+      Upgrading Website
+    </div>
     <div class="website-fixing-svg__message">
-      Website Upgrading
+      Coming Soon
     </div>
   </div>
 </template>
