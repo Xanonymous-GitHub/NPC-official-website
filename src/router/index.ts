@@ -4,7 +4,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Fixing',
-    component: () => import(/* webpackChunkName: "fixing" */ '@/views/Fixing.vue')
+    component: () => import(
+      /* webpackChunkName: "fixing" */
+      /* webpackPrefetch: true */
+      '@/pages/Fixing.vue')
   },
 ]
 
