@@ -5,7 +5,7 @@ const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const zopfli = require("@gfx/zopfli");
 const BrotliPlugin = require("brotli-webpack-plugin");
 const PrerenderSpaPlugin = require("prerender-spa-plugin");
-const productionGzipExtensions = /\.(js|css|json|txt)(\?.*)?$/i;
+const productionGzipExtensions = /\.(js|css|json|txt|html)(\?.*)?$/i;
 const isProduction = process.env.NODE_ENV === 'production'
 const needBundleAnalysis = process.argv.includes('--analyze')
 const resolve = dir => path.join(__dirname, dir);
