@@ -33,6 +33,7 @@
     Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     font-weight: bolder;
+    cursor: default;
   }
 
   .website-fixing-svg {
@@ -43,6 +44,7 @@
     margin: 0;
     padding: 0;
     @at-root &__message {
+      cursor: default;
       height: min-content;
       margin: 0;
       font-size: 2rem;

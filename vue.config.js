@@ -12,6 +12,10 @@ const resolve = dir => path.join(__dirname, dir);
 const renderRoutes = (() => {
   const routes = [
     '/',
+    '/dashboard',
+    '/login',
+    '/registration',
+    '/admin',
   ].map((route) => route.replace(/\/$/, ''))
   routes.push(...routes.map((route) => `${route}/`))
   return routes
@@ -26,6 +30,23 @@ module.exports = {
   configureWebpack: config => {
     const plugins = [];
     if (isProduction) {
+      config.optimization = {
+        runtimeChunk: 'single',
+        splitChunks: {
+          chunks: 'all',
+          maxInitialRequests: Infinity,
+          minSize: 20000,
+          cacheGroups: {
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name(module) {
+                const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
+                return `${packageName.replace('@', '')}`
+              }
+            }
+          }
+        }
+      };
       plugins.push(
         new CompressionWebpackPlugin({
           algorithm(input, compressionOptions, callback) {
@@ -47,6 +68,7 @@ module.exports = {
       new PrerenderSpaPlugin({
         staticDir: resolve("dist"),
         renderRoutes,
+        routes: renderRoutes,
         postProcess(ctx) {
           ctx.route = ctx.originalRoute;
           ctx.html = ctx.html.split(/>[\s]+</gim).join("><");
@@ -65,7 +87,7 @@ module.exports = {
         renderer: new PrerenderSpaPlugin.PuppeteerRenderer({
           inject: {},
           headless: false,
-          renderAfterDocumentEvent: "render-event"
+          // renderAfterDocumentEvent: "render-event"
         })
       });
     }
@@ -81,5 +103,8 @@ module.exports = {
     }
   },
   productionSourceMap: false,
+  css: {
+    sourceMap: false,
+  },
   lintOnSave: process.env.NODE_ENV === 'development',
 }
