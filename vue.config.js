@@ -1,5 +1,14 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const CompressionWebpackPlugin = require("compression-webpack-plugin");
+const zopfli = require("@gfx/zopfli");
+const BrotliPlugin = require("brotli-webpack-plugin");
+const PrerenderSpaPlugin = require("prerender-spa-plugin");
+const productionGzipExtensions = /\.(js|css|json|txt)(\?.*)?$/i;
+const isProduction = process.env.NODE_ENV === 'production'
+const needBundleAnalysis = process.argv.includes('--analyze')
+const resolve = dir => path.join(__dirname, dir);
 const renderRoutes = (() => {
   const routes = [
     '/',
@@ -8,33 +17,69 @@ const renderRoutes = (() => {
   return routes
 })()
 
-const obfuscatorOptions = {
-  compact: true,
-  controlFlowFlattening: true,
-  controlFlowFlatteningThreshold: 1,
-  deadCodeInjection: true,
-  deadCodeInjectionThreshold: 1,
-  debugProtection: true,
-  debugProtectionInterval: true,
-  disableConsoleOutput: true,
-  identifierNamesGenerator: 'hexadecimal',
-  log: false,
-  numbersToExpressions: true,
-  renameGlobals: false,
-  rotateStringArray: true,
-  selfDefending: true,
-  shuffleStringArray: true,
-  simplify: true,
-  splitStrings: true,
-  splitStringsChunkLength: 5,
-  stringArray: true,
-  stringArrayEncoding: 'rc4',
-  stringArrayThreshold: 1,
-  transformObjectKeys: true,
-  unicodeEscapeSequence: false
-}
-
 module.exports = {
+  chainWebpack: config => {
+    if (isProduction && needBundleAnalysis) {
+      config.plugin('analyzer').use(new BundleAnalyzerPlugin())
+    }
+  },
+  configureWebpack: config => {
+    const plugins = [];
+    if (isProduction) {
+      plugins.push(
+        new CompressionWebpackPlugin({
+          algorithm(input, compressionOptions, callback) {
+            return zopfli.gzip(input, compressionOptions, callback);
+          },
+          compressionOptions: {
+            numiterations: 15
+          },
+          minRatio: 0.99,
+          test: productionGzipExtensions
+        })
+      );
+      plugins.push(
+        new BrotliPlugin({
+          test: productionGzipExtensions,
+          minRatio: 0.99
+        })
+      );
+      plugins.push(
+        new CompressionWebpackPlugin({
+          filename: "[path].gz[query]",
+          algorithm: "gzip",
+          test: productionGzipExtensions,
+          threshold: 0,
+          minRatio: 0.99
+        })
+      );
+      new PrerenderSpaPlugin({
+        staticDir: resolve("dist"),
+        renderRoutes,
+        postProcess(ctx) {
+          ctx.route = ctx.originalRoute;
+          ctx.html = ctx.html.split(/>[\s]+</gim).join("><");
+          if (ctx.route.endsWith(".html")) {
+            ctx.outputPath = path.join(__dirname, "dist", ctx.route);
+          }
+          return ctx;
+        },
+        minify: {
+          collapseBooleanAttributes: true,
+          collapseWhitespace: true,
+          decodeEntities: true,
+          keepClosingSlash: true,
+          sortAttributes: true
+        },
+        renderer: new PrerenderSpaPlugin.PuppeteerRenderer({
+          inject: {},
+          headless: false,
+          renderAfterDocumentEvent: "render-event"
+        })
+      });
+    }
+    config.plugins = [...config.plugins, ...plugins];
+  },
   pages: {
     index: {
       entry: "src/main.ts",
@@ -44,27 +89,6 @@ module.exports = {
       chunks: ['chunk-vendors', 'chunk-common', 'index']
     }
   },
-
-  pluginOptions: {
-    prerenderSpa: {
-      renderRoutes,
-      onlyProduction: true,
-      registry: undefined,
-      useRenderEvent: true,
-      headless: true
-    }
-  },
-
-  configureWebpack: {
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          include: [path.resolve(__dirname, "dist")],
-          enforce: 'post',
-          use: {loader: 'obfuscator-loader', options: obfuscatorOptions}
-        },
-      ]
-    }
-  }
+  productionSourceMap: false,
+  lintOnSave: process.env.NODE_ENV === 'development',
 }
