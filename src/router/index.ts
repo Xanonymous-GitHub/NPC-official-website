@@ -46,14 +46,15 @@ const routes: Array<RouteRecordRaw> = [
       '@/pages/Admin.vue'
       )
   },
-  // {
-  //   path: '/',
-  //   name: 'Fixing',
-  //   component: () => import(
-  //     /* webpackChunkName: "fixing" */
-  //     /* webpackPrefetch: true */
-  //     '@/pages/Fixing.vue')
-  // },
+  {
+    path: '/fixing',
+    name: 'Fixing',
+    component: () => import(
+      /* webpackChunkName: "fixing" */
+      /* webpackPrefetch: true */
+      '@/pages/Fixing.vue'
+      )
+  },
 ]
 
 const router = createRouter({
