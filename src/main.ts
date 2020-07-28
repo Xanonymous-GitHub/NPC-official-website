@@ -2,9 +2,15 @@ import {createApp} from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+// import {RenderedEventDispatcher} from './plugins/renderedEventDispatcher'
 
 const app = createApp(App)
 
-app.use(store)
+app
+  // .use(RenderedEventDispatcher)
+  .use(store)
   .use(router)
-  .mount('#app')
+
+document.addEventListener('DOMContentLoaded', () => {
+  app.mount('#app')
+})

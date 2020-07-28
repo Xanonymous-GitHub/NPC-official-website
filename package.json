@@ -1,12 +1,13 @@
 {
   "name": "npc-website",
-  "version": "0.1.200728",
+  "version": "0.1.200729",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build-analyze": "vue-cli-service build --analyze",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint --fix",
+    "upgrade": "npm upgrade --all && ncu -u && npm i"
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
@@ -18,9 +19,9 @@
     "@fortawesome/vue-fontawesome": "^0.1.10",
     "core-js": "^3.6.5",
     "prerender-spa-plugin": "^3.4.0",
-    "vue": "^3.0.0-0",
+    "vue": "^3.0.0-rc.5",
     "vue-material": "^1.0.0-beta-14",
-    "vue-router": "^4.0.0-0",
+    "vue-router": "^4.0.0-beta.4",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
@@ -33,7 +34,7 @@
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0-rc.4",
+    "@vue/compiler-sfc": "^3.0.0-rc.5",
     "@vue/eslint-config-typescript": "^5.0.2",
     "brotli-webpack-plugin": "^1.1.0",
     "compression-webpack-plugin": "^4.0.0",
@@ -51,7 +52,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
-      "vue-cli-service lint",
+      "vue-cli-service lint --fix",
       "git add"
     ]
   }
