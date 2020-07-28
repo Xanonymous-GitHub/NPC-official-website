@@ -44,15 +44,6 @@ module.exports = {
           minRatio: 0.99
         })
       );
-      plugins.push(
-        new CompressionWebpackPlugin({
-          filename: "[path].gz[query]",
-          algorithm: "gzip",
-          test: productionGzipExtensions,
-          threshold: 0,
-          minRatio: 0.99
-        })
-      );
       new PrerenderSpaPlugin({
         staticDir: resolve("dist"),
         renderRoutes,
