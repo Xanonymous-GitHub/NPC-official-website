@@ -1,6 +1,6 @@
 {
   "name": "npc-website",
-  "version": "0.1.200729",
+  "version": "0.2.200729",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
