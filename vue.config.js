@@ -27,6 +27,14 @@ module.exports = {
     if (isProduction && needBundleAnalysis) {
       config.plugin('analyzer').use(new BundleAnalyzerPlugin())
     }
+    const svgRule = config.module.rule('svg')
+    svgRule.uses.clear()
+    svgRule
+      .use('babel-loader')
+      .loader('babel-loader')
+      .end()
+      .use('vue-svg-loader')
+      .loader('vue-svg-loader')
   },
   configureWebpack: config => {
     const plugins = [];
