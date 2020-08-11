@@ -15,8 +15,8 @@
 
 <script lang="ts">
   import {defineComponent} from 'vue';
-  import Logo from '@/components/logo.vue';
-  import RotatingIcon from '@/components/RotatingIcon.vue'
+  import Logo from '@/components/fixing/logo.vue';
+  import RotatingIcon from '@/components/fixing/RotatingIcon.vue'
   import "@/assets/scss/pages/fixing.scss";
 
   export default defineComponent({

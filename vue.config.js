@@ -5,6 +5,12 @@ const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const zopfli = require("@gfx/zopfli");
 const BrotliPlugin = require("brotli-webpack-plugin");
 const PrerenderSpaPlugin = require("prerender-spa-plugin");
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const postcssPresetEnv = require('postcss-preset-env');
+const postcssImport = require('postcss-import');
+const postcssPlugin = require('postcss-plugin');
+const postcssAssets = require('postcss-assets');
 const productionGzipExtensions = /\.(js|css|json|txt|html)(\?.*)?$/i;
 const isProduction = process.env.NODE_ENV === 'production'
 const needBundleAnalysis = process.argv.includes('--analyze')
@@ -118,10 +124,18 @@ module.exports = {
   productionSourceMap: false,
   css: {
     sourceMap: false,
-    loaderOptions:{
-      postcss:{
+    loaderOptions: {
+      postcss: {
         map: false,
-      }
+        plugins: [
+          autoprefixer,
+          cssnano,
+          postcssPresetEnv,
+          postcssImport,
+          postcssPlugin,
+          postcssAssets
+        ]
+      },
     }
   },
   lintOnSave: process.env.NODE_ENV === 'development',

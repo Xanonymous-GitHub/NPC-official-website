@@ -1,7 +1,7 @@
 @import "../shared";
 @import "../components/fixing/rotating-icon";
 
-@include page("fixing") {
+@include _page("fixing") {
   @include rotating-icon;
   .website-fixing-svg {
     position: relative;

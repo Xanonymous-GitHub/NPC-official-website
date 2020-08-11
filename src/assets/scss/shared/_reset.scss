@@ -1,4 +1,4 @@
-@mixin reset {
+@mixin _reset {
   html,
   body,
   div,
@@ -78,6 +78,7 @@
   }
 
   body {
+    margin: 0;
     line-height: 1;
   }
 
@@ -108,7 +109,6 @@
   blockquote:after,
   q:before,
   q:after {
-    content: "";
     content: none;
   }
 

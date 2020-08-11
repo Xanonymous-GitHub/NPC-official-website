@@ -1,5 +1,37 @@
 @import "../shared";
+@import "../components/home/main-logo";
 
-@include page("home"){
-  
+@include _page("home") {
+  .first-area {
+    #main-logo-container {
+      left: 50%;
+      top: 7vh;
+      transform: translateX(-50%);
+      position: relative;
+      width: calc((35vw + 60vh) / 2 * 0.55);
+      max-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include main-logo;
+    }
+
+    clip-path: polygon(0 0, 100% 0, 100% calc((25vw + 40vh) / 2), 0 calc((35vw + 60vh) / 2));
+    background: linear-gradient(-45deg, #071a52, #086972, #17b978, #a7ff83);
+    background-size: 400% 400%;
+    animation: gradient 10s ease-in-out infinite;
+    height: 100%;
+
+    @keyframes gradient {
+      0% {
+        background-position: 0 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0 50%;
+      }
+    }
+  }
 }
