@@ -5,4 +5,24 @@
     Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   }
+
+  @font-face {
+    font-family: "google-sans";
+    src: url("~@/assets/fonts/Product Sans Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "google-sans-italic";
+    src: url("~@/assets/fonts/Product Sans Italic.ttf");
+  }
+
+  @font-face {
+    font-family: "google-sans-bold";
+    src: url("~@/assets/fonts/Product Sans Bold.ttf");
+  }
+
+  @font-face {
+    font-family: "google-sans-bold-italic";
+    src: url("~@/assets/fonts/Product Sans Bold Italic.ttf");
+  }
 }
