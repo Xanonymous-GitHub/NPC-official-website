@@ -118,6 +118,11 @@ module.exports = {
   productionSourceMap: false,
   css: {
     sourceMap: false,
+    loaderOptions:{
+      postcss:{
+        map: false,
+      }
+    }
   },
   lintOnSave: process.env.NODE_ENV === 'development',
 }
