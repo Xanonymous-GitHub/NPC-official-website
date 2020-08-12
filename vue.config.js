@@ -35,12 +35,15 @@ module.exports = {
     }
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()
-    svgRule
-      .use('babel-loader')
-      .loader('babel-loader')
+    config.module
+      .rule("svg-sprite-loader")
+      .test(/\.svg$/)
+      .include
+      .add(resolve("src/assets/images"))
       .end()
-      .use('vue-svg-loader')
-      .loader('vue-svg-loader')
+      .use("svg-sprite-loader")
+      .loader("svg-sprite-loader")
+      .options({symbolId: "[name].svg"})
   },
   configureWebpack: config => {
     const plugins = [];
