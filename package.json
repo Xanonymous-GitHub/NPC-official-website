@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build-analyze": "vue-cli-service build --analyze",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint --fix",
+    "build-analyze": "vue-cli-service build --analyze",
     "upgrade": "npm upgrade --all && ncu -u"
   },
   "dependencies": {
@@ -59,7 +59,7 @@
     "sass": "^1.26.10",
     "sass-loader": "^9.0.3",
     "svg-sprite-loader": "^5.0.0",
-    "typescript": "~3.9.7",
+    "typescript": "^3.9.7",
     "webpack-bundle-analyzer": "^3.8.0"
   },
   "gitHooks": {

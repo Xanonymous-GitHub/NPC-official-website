@@ -1,5 +1,5 @@
 <template>
-  <main id="fixing" class="page-container">
+  <main class="page-container" id="fixing">
     <div class="website-fixing-svg">
       <Logo/>
       <RotatingIcon/>
@@ -14,16 +14,22 @@
 </template>
 
 <script lang="ts">
-  import {defineComponent} from 'vue';
-  import Logo from '@/components/fixing/logo.vue';
-  import RotatingIcon from '@/components/fixing/RotatingIcon.vue'
-  import "@/assets/scss/pages/fixing.scss";
+import {defineComponent, onMounted} from 'vue';
+import Logo from '@/components/fixing/logo.vue';
+import RotatingIcon from '@/components/fixing/RotatingIcon.vue'
+import "@/assets/scss/pages/fixing.scss";
 
-  export default defineComponent({
-    name: 'Fixing',
-    components: {
-      Logo,
-      RotatingIcon
-    },
-  });
+export default defineComponent({
+  name: 'Fixing',
+  components: {
+    Logo,
+    RotatingIcon
+  },
+  setup() {
+    onMounted(() => {
+      document.dispatchEvent(new Event('app-rendered'));
+    });
+    return;
+  }
+});
 </script>

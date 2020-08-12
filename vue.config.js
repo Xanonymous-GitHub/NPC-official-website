@@ -45,26 +45,10 @@ module.exports = {
       .loader("svg-sprite-loader")
       .options({symbolId: "[name].svg"})
   },
+
   configureWebpack: config => {
     const plugins = [];
     if (isProduction) {
-      config.optimization = {
-        runtimeChunk: 'single',
-        splitChunks: {
-          chunks: 'all',
-          maxInitialRequests: Infinity,
-          maxSize: 100000,
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name(module) {
-                const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
-                return `${packageName.replace('@', '')}`
-              }
-            }
-          }
-        }
-      };
       plugins.push(
         new CompressionWebpackPlugin({
           algorithm(input, compressionOptions, callback) {
@@ -105,8 +89,7 @@ module.exports = {
             sortAttributes: true
           },
           renderer: new PrerenderSpaPlugin.PuppeteerRenderer({
-            // renderAfterDocumentEvent: "app-rendered",
-            // renderAfterElementExists: "#app",
+            renderAfterDocumentEvent: "app-rendered",
             maxConcurrentRoutes: 20,
             headless: true,
           })
@@ -115,6 +98,7 @@ module.exports = {
     }
     config.plugins = [...config.plugins, ...plugins];
   },
+
   pages: {
     index: {
       entry: "src/main.ts",
@@ -124,7 +108,9 @@ module.exports = {
       chunks: ['chunk-vendors', 'chunk-common', 'index']
     }
   },
+
   productionSourceMap: false,
+
   css: {
     sourceMap: false,
     loaderOptions: {
@@ -141,5 +127,23 @@ module.exports = {
       },
     }
   },
+
   lintOnSave: process.env.NODE_ENV === 'development',
+
+  pluginOptions: {
+    prerenderSpa: {
+      registry: undefined,
+      renderRoutes: [
+        '/',
+        '/dashboard',
+        '/login',
+        '/registration',
+        '/admin',
+        '/fixing'
+      ],
+      useRenderEvent: true,
+      headless: true,
+      onlyProduction: true
+    }
+  }
 }

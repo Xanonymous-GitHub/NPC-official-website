@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, onMounted} from 'vue';
 import MainLogo from "@/components/home/MainLogo.vue";
 import '@/assets/images/programmer.svg';
 import '@/assets/scss/pages/home.scss'
@@ -53,6 +53,9 @@ export default defineComponent({
     }
   },
   setup() {
+    onMounted(() => {
+      document.dispatchEvent(new Event('app-rendered'));
+    });
     return;
   }
 });
