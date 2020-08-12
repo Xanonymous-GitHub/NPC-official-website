@@ -1,0 +1,61 @@
+@import "../shared";
+@import "../components/home/main-logo";
+
+@include _page("home") {
+  .first-area {
+    position: relative;
+
+    #main-logo-container {
+      left: 90%;
+      top: 10vh;
+      transform: translateX(-90%);
+      position: relative;
+      width: calc((35vw + 60vh) / 2 * 0.4);
+      max-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include main-logo;
+    }
+
+    .main-title {
+      font-size: calc((8vw + 9vh) / 2); // 8+9 XD
+      font-family: "google-sans-bold", sans-serif;
+      --moz-osx-font-smoothing: grayscale;
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      line-height: 1.2;
+      color: #0a2540;
+      text-shadow: black 1px 1px 2px;
+    }
+
+    .clip-area {
+      clip-path: polygon(0 0, 100% 0, 100% calc((25vw + 40vh) / 2), 0 100%);
+      background: linear-gradient(-35deg,
+              rgba(167, 255, 131, 0.9),
+              rgba(249, 237, 105, 0.9),
+              rgba(240, 138, 93, 0.9),
+              rgba(255, 63, 63, 0.9),
+              rgb(182, 147, 254, 0.9),
+              rgba(0, 224, 255, 0.9),
+              rgba(116, 249, 255, 0.9)),
+      url("~@/assets/images/Colorful-Plait-Background.jpg");
+      background-size: 300% 300%;
+      animation: gradient 20s forwards ease-in-out infinite;
+      height: calc((35vw + 60vh) / 2);
+
+      @keyframes gradient {
+        0% {
+          background-position: 0 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0 50%;
+        }
+      }
+    }
+  }
+}

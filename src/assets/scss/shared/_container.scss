@@ -1,0 +1,6 @@
+@mixin _page($name) {
+  #app ##{$name}.page-container {
+    height: 100%;
+    @content;
+  }
+}

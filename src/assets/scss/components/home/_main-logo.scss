@@ -1,0 +1,18 @@
+@mixin main-logo {
+  .logo {
+    stroke-dashoffset: 2000;
+    stroke-dasharray: 2000;
+    animation: draw 3s ease-in-out infinite;
+  }
+  @keyframes draw {
+    0% {
+      stroke-dashoffset: 2000;
+    }
+    50% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 2000;
+    }
+  }
+}

@@ -3,3 +3,19 @@
     <h1>This is an about page</h1>
   </div>
 </template>
+
+<!--<template>-->
+<!--  <div></div>-->
+<!--</template>-->
+
+<!--<script lang="ts">-->
+<!--  import {defineComponent} from 'vue';-->
+<!--  -->
+<!--  export default defineComponent({-->
+<!--    name: ""-->
+<!--  });-->
+<!--</script>-->
+
+<!--<style lang="scss" scoped>-->
+
+<!--</style>-->
