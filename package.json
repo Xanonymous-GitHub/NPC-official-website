@@ -1,6 +1,6 @@
 {
   "name": "npc-website",
-  "version": "0.2.200812",
+  "version": "0.2.200814",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -47,7 +47,7 @@
     "@vue/compiler-sfc": "^3.0.0-rc.5",
     "@vue/eslint-config-typescript": "^5.0.2",
     "brotli-webpack-plugin": "^1.1.0",
-    "compression-webpack-plugin": "^4.0.0",
+    "compression-webpack-plugin": "^4.0.1",
     "cssnano": "^4.1.10",
     "eslint": "^7.6.0",
     "eslint-plugin-vue": "^7.0.0-beta.2",

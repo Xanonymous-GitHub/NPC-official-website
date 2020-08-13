@@ -8,12 +8,12 @@
 
   .first-area {
     position: relative;
-    height: 100%;
+    height: 100vh;
 
     #main-logo-container {
-      left: 90%;
+      left: 90vw;
       top: 10vh;
-      transform: translateX(-90%);
+      transform: translateX(-90vw);
       position: relative;
       width: calc(#{$svg-width-fit-content} * 0.4);
       max-width: 300px;
@@ -29,27 +29,30 @@
       font-family: "google-sans-bold", sans-serif;
       --moz-osx-font-smoothing: grayscale;
       position: absolute;
-      top: calc(#{$clip-path-short-size} * 0.55);
-      left: 10%;
+      top: 10vh;
+      left: 10vw;
       line-height: 1.2;
-      color: #0a2540;
-      text-shadow: black 1px 1px 2px;
+      color: #ffffff;
+      text-shadow: grey 1px 1px 1px;
+      max-font-size: 65px;
     }
 
     .clip-area {
-      clip-path: polygon(0 0, 100% 0, 100% $clip-path-short-size, 0 100%);
-      background: linear-gradient(-35deg,
-              rgba(167, 255, 131, 0.9),
-              rgba(249, 237, 105, 0.9),
-              rgba(240, 138, 93, 0.9),
-              rgba(255, 63, 63, 0.9),
-              rgb(182, 147, 254, 0.9),
-              rgba(0, 224, 255, 0.9),
-              rgba(116, 249, 255, 0.9)),
-      url("~@/assets/images/Colorful-Plait-Background.jpg");
-      background-size: 300% 300%;
+      //clip-path: polygon(0 0, 100% 0, 100% $clip-path-short-size, 0 100%);
+      $gradient-blue: linear-gradient(
+                      35deg,
+                      rgba(32, 50, 235, 0.9),
+                      rgba(32, 70, 235, 0.9),
+                      rgba(32, 100, 235, 0.9),
+                      rgba(32, 160, 235, 0.9)
+      );
+      background: $gradient-blue, url("~@/assets/images/Colorful-Plait-Background.jpg");
       animation: gradient 20s forwards ease-in-out infinite;
-      height: $svg-width-fit-content;
+      height: calc(#{$svg-width-fit-content});
+      //.wavy-area path {
+      //  fill: #000000;
+      //  fill-opacity: 0.5;
+      //}
 
       @keyframes gradient {
         0% {
@@ -64,6 +67,64 @@
       }
     }
 
+    .waves {
+      top: 100%;
+      transform: translateY(-90%);
+      position: relative;
+      width: 100%;
+      height: 15vh;
+      bottom: 0;
+      margin-bottom: -7px;
+      min-height: 100px;
+      max-height: 150px;
+    }
+
+    .parallax > use {
+      animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+
+      &:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 7s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+      }
+
+      &:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .waves {
+        height: 40px;
+        min-height: 40px;
+      }
+      .content {
+        height: 30vh;
+      }
+      h1 {
+        font-size: 24px;
+      }
+    }
+
+    @keyframes move-forever {
+      0% {
+        transform: translate3d(-90px, 0, 0);
+      }
+      100% {
+        transform: translate3d(85px, 0, 0);
+      }
+    }
+
     .top-picture-box {
       position: absolute;
       left: 95%;
@@ -75,8 +136,8 @@
       align-items: center;
 
       svg {
-        width: 30vw;
-        height: 30vw;
+        width: 40vw;
+        height: 40vw;
       }
     }
   }
