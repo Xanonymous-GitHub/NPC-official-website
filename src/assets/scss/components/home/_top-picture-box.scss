@@ -10,8 +10,8 @@
     align-items: center;
 
     svg {
-      width: 40vw;
-      height: 40vw;
+      width: calc((40vw + 40vh) / 2);
+      height: calc((40vw + 40vh) / 2);
     }
   }
 }
