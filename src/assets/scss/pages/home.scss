@@ -1,7 +1,12 @@
 @import "../shared";
 @import "../components/home/main-logo";
+@import "../components/home/wavy";
+@import "../components/home/top-picture-box";
 
 @include _page("home") {
+  @include wavy;
+  @include top-picture-box;
+
   $main-title-font-size: calc((8vw + 9vh) / 2); // 8+9 XD
   $svg-width-fit-content: calc((35vw + 60vh) / 2);
   $clip-path-short-size: calc((25vw + 40vh) / 2);
@@ -38,7 +43,6 @@
     }
 
     .clip-area {
-      //clip-path: polygon(0 0, 100% 0, 100% $clip-path-short-size, 0 100%);
       $gradient-blue: linear-gradient(
                       35deg,
                       rgba(32, 50, 235, 0.9),
@@ -49,10 +53,6 @@
       background: $gradient-blue, url("~@/assets/images/Colorful-Plait-Background.jpg");
       animation: gradient 20s forwards ease-in-out infinite;
       height: calc(#{$svg-width-fit-content});
-      //.wavy-area path {
-      //  fill: #000000;
-      //  fill-opacity: 0.5;
-      //}
 
       @keyframes gradient {
         0% {
@@ -64,80 +64,6 @@
         100% {
           background-position: 0 50%;
         }
-      }
-    }
-
-    .waves {
-      top: 100%;
-      transform: translateY(-90%);
-      position: relative;
-      width: 100%;
-      height: 15vh;
-      bottom: 0;
-      margin-bottom: -7px;
-      min-height: 100px;
-      max-height: 150px;
-    }
-
-    .parallax > use {
-      animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
-
-      &:nth-child(1) {
-        animation-delay: -2s;
-        animation-duration: 7s;
-      }
-
-      &:nth-child(2) {
-        animation-delay: -3s;
-        animation-duration: 10s;
-      }
-
-      &:nth-child(3) {
-        animation-delay: -4s;
-        animation-duration: 13s;
-      }
-
-      &:nth-child(4) {
-        animation-delay: -5s;
-        animation-duration: 20s;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .waves {
-        height: 40px;
-        min-height: 40px;
-      }
-      .content {
-        height: 30vh;
-      }
-      h1 {
-        font-size: 24px;
-      }
-    }
-
-    @keyframes move-forever {
-      0% {
-        transform: translate3d(-90px, 0, 0);
-      }
-      100% {
-        transform: translate3d(85px, 0, 0);
-      }
-    }
-
-    .top-picture-box {
-      position: absolute;
-      left: 95%;
-      bottom: 5%;
-      transform: translateX(-95%);
-      max-width: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      svg {
-        width: 40vw;
-        height: 40vw;
       }
     }
   }

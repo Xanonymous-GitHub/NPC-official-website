@@ -1,0 +1,17 @@
+@mixin top-picture-box {
+  .top-picture-box {
+    position: absolute;
+    left: 95%;
+    bottom: 5%;
+    transform: translateX(-95%);
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: 40vw;
+      height: 40vw;
+    }
+  }
+}
