@@ -22,15 +22,23 @@
         <br/>
         {{ mainTitle.line3 }}
       </div>
-      <h1 class="main-title main-title__chinese">
-        <svg class="logo logo__npc" viewBox="0 0 10 10">
-          <use xlink:href="#npc_logo.svg"/>
-        </svg>
-        {{ mainTitleChinese }}
-      </h1>
-      <h2 class="main-title main-title__sub-title">
-        {{ subTitle.line1 }}
-      </h2>
+      <div class="info-area">
+        <div class="info-area__text">
+          <h1 class="main-title main-title__chinese">
+            <svg class="logo logo__npc" viewBox="0 0 10 10">
+              <use xlink:href="#npc_logo.svg"/>
+            </svg>
+            {{ mainTitleChinese }}
+          </h1>
+          <h2 class="main-title main-title__sub-title">
+            {{ subTitle.line1 }}
+          </h2>
+        </div>
+        <div class="info-area__button--container">
+          <router-link class="info-area__button info-area__button--red" to="/">Join us</router-link>
+          <router-link class="info-area__button info-area__button--white" to="/">chat online</router-link>
+        </div>
+      </div>
       <div class="top-picture-box">
         <svg>
           <use xlink:href="#programmer.svg"/>
