@@ -22,12 +22,12 @@
         <br/>
         {{ mainTitle.line3 }}
       </div>
-      <div class="main-title main-title__chinese">
+      <h1 class="main-title main-title__chinese">
         <svg viewBox="0 0 10 10" class="logo logo__npc">
           <use xlink:href="#npc_logo.svg"/>
         </svg>
         {{ mainTitleChinese }}
-      </div>
+      </h1>
       <div class="top-picture-box">
         <svg>
           <use xlink:href="#programmer.svg"/>

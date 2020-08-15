@@ -25,6 +25,7 @@
       &__npc {
         display: inline-block;
         max-height: 1em;
+        max-width: 1em;
         vertical-align: bottom;
       }
 
@@ -40,7 +41,6 @@
 
     .main-title {
       cursor: default;
-      font-size: $main-title-font-size;
       font: {
         size: $main-title-font-size;
         family: "google-sans-bold", sans-serif;
