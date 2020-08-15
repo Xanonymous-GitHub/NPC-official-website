@@ -23,11 +23,14 @@
         {{ mainTitle.line3 }}
       </div>
       <h1 class="main-title main-title__chinese">
-        <svg viewBox="0 0 10 10" class="logo logo__npc">
+        <svg class="logo logo__npc" viewBox="0 0 10 10">
           <use xlink:href="#npc_logo.svg"/>
         </svg>
         {{ mainTitleChinese }}
       </h1>
+      <h2 class="main-title main-title__sub-title">
+        {{ subTitle.line1 }}
+      </h2>
       <div class="top-picture-box">
         <svg>
           <use xlink:href="#programmer.svg"/>
@@ -58,7 +61,7 @@ export default defineComponent({
       },
       mainTitleChinese: "北科程式設計研究社",
       subTitle: {
-        line1: "一群熱愛程式設計的學生所組成的社團。",
+        line1: "由一群熱愛程式設計的學生所組成的社團。",
       },
       mainDescription: {
         line1: "我們致力於推廣資訊教育，讓彼此體驗程式的美好。",

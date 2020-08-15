@@ -4,14 +4,21 @@
     left: 95%;
     bottom: 5%;
     transform: translateX(-95%);
-    max-width: 400px;
+    max-width: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     svg {
-      width: calc((40vw + 40vh) / 2);
-      height: calc((40vw + 40vh) / 2);
+      width: calc((50vw + 40vh) / 2);
+      height: calc((50vw + 40vh) / 2);
+
+      @media (max-width: 768px) {
+        &{
+          width: calc((30vw + 30vh) / 2);
+          height: calc((30vw + 30vh) / 2);
+        }
+      }
     }
   }
 }
