@@ -7,7 +7,8 @@
   @include wavy;
   @include top-picture-box;
 
-  $main-title-font-size: calc((8vw + 9vh) / 2); // 8+9 XD
+  $main-title-font-size: calc((8vw + 9vh) / 2);
+  $main-title-chinese-font-size: calc((4vw + 5vh) / 2);
   $svg-width-fit-content: calc((35vw + 60vh) / 2);
   $clip-path-short-size: calc((25vw + 40vh) / 2);
 
@@ -15,23 +16,35 @@
     position: relative;
     height: 100vh;
 
-    #main-logo-container {
-      left: 90vw;
-      top: 10vh;
-      transform: translateX(-90vw);
-      position: relative;
-      width: calc(#{$svg-width-fit-content} * 0.4);
-      max-width: 300px;
+    .logo {
       display: flex;
       justify-content: center;
       align-items: center;
-      @include main-logo;
+      position: relative;
+
+      &__npc {
+        display: inline-block;
+        max-height: 1em;
+        vertical-align: bottom;
+      }
+
+      &__main {
+        left: 90vw;
+        top: 10vh;
+        transform: translateX(-90vw);
+        width: calc(#{$svg-width-fit-content} * 0.4);
+        max-width: 300px;
+        @include main-logo;
+      }
     }
 
     .main-title {
       cursor: default;
       font-size: $main-title-font-size;
-      font-family: "google-sans-bold", sans-serif;
+      font: {
+        size: $main-title-font-size;
+        family: "google-sans-bold", sans-serif;
+      };
       --moz-osx-font-smoothing: grayscale;
       position: absolute;
       top: 10vh;
@@ -40,6 +53,23 @@
       color: #ffffff;
       text-shadow: grey 1px 1px 1px;
       max-font-size: 65px;
+
+      &__chinese {
+        color: #1b262c;
+        position: relative;
+        background-clip: content-box;
+        transform: translateY(-10vh);
+        font: {
+          size: $main-title-chinese-font-size;
+          weight: bolder;
+        };
+        width: min-content;
+        white-space: nowrap;
+      }
+    }
+
+    .sub-title {
+
     }
 
     .clip-area {

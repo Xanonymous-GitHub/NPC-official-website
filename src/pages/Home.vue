@@ -22,6 +22,12 @@
         <br/>
         {{ mainTitle.line3 }}
       </div>
+      <div class="main-title main-title__chinese">
+        <svg viewBox="0 0 10 10" class="logo logo__npc">
+          <use xlink:href="#npc_logo.svg"/>
+        </svg>
+        {{ mainTitleChinese }}
+      </div>
       <div class="top-picture-box">
         <svg>
           <use xlink:href="#programmer.svg"/>
@@ -33,9 +39,9 @@
 
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue';
-// import MainLogo from "@/components/home/MainLogo.vue";
 import '@/assets/images/programmer.svg';
-import '@/assets/scss/pages/home.scss'
+import '@/assets/images/npc_logo.svg';
+import '@/assets/scss/pages/home.scss';
 
 export default defineComponent({
   name: "Home",
@@ -50,14 +56,16 @@ export default defineComponent({
         line2: "Programming",
         line3: "Club"
       },
+      mainTitleChinese: "北科程式設計研究社",
+      subTitle: {
+        line1: "一群熱愛程式設計的學生所組成的社團。",
+      },
       mainDescription: {
-        line1: "北科程式設計研究社",
-        line2: "一群熱愛程式設計的學生所組成的社團。",
-        line3: "我們致力於推廣資訊教育，讓彼此體驗程式的美好。",
-        line4: "想學學校不會教的東西嗎? 或是從小練就一身演算法功力，卻沒舞台發揮？ 甚至是寫個 App，讓全校使用?",
-        line5: "讓我們一起報名資訊競賽，一起參加資訊年會，一起寫程式吧！",
-        line6: "我們每學期皆會開辦社課及社聚，也會舉辦社遊、跨校交流、黑客松等各式各樣的精彩活動。",
-        line7: "萬事俱備，只剩入社，心動不如馬上行動，現在就加入我們吧！"
+        line1: "我們致力於推廣資訊教育，讓彼此體驗程式的美好。",
+        line2: "想學學校不會教的東西嗎? 或是從小練就一身演算法功力，卻沒舞台發揮？ 甚至是寫個 App，讓全校使用?",
+        line3: "讓我們一起報名資訊競賽，一起參加資訊年會，一起寫程式吧！",
+        line4: "我們每學期皆會開辦社課及社聚，也會舉辦社遊、跨校交流、黑客松等各式各樣的精彩活動。",
+        line5: "萬事俱備，只剩入社，心動不如馬上行動，現在就加入我們吧！"
       },
     }
   },
