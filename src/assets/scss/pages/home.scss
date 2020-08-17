@@ -9,14 +9,14 @@
   @include top-picture-box;
 
   $main-title-font-size: calc((8vw + 9vh) / 2);
-  $main-title-chinese-font-size: calc((4vw + 5vh) / 2);
-  $sub-title-font-size: calc((4vw + 5vh) / 4);
+  $main-title-chinese-font-size: calc((4vw + 5vh) / 2.2);
+  $sub-title-font-size: calc((4vw + 5vh) / 4.2);
   $svg-width-fit-content: calc((35vw + 60vh) / 2);
   $clip-path-short-size: calc((25vw + 40vh) / 2);
 
   .first-area {
     position: relative;
-    height: 100%;
+    @include fix-100vh-in-mobile-WebKit;
 
     .logo {
       display: flex;
@@ -86,6 +86,7 @@
         padding-left: 2em;
         margin: 1em 0 0 0;
         word-wrap: break-word;
+        text-shadow: darkgrey 1px 1px 1px;
 
         @media (max-width: 768px) {
           font-size: calc(#{$sub-title-font-size} * 1.3);
