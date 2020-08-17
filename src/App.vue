@@ -17,6 +17,7 @@ export default defineComponent({
     let rootKey = 0
     const onOrientationchange = () => {
       rootKey++;
+      window.location.reload()
     }
 
     onMounted(() => {
