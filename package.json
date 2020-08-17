@@ -67,7 +67,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
-      "vue-cli-service lint --fix",
+      "vue-cli-service lint --fix && sh ./deploy-to-preview.sh",
       "git add"
     ]
   }
