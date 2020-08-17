@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import "@/assets/scss/app.scss";
-import {defineComponent, onMounted} from "vue";
+import {defineComponent, onMounted, onBeforeUnmount} from "vue";
 
 export default defineComponent({
   name: "App",
@@ -33,8 +33,12 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      window.addEventListener("resize", debounce(onOrientationchange));
+      window.addEventListener("orientationchange", debounce(onOrientationchange), false);
       document.dispatchEvent(new Event('app-rendered'));
+    })
+
+    onBeforeUnmount(() => {
+      window.removeEventListener("orientationchange", debounce(onOrientationchange), false)
     })
 
     return {}
