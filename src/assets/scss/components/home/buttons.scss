@@ -40,7 +40,7 @@
   #{$selector}--red {
     color: white;
     font-size: 1em;
-    box-shadow: 0 7px 25px -4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 7px 25px -4px rgba(0, 0, 0, 0.4);
     background: linear-gradient(-90deg, #ee1a43 30%, #ff4d13 70%);
 
     &:hover {
