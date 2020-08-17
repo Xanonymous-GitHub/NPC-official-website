@@ -1,7 +1,7 @@
 <template>
   <router-view v-slot="{ Component }">
     <keep-alive>
-      <component :is="Component" :key="rootKey"/>
+      <component :is="Component"/>
     </keep-alive>
   </router-view>
 </template>
@@ -15,10 +15,8 @@ export default defineComponent({
   props: {},
 
   setup() {
-    let rootKey = 0
-
     // eslint-disable-next-line @typescript-eslint/ban-types
-    function debounce(func: Function, delay = 50) {
+    function debounce(func: Function, delay = 250) {
       let timer: number;
       return () => {
         let args = arguments;
@@ -31,7 +29,6 @@ export default defineComponent({
     }
 
     function onOrientationchange() {
-      rootKey++;
       window.location.reload()
     }
 
@@ -40,7 +37,7 @@ export default defineComponent({
       document.dispatchEvent(new Event('app-rendered'));
     })
 
-    return {rootKey}
+    return {}
   }
 });
 </script>
