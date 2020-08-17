@@ -1,0 +1,51 @@
+@mixin button($selector) {
+  #{$selector} {
+    vertical-align: bottom;
+    font-weight: bolder;
+    margin: 1em 0.5em;
+    position: relative;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 35px;
+    animation: fadeIn 1000ms forwards, moveDown 900ms forwards;
+    animation-delay: 400ms;
+    width: 100px;
+    min-width: 100px;
+    display: inline-block;
+    border-radius: 50px;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+  }
+  @content;
+}
+
+@mixin button__white($selector) {
+  #{$selector}--white {
+    color: #0957ff;
+    font-size: 0.9em;
+    box-shadow: 0 7px 25px -4px rgba(0, 0, 0, 0.2);
+    background-color: #f7fbfc;
+
+    &:hover {
+      background: linear-gradient(-45deg, #00204a, #005792, #00bbf0);
+      color: white;
+      transition: .3s;
+    }
+  }
+}
+
+@mixin button__red($selector) {
+  #{$selector}--red {
+    color: white;
+    font-size: 1em;
+    box-shadow: 0 7px 25px -4px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(-90deg, #ee1a43 30%, #ff4d13 70%);
+
+    &:hover {
+      background: linear-gradient(-45deg, #086972, #17b978, #a7ff83);
+      transition: .3s;
+    }
+  }
+}
