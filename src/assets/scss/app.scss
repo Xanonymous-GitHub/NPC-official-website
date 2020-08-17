@@ -2,10 +2,14 @@
 
 @include _font;
 
-html,
+html {
+  height: -webkit-fill-available;
+}
+
 body,
 #app {
-  height: 100%;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   margin: 0;
   -moz-text-size-adjust: none;
   -ms-text-size-adjust: none;

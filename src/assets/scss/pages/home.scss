@@ -4,6 +4,7 @@
 @import "../components/home/top-picture-box";
 
 @include _page("home") {
+  @include fix-100vh-in-mobile-WebKit;
   @include wavy;
   @include top-picture-box;
 
@@ -15,7 +16,7 @@
 
   .first-area {
     position: relative;
-    height: 100vh;
+    height: 100%;
 
     .logo {
       display: flex;
