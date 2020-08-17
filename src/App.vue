@@ -30,7 +30,6 @@ export default defineComponent({
       }
     }
 
-    // @Debounce(300)
     function onOrientationchange() {
       rootKey++;
       window.location.reload()
