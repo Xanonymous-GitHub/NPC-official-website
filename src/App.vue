@@ -33,7 +33,7 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      window.addEventListener("orientationchange" in window ? "orientationchange" : "resize", debounce(onOrientationchange), true);
+      window.addEventListener("resize", debounce(onOrientationchange));
       document.dispatchEvent(new Event('app-rendered'));
     })
 
