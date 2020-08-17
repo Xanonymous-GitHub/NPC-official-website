@@ -1,7 +1,7 @@
 <template>
   <router-view v-slot="{ Component }">
     <keep-alive>
-      <component :is="Component"/>
+      <component :is="Component" :key="rootKey"/>
     </keep-alive>
   </router-view>
 </template>
@@ -14,10 +14,18 @@ export default defineComponent({
   name: "App",
   props: {},
   setup() {
+    let rootKey = 0
+    const onOrientationchange = () => {
+      rootKey++;
+      window.location.reload()
+    }
+
     onMounted(() => {
+      window.addEventListener("orientationchange" in window ? "orientationchange" : "resize", onOrientationchange, true);
       document.dispatchEvent(new Event('app-rendered'));
-    });
-    return {};
+    })
+
+    return {rootKey}
   }
 });
 </script>
