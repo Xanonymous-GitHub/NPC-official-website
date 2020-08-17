@@ -13,15 +13,31 @@ import {defineComponent, onMounted} from "vue";
 export default defineComponent({
   name: "App",
   props: {},
+
   setup() {
     let rootKey = 0
-    const onOrientationchange = () => {
+
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    function debounce(func: Function, delay = 50) {
+      let timer: number;
+      return () => {
+        let args = arguments;
+
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          func(args);
+        }, delay)
+      }
+    }
+
+    // @Debounce(300)
+    function onOrientationchange() {
       rootKey++;
       window.location.reload()
     }
 
     onMounted(() => {
-      window.addEventListener("orientationchange" in window ? "orientationchange" : "resize", onOrientationchange, true);
+      window.addEventListener("orientationchange" in window ? "orientationchange" : "resize", debounce(onOrientationchange), true);
       document.dispatchEvent(new Event('app-rendered'));
     })
 
