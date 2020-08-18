@@ -1,0 +1,70 @@
+@mixin about-us-area {
+  $svg-width-fit-content: calc((35vw + 60vh) / 2);
+
+  .about-us-area {
+    margin: 1em;
+    padding: 1em 2em;
+    border-radius: 30px;
+    background-color: rgba(245, 245, 247, 1);
+    position: relative;
+    min-height: max-content;
+
+    %text-box {
+      position: relative;
+      font-family: google-sans-bold, sans-serif;
+    }
+
+    .content{
+      display: flex;
+      position: relative;
+      flex-wrap: nowrap;
+      height: max-content;
+
+      @media (max-width: 768px) {
+        flex-wrap: wrap;
+      }
+
+      .main-logo{
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        position: relative;
+        width: $svg-width-fit-content;
+        vertical-align: top;
+        margin: 0 2em;
+
+        @media (max-width: 768px) {
+          width: 100%;
+          margin-bottom: 2em;
+        }
+      }
+
+      .text-content {
+        @extend %text-box;
+        text-align: left;
+        font-size: 1em;
+        position: relative;
+      }
+    }
+
+    .title {
+      @extend %text-box;
+      text-align: center;
+      font-size: 1.5em;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 1.5em;
+    }
+
+    .divider {
+      width: 95%;
+      height: 7px;
+      border-radius: 10px;
+      margin-right: auto;
+      margin-left: auto;
+      position: relative;
+      background: linear-gradient(-45deg, #3ec1d3, #f6f7d7, #ff9a00, #ff165d);
+    }
+  }
+}

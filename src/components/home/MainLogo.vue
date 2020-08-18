@@ -1,8 +1,9 @@
 <template>
-  <svg class="logo" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 488 490.773">
+  <svg class="logo" fill="#000000" preserveAspectRatio="xMidYMid meet" viewBox="0 0 488 490.773"
+       xmlns="http://www.w3.org/2000/svg">
     <defs>
       <clipPath id="a">
-        <path d="M160 320.111l320 162.662V.111l-160 160L.35 0l-.351 480.111" data-name="Path 165" fill="none"
+        <path d="M160 320.111l320 162.662V.111l-160 160L.35 0l-.351 480.111" data-name="Path 165" fill="#000000"
               stroke="#707070" stroke-width="4"/>
       </clipPath>
     </defs>
@@ -313,7 +314,8 @@
                 d="M19.25 53.788a36.733 36.733 0 0019.964 5.5 36.747 36.747 0 0019.97-5.5 36.748 36.748 0 00-19.97-5.5 36.734 36.734 0 00-19.964 5.5z"
                 data-name="Path 163"/>
           </g>
-          <path d="M-29.187 37.349h21.294V74.75h-21.294z" data-name="Rectangle 1" fill="none" stroke="#fff" stroke-linecap="round"
+          <path d="M-29.187 37.349h21.294V74.75h-21.294z" data-name="Rectangle 1" fill="none" stroke="#fff"
+                stroke-linecap="round"
                 stroke-linejoin="round" stroke-width="4"/>
           <path d="M-26.349 303.396l-3.84 3.84a18.922 18.922 0 013.84-3.84z" data-name="Path 164" fill="none"
                 stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
