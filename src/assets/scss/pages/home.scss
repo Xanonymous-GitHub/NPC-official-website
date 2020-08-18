@@ -61,7 +61,7 @@
       &__chinese {
         color: #1b262c;
         position: relative;
-        transform: translateY(-10vh);
+        transform: translateY(-10vh) !important;
         font: {
           size: $main-title-chinese-font-size;
           weight: bolder;
@@ -133,7 +133,7 @@
         margin-bottom: 1em;
       }
 
-      @include button("&__button") {
+      @include _button("&__button") {
         @include button__red("&__button");
         @include button__white("&__button");
       }

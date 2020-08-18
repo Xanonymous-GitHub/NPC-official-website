@@ -1,4 +1,4 @@
-@mixin button($selector) {
+@mixin _button($selector) {
   #{$selector} {
     vertical-align: bottom;
     font-weight: bolder;
@@ -8,8 +8,6 @@
     height: 50px;
     line-height: 50px;
     padding: 0 35px;
-    animation: fadeIn 1000ms forwards, moveDown 900ms forwards;
-    animation-delay: 400ms;
     width: 100px;
     min-width: 100px;
     display: inline-block;
@@ -26,7 +24,7 @@
     color: #0957ff;
     font-size: 0.9em;
     box-shadow: 0 7px 25px -4px rgba(0, 0, 0, 0.2);
-    background-color: #f7fbfc;
+    background: linear-gradient(205deg, #fafafa 30%, #e8f1f5 70%);
 
     &:hover {
       background: linear-gradient(-45deg, #00204a, #005792, #00bbf0);

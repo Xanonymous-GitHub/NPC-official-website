@@ -15,7 +15,7 @@
           </g>
         </svg>
       </div>
-      <div class="main-title">
+      <div class="main-title animate__animated animate__fadeInLeft animate__lightSpeedInLeft">
         {{ mainTitle.line1 }}
         <br/>
         {{ mainTitle.line2 }}
@@ -24,22 +24,22 @@
       </div>
       <div class="info-area">
         <div class="info-area__text">
-          <h1 class="main-title main-title__chinese">
+          <h1 class="main-title main-title__chinese animate__animated animate__fadeIn">
             <svg class="logo logo__npc" viewBox="0 0 10 10">
               <use xlink:href="#npc_logo.svg"/>
             </svg>
             {{ mainTitleChinese }}
           </h1>
-          <h2 class="main-title main-title__sub-title">
+          <h2 class="main-title main-title__sub-title animate__animated animate__fadeIn">
             {{ subTitle.line1 }}
           </h2>
         </div>
         <div class="info-area__button--container">
-          <router-link class="info-area__button info-area__button--red" to="/">Join us</router-link>
-          <router-link class="info-area__button info-area__button--white" to="/">chat online</router-link>
+          <router-link class="info-area__button info-area__button--red animate__animated animate__bounceIn" to="/">Join us</router-link>
+          <router-link class="info-area__button info-area__button--white animate__animated animate__bounceIn" to="/">chat online</router-link>
         </div>
       </div>
-      <div class="top-picture-box">
+      <div class="top-picture-box animate__animated animate__fadeIn">
         <svg>
           <use xlink:href="#programmer.svg"/>
         </svg>
