@@ -17,10 +17,8 @@
   .first-area {
     position: relative;
     @include fix-100vh-in-mobile-WebKit;
+    height: max-content;
 
-    @media (max-width: 768px) {
-      height: max-content;
-    }
 
     .logo {
       display: flex;
@@ -130,10 +128,6 @@
       flex-wrap: wrap;
       margin-left: 5vw;
       width: calc(100% - ((30vw + 30vh) / 2) - 5% - 10%); // I forgot how this come from...
-
-      //@media (max-width: 768px) {
-      //  bottom: 5%;
-      //}
 
       &__text {
         width: max-content;

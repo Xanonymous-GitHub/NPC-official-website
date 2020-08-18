@@ -58,7 +58,7 @@
       </div>
       <div class="content">
         <div class="main-logo animate__animated animate__bounceIn">
-          <svg viewBox="0 0 200 200">
+          <svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid meet">
             <use xlink:href="#process.svg"/>
           </svg>
         </div>
