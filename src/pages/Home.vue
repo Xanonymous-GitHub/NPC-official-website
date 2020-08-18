@@ -77,6 +77,11 @@
         </div>
       </div>
     </div>
+    <div class="footer">
+      <div class="copyright">
+        Copyright <b style="font-family: sans-serif">&copy;</b> 2020 by NTUT Programming Club
+      </div>
+    </div>
   </main>
 </template>
 
