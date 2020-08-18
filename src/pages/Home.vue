@@ -41,7 +41,7 @@
                                                                                                                    us
           </router-link>
           <router-link class="info-area__button info-area__button--white animate__animated animate__bounceIn" to="/">
-            chat online
+            Chat online
           </router-link>
         </div>
       </div>

@@ -5,9 +5,9 @@
     margin: 1em 0.5em;
     position: relative;
     text-align: center;
-    height: 50px;
-    line-height: 50px;
-    padding: 0 35px;
+    height: 2.7em;
+    line-height: 2.7em;
+    padding: 0 1.89em;
     width: 100px;
     min-width: 100px;
     display: inline-block;
@@ -16,6 +16,7 @@
     user-select: none;
     text-decoration: none;
   }
+
   @content;
 }
 
@@ -37,7 +38,7 @@
 @mixin button__red($selector) {
   #{$selector}--red {
     color: white;
-    font-size: 1em;
+    font-size: 0.9em;
     box-shadow: 0 7px 25px -4px rgba(0, 0, 0, 0.4);
     background: linear-gradient(-90deg, #ee1a43 30%, #ff4d13 70%);
 

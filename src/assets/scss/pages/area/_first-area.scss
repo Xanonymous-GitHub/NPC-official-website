@@ -18,6 +18,10 @@
     position: relative;
     @include fix-100vh-in-mobile-WebKit;
 
+    @media (max-width: 768px) {
+      height: max-content;
+    }
+
     .logo {
       display: flex;
       justify-content: center;
@@ -121,15 +125,21 @@
 
     .info-area {
       display: flex;
+      position: relative;
       flex-direction: row;
       flex-wrap: wrap;
       margin-left: 5vw;
       width: calc(100% - ((30vw + 30vh) / 2) - 5% - 10%); // I forgot how this come from...
 
+      //@media (max-width: 768px) {
+      //  bottom: 5%;
+      //}
+
       &__text {
         width: max-content;
         display: block;
         margin-bottom: 1em;
+        margin-top: 1em;
       }
 
       @include _button("&__button") {

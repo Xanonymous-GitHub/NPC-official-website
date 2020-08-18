@@ -10,8 +10,9 @@
       bottom: 1em;
     }
 
-    .copyright{
+    .copyright {
       width: 100%;
+      font-size: calc((2vw + 2vh) / 2);
       text-align: center;
     }
   }
