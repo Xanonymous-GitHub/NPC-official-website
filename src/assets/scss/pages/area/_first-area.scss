@@ -140,6 +140,16 @@
         max-width: 100%;
       }
 
+      &__button--container{
+        align-content: center;
+        vertical-align: center;
+        display: flex;
+        display: -webkit-box;
+        flex-wrap: wrap;
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+      }
+
       @include _button("&__button") {
         @include button__red("&__button");
         @include button__white("&__button");
