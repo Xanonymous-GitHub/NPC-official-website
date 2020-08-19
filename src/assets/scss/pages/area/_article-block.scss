@@ -1,7 +1,7 @@
-@mixin about-us-area {
+@mixin article-block {
   $svg-width-fit-content: calc((35vw + 60vh) / 2);
 
-  .about-us-area {
+  .article-block {
     margin: 1em;
     padding: 1em 2em;
     border-radius: 30px;
@@ -16,6 +16,8 @@
 
     .content {
       display: flex;
+      align-content: center;
+      justify-content: center;
       position: relative;
       flex-wrap: nowrap;
       height: max-content;
@@ -24,13 +26,13 @@
         flex-wrap: wrap;
       }
 
-      .main-logo {
+      .article-picture {
         display: flex;
         justify-content: center;
         align-items: flex-start;
         position: relative;
         vertical-align: top;
-        margin: 0 1em;
+        margin: 0 2em;
         max-height: 300px;
 
         @media (max-width: 900px) {

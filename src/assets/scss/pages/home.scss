@@ -1,11 +1,11 @@
 @import "../shared";
 @import "./area/first-area";
-@import "./area/about-us-area";
+@import "area/article-block";
 @import "./area/footer";
 
 @include _page("home") {
   @include fix-100vh-in-mobile-WebKit;
   @include first-area;
-  @include about-us-area;
+  @include article-block;
   @include footer;
 }

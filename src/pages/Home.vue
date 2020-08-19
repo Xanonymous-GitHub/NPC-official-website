@@ -51,34 +51,26 @@
         </svg>
       </div>
     </div>
-    <div class="about-us-area">
-      <div class="title">
-        About us 關於我們
-        <div class="divider" />
-      </div>
-      <div class="content">
-        <div class="main-logo animate__animated animate__bounceIn">
-          <svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid meet">
-            <use xlink:href="#process.svg"/>
-          </svg>
-        </div>
-        <div class="text-content">
-          為了使更多人能夠體會程式的魅力，我們致力於北科校園推廣資訊技術，開設不同語言的課程，讓彼此體驗程式的美好。
-          <br /><br />
-          我們每學期皆會開辦社課及社聚，也會舉辦社遊、跨校交流、黑客松等各式各樣的精彩活動。
-          <br /><br />
-          不僅如此，更加開基礎課程，讓初學者能夠更快速地上手。
-          <br /><br />
-          同時，我們也有讀書會分組形式的社課，讓社員能夠團隊合作，並在最後進入專案的開發。
-          <br /><br />
-          想學學校不會教的技術嗎？或是從小練就一身演算法功力，卻沒舞台發揮？甚至是寫個 App，讓全校使用？
-          <br /><br />
-          讓我們一起報名資訊競賽，一起參加資訊年會，一起寫程式！
-          <br /><br />
-          對程式有興趣的你，趕快加入我們的夢想藍圖吧！
-        </div>
-      </div>
-    </div>
+    <Article title="About us 關於我們">
+      <template #picture>
+        <use xlink:href="#process.svg"/>
+      </template>
+      <template #textContent>
+        為了使更多人能夠體會程式的魅力，我們致力於北科校園推廣資訊技術，開設不同語言的課程，讓彼此體驗程式的美好。
+        <br/><br/>
+        我們每學期皆會開辦社課及社聚，也會舉辦社遊、跨校交流、黑客松等各式各樣的精彩活動。
+        <br/><br/>
+        不僅如此，更加開基礎課程，讓初學者能夠更快速地上手。
+        <br/><br/>
+        同時，我們也有讀書會分組形式的社課，讓社員能夠團隊合作，並在最後進入專案的開發。
+        <br/><br/>
+        想學學校不會教的技術嗎？或是從小練就一身演算法功力，卻沒舞台發揮？甚至是寫個 App，讓全校使用？
+        <br/><br/>
+        讓我們一起報名資訊競賽，一起參加資訊年會，一起寫程式！
+        <br/><br/>
+        對程式有興趣的你，趕快加入我們的夢想藍圖吧！
+      </template>
+    </Article>
     <div class="footer">
       <div class="copyright">
         Copyright <b style="font-family: sans-serif">&copy;</b> 2020 by NTUT Programming Club
@@ -93,12 +85,14 @@ import '@/assets/images/programmer.svg';
 import '@/assets/images/npc_logo.svg';
 import '@/assets/scss/pages/home.scss';
 import '@/assets/images/process.svg';
+import Article from '@/components/home/article.vue';
 // import MainLogo from '@/components/home/MainLogo.vue';
 
 export default defineComponent({
   name: "Home",
   props: {},
   components: {
+    Article
     // MainLogo
   },
   data() {
