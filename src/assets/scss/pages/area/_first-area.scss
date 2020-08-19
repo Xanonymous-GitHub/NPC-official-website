@@ -85,10 +85,11 @@
         white-space: nowrap;
         position: relative;
         transform: translateY(-10vh);
-        padding-left: 1.2em;
         margin: 1em 0 0 0;
         word-wrap: break-word;
         text-shadow: darkgrey 1px 1px 1px;
+        max-width: 100%;
+        text-wrap: normal;
 
         @media (max-width: 768px) {
           font-size: calc(#{$sub-title-font-size} * 1.3);
@@ -127,13 +128,16 @@
       flex-direction: row;
       flex-wrap: wrap;
       margin-left: 5vw;
-      width: calc(100% - ((30vw + 30vh) / 2) - 5% - 10%); // I forgot how this come from...
+      margin-right: 5vw;
+      max-width: 90%;
+      width: calc(100% - ((30vw + 30vh) / 2) - 5% - 10%);
 
       &__text {
         width: max-content;
         display: block;
         margin-bottom: 1em;
         margin-top: 1em;
+        max-width: 100%;
       }
 
       @include _button("&__button") {

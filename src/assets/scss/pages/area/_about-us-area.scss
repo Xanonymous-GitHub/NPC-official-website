@@ -20,7 +20,7 @@
       flex-wrap: nowrap;
       height: max-content;
 
-      @media (max-width: 800px) {
+      @media (max-width: 900px) {
         flex-wrap: wrap;
       }
 
@@ -30,10 +30,10 @@
         align-items: flex-start;
         position: relative;
         vertical-align: top;
-        margin: 0 2em;
+        margin: 0 1em;
         max-height: 300px;
 
-        @media (max-width: 800px){
+        @media (max-width: 900px) {
           margin: 0 auto;
         }
 
@@ -43,7 +43,7 @@
 
           @media (max-width: 800px) {
             & {
-              width: 100%;
+              width: 200px;
               margin-bottom: 2em;
             }
           }
@@ -61,11 +61,16 @@
     .title {
       @extend %text-box;
       text-align: center;
-      font-size: 1.5em;
+      font-size: calc((3.5vw + 3vh) / 2);
       display: inline-block;
       left: 50%;
       transform: translateX(-50%);
       margin-bottom: 1.5em;
+
+      @media (max-width: 640px) {
+        font-size: 7vw;
+        margin-bottom: .5em;
+      }
     }
 
     .divider {
