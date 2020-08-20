@@ -1,7 +1,7 @@
 @mixin _font {
   @import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap");
   * {
-    font-family: Noto Sans TC, "google-sans", Quicksand, Quicksand, -apple-system, BlinkMacSystemFont, Segoe UI,
+    font-family: "google-sans", "NotoSansTC-Medium", Quicksand, Quicksand, -apple-system, "NotoSansTC-Medium", BlinkMacSystemFont, Segoe UI,
     Roboto, Helvetica Neue, Arial, Noto Sans TC, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   }
@@ -34,5 +34,15 @@
   @font-face {
     font-family: "FugazOne";
     src: url("~@/assets/fonts/FugazOne-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "NotoSansTC-Bold";
+    src: url("~@/assets/fonts/NotoSansTC-Bold.otf");
+  }
+
+  @font-face {
+    font-family: "NotoSansTC-Medium";
+    src: url("~@/assets/fonts/NotoSansTC-Medium.otf");
   }
 }
