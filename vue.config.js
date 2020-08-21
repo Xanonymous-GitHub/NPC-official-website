@@ -33,6 +33,10 @@ module.exports = {
     if (isProduction && needBundleAnalysis) {
       config.plugin('analyzer').use(new BundleAnalyzerPlugin())
     }
+    config.plugin('optimize-css').tap(([options]) => {
+      options.cssnanoOptions.preset[1].svgo = false
+      return [options]
+    })
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()
     config.module
