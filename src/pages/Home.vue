@@ -37,11 +37,10 @@
           </h2>
         </div>
         <div class="info-area__button--container">
-          <router-link class="info-area__button info-area__button--red animate__animated animate__bounceIn" to="/">Join
-                                                                                                                   us
+          <router-link class="info-area__button info-area__button--red animate__animated animate__bounceIn" to="/">加入我們
           </router-link>
           <router-link class="info-area__button info-area__button--white animate__animated animate__bounceIn" to="/">
-            Chat online
+            線上聊天
           </router-link>
         </div>
       </div>
