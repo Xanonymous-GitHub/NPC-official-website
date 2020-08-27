@@ -71,6 +71,28 @@
         對程式有興趣的你，趕快加入我們的夢想藍圖吧！
       </template>
     </Article>
+    <Article title="Recent Activities 近期活動">
+      <template #picture>
+        <use xlink:href="#tea.svg"/>
+      </template>
+      <template #textContent>
+        【活動】NPC 新生茶會
+        <br/><br/>
+        對程式設計有興趣卻不知道在哪裡學？
+        想與其他同好交流但是怕自己不夠厲害？
+        程式上遇到問題卻沒有辦法解決？
+        那你絕對要來參加程式設計研究社的新生茶會！
+        <br/><br/>
+        在 NPC 新生茶會介紹社團的精彩活動內容，
+        還有有趣的解謎遊戲讓你和組員一起體驗程式設計的美好！
+        提前報名的話還能領取美味的零食哦！
+        <br/><br/>
+        時間：9/22(二) 晚上 18:30
+        <br/>
+        地點：綜合科館 B1 第三演講廳
+
+      </template>
+    </Article>
     <div class="footer">
       <div class="copyright">
         Copyright <b style="font-family: sans-serif">&copy;</b> 2020 by NTUT Programming Club
@@ -85,6 +107,7 @@ import '@/assets/images/programmer.svg';
 import '@/assets/images/npc_logo_Hans_Chiu.svg';
 import '@/assets/scss/pages/home.scss';
 import '@/assets/images/process.svg';
+import '@/assets/images/tea.svg';
 import NavBar from "@/components/home/NavBar.vue";
 
 export default defineComponent({
