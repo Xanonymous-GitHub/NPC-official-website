@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const CompressionWebpackPlugin = require("compression-webpack-plugin");
-const zopfli = require("@gfx/zopfli");
-const BrotliPlugin = require("brotli-webpack-plugin");
+// const CompressionWebpackPlugin = require("compression-webpack-plugin");
+// const zopfli = require("@gfx/zopfli");
+// const BrotliPlugin = require("brotli-webpack-plugin");
 const PrerenderSpaPlugin = require("prerender-spa-plugin");
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
@@ -11,7 +11,7 @@ const postcssPresetEnv = require('postcss-preset-env');
 const postcssImport = require('postcss-import');
 const postcssPlugin = require('postcss-plugin');
 const postcssAssets = require('postcss-assets');
-const productionGzipExtensions = /\.(js|css|json|txt|html)(\?.*)?$/i;
+// const productionGzipExtensions = /\.(js|css|json|txt|html)(\?.*)?$/i;
 const isProduction = process.env.NODE_ENV === 'production'
 const needBundleAnalysis = process.argv.includes('--analyze')
 const resolve = dir => path.join(__dirname, dir);
@@ -33,10 +33,10 @@ module.exports = {
     if (isProduction && needBundleAnalysis) {
       config.plugin('analyzer').use(new BundleAnalyzerPlugin())
     }
-    config.plugin('optimize-css').tap(([options]) => {
-      options.cssnanoOptions.preset[1].svgo = false
-      return [options]
-    })
+    // config.plugin('optimize-css').tap(([options]) => {
+    //   options.cssnanoOptions.preset[1].svgo = false
+    //   return [options]
+    // })
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()
     config.module
@@ -53,24 +53,24 @@ module.exports = {
   configureWebpack: config => {
     const plugins = [];
     if (isProduction) {
-      plugins.push(
-        new CompressionWebpackPlugin({
-          algorithm(input, compressionOptions, callback) {
-            return zopfli.gzip(input, compressionOptions, callback);
-          },
-          compressionOptions: {
-            numiterations: 15
-          },
-          minRatio: 0.99,
-          test: productionGzipExtensions
-        })
-      );
-      plugins.push(
-        new BrotliPlugin({
-          test: productionGzipExtensions,
-          minRatio: 0.99
-        })
-      );
+      // plugins.push(
+      //   new CompressionWebpackPlugin({
+      //     algorithm(input, compressionOptions, callback) {
+      //       return zopfli.gzip(input, compressionOptions, callback);
+      //     },
+      //     compressionOptions: {
+      //       numiterations: 15
+      //     },
+      //     minRatio: 0.99,
+      //     test: productionGzipExtensions
+      //   })
+      // );
+      // plugins.push(
+      //   new BrotliPlugin({
+      //     test: productionGzipExtensions,
+      //     minRatio: 0.99
+      //   })
+      // );
       plugins.push(
         new PrerenderSpaPlugin({
           staticDir: resolve("dist"),
