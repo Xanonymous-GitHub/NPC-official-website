@@ -33,6 +33,9 @@ module.exports = {
     if (isProduction && needBundleAnalysis) {
       config.plugin('analyzer').use(new BundleAnalyzerPlugin())
     }
+    config.performance
+      .maxEntrypointSize(1000000)
+      .maxAssetSize(1000000)
     // config.plugin('optimize-css').tap(([options]) => {
     //   options.cssnanoOptions.preset[1].svgo = false
     //   return [options]

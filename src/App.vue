@@ -9,36 +9,24 @@
 <script lang="ts">
 import "@/assets/scss/app.scss";
 import {defineComponent, onMounted, onBeforeUnmount} from "vue";
+import {debounce} from 'lodash'
 
 export default defineComponent({
   name: "App",
   props: {},
 
   setup() {
-    // eslint-disable-next-line @typescript-eslint/ban-types
-    function debounce(func: Function, delay = 250) {
-      let timer: number;
-      return () => {
-        let args = arguments;
-
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-          func(args);
-        }, delay)
-      }
-    }
-
-    function onOrientationchange() {
+    const onOrientationchange = debounce(() => {
       window.location.reload()
-    }
+    }, 250)
 
     onMounted(() => {
-      window.addEventListener("orientationchange", debounce(onOrientationchange), false);
+      window.addEventListener("orientationchange", onOrientationchange, false);
       document.dispatchEvent(new Event('app-rendered'));
     })
 
     onBeforeUnmount(() => {
-      window.removeEventListener("orientationchange", debounce(onOrientationchange), false)
+      window.removeEventListener("orientationchange", onOrientationchange, false)
     })
 
     return {}
