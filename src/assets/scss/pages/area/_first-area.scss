@@ -3,10 +3,12 @@
 @import "../../components/home/wavy";
 @import "../../components/home/top-picture-box";
 @import "../../components/home/buttons";
+@import "../../components/home/nav-bar";
 
 @mixin first-area {
   @include wavy;
   @include top-picture-box;
+  @include nav-bar;
 
   $main-title-font-size: calc((8vw + 9vh) / 2);
   $main-title-chinese-font-size: calc((4vw + 5vh) / 2.2);
@@ -30,6 +32,9 @@
         display: inline-block;
         max-height: 1em;
         max-width: 1em;
+        height: 100%;
+        width: auto;
+        fill: black;
         vertical-align: bottom;
       }
 
@@ -58,6 +63,8 @@
       text-shadow: grey 1px 1px 1px;
       max-font-size: 65px;
       max-width: 90%;
+      transition-timing-function: ease-in-out;
+      transition: .3s;
 
       &__chinese {
         color: #1b262c;

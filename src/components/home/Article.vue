@@ -6,7 +6,7 @@
     </div>
     <div class="content">
       <div class="article-picture animate__animated animate__bounceIn">
-        <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+        <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 1 1">
           <slot name="picture"></slot>
         </svg>
       </div>

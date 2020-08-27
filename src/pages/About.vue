@@ -16,6 +16,6 @@
 <!--  });-->
 <!--</script>-->
 
-<!--<style lang="scss" scoped>-->
+<!--const data: UnwrapRef<{}> = reactive({-->
 
-<!--</style>-->
+<!--})-->

@@ -1,6 +1,7 @@
 <template>
   <main class="page-container" id="home">
     <div class="first-area">
+      <NavBar/>
       <div class="clip-area">
         <svg class="waves" preserveAspectRatio="none" shape-rendering="auto"
              viewBox="0 24 150 28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -25,8 +26,8 @@
       <div class="info-area">
         <div class="info-area__text">
           <h1 class="main-title main-title__chinese animate__animated animate__fadeIn">
-            <svg class="logo logo__npc" viewBox="0 0 10 10">
-              <use xlink:href="#npc_logo.svg"/>
+            <svg class="logo logo__npc" viewBox="0 0 1 1">
+              <use xlink:href="#npc_logo_Hans_Chiu.svg"/>
             </svg>
             {{ mainTitleChinese }}
           </h1>
@@ -79,20 +80,19 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted} from 'vue';
+import {defineComponent, defineAsyncComponent, onMounted} from 'vue';
 import '@/assets/images/programmer.svg';
-import '@/assets/images/npc_logo.svg';
+import '@/assets/images/npc_logo_Hans_Chiu.svg';
 import '@/assets/scss/pages/home.scss';
 import '@/assets/images/process.svg';
-import Article from '@/components/home/article.vue';
-// import MainLogo from '@/components/home/MainLogo.vue';
+import NavBar from "@/components/home/NavBar.vue";
 
 export default defineComponent({
   name: "Home",
   props: {},
   components: {
-    Article
-    // MainLogo
+    NavBar,
+    Article: defineAsyncComponent(() => import('@/components/home/Article.vue'))
   },
   data() {
     return {

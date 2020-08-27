@@ -12,6 +12,8 @@
     svg {
       width: calc((50vw + 40vh) / 2);
       height: calc((50vw + 40vh) / 2);
+      transition-timing-function: ease-in-out;
+      transition: .3s;
 
       @media (max-width: 800px) {
         &{
