@@ -9,6 +9,7 @@
 <script lang="ts">
 import "@/assets/scss/app.scss";
 import {defineComponent, onMounted, onBeforeUnmount} from "vue";
+import nyancat from "@/utils/nyancat";
 
 export default defineComponent({
   name: "App",
@@ -34,6 +35,7 @@ export default defineComponent({
 
     onMounted(() => {
       window.addEventListener("orientationchange", debounce(onOrientationchange), false);
+      nyancat()
       document.dispatchEvent(new Event('app-rendered'));
     })
 

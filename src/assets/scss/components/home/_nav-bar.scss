@@ -11,7 +11,7 @@
   %nav-bar-base-rule {
     @extend %flex-space-between-set;
     top: 0;
-    z-index: 9999;
+    z-index: 9998;
     height: 4vh;
     width: 86%;
     margin: 3vh 7vw;
@@ -56,9 +56,16 @@
       width: 70%;
       color: white;
       font-weight: bolder;
+      overflow: auto;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
 
       .item {
         margin: 0 20px;
+        text-wrap: none;
+        white-space: nowrap;
 
         &:hover ~ .underline {
           transition-timing-function: ease-in-out;
@@ -80,6 +87,28 @@
         position: relative;
         background: white;
         transition: .3s;
+      }
+    }
+
+    .menu-button {
+      font-size: calc(2vw + 4vh);
+      color: white;
+      cursor: pointer;
+      display: none;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
+
+      &:hover {
+        transition: .3s;
+        transition-timing-function: ease-in-out;
+        color: darkorange;
+      }
+
+      &:active {
+        transition: .3s;
+        color: #b34400;
       }
     }
 

@@ -1,0 +1,57 @@
+@mixin nav-drawer {
+  .bottom-layer {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .nav-drawer {
+    position: fixed;
+    z-index: 10000;
+    width: 70%;
+    height: 100%;
+    right: 0;
+    background-color: #1b262c;
+    padding: 0.5em 0;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    .item {
+      margin: 0.5em;
+      color: white;
+      font-weight: bolder;
+      font-size: 1.5em;
+    }
+
+    .close-bottom {
+      position: relative;
+      float: right;
+      color: #aaa;
+      padding: 0 10px;
+      font-size: 50px;
+      font-weight: bold;
+      transition: 0.3s;
+
+      &:hover,
+      &:focus {
+        color: red;
+        text-decoration: none;
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+
+      &:active {
+        color: darkred;
+        transform: scale(0.9);
+      }
+    }
+  }
+}
