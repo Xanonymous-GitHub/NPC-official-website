@@ -3,6 +3,8 @@
     margin-top: 3em;
     background-color: dimgrey;
     color: white;
+    z-index: 99999999;
+    position: relative;
     padding: {
       left: 2em;
       right: 2em;

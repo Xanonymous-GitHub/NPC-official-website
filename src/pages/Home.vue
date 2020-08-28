@@ -2,7 +2,6 @@
   <main class="page-container" id="home">
     <div class="first-area">
       <NavBar/>
-<!--      <NavDrawer/>-->
       <div class="clip-area">
         <svg class="waves" preserveAspectRatio="none" shape-rendering="auto"
              viewBox="0 24 150 28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -117,7 +116,6 @@ export default defineComponent({
   components: {
     NavBar,
     Article: defineAsyncComponent(() => import('@/components/home/Article.vue')),
-    // NavDrawer: defineAsyncComponent(() => import('@/components/home/NavDrawer.vue'))
   },
   data() {
     return {

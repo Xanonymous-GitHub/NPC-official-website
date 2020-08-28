@@ -90,28 +90,6 @@
       }
     }
 
-    .menu-button {
-      font-size: calc(2vw + 4vh);
-      color: white;
-      cursor: pointer;
-      display: none;
-
-      @media (max-width: 768px) {
-        display: block;
-      }
-
-      &:hover {
-        transition: .3s;
-        transition-timing-function: ease-in-out;
-        color: darkorange;
-      }
-
-      &:active {
-        transition: .3s;
-        color: #b34400;
-      }
-    }
-
     a {
       text-decoration: none;
       color: white;

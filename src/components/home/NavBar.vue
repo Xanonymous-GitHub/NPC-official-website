@@ -1,4 +1,5 @@
 <template>
+  <NavDrawer :navItems="menuItems"/>
   <div class="nav-bar animate__animated animate__backInDown">
     <router-link to="/">
       <svg class="nav-logo" fill="black" viewBox="0 0 2703 630">
@@ -13,18 +14,18 @@
         <div class="underline"/>
       </router-link>
     </div>
-    <div class="menu-button">
-      &#9776;
-    </div>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, defineAsyncComponent} from 'vue';
 import '@/assets/images/npc_text.svg';
 
 export default defineComponent({
   name: "NavBar",
+  components: {
+    NavDrawer: defineAsyncComponent(() => import('@/components/home/NavDrawer.vue'))
+  },
   setup() {
     const menuItems = [
       {
