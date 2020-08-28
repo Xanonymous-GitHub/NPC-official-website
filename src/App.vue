@@ -21,7 +21,6 @@ export default defineComponent({
       let timer: number;
       return () => {
         let args = arguments;
-
         clearTimeout(timer);
         timer = setTimeout(() => {
           func(args);
@@ -36,6 +35,9 @@ export default defineComponent({
     onMounted(() => {
       window.addEventListener("orientationchange", debounce(onOrientationchange), false);
       nyancat()
+      document.body.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+      });
       document.dispatchEvent(new Event('app-rendered'));
     })
 

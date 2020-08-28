@@ -7,7 +7,8 @@
       </svg>
     </router-link>
     <div class="menu-box">
-      <router-link :key="key" :to="item.link" tag="li" v-for="(item, key) in menuItems">
+      <router-link :key="key" :to="item.link"
+                   v-for="(item, key) in menuItems">
         <div class="item">
           &#9733;{{ item.name }}
         </div>
@@ -33,15 +34,7 @@ export default defineComponent({
         link: "/",
       },
       {
-        name: "Mr.Coding",
-        link: "/"
-      },
-      {
-        name: "專案成果",
-        link: "/"
-      },
-      {
-        name: "社團歷史",
+        name: "關於",
         link: "/"
       },
       {
@@ -49,7 +42,15 @@ export default defineComponent({
         link: "/"
       },
       {
-        name: "關於",
+        name: "社團歷史",
+        link: "/"
+      },
+      {
+        name: "專案成果",
+        link: "/redirect/NPC-github",
+      },
+      {
+        name: "Mr. Coding",
         link: "/"
       }
     ]

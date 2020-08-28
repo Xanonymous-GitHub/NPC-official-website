@@ -40,7 +40,8 @@
         <div class="info-area__button--container">
           <router-link class="info-area__button info-area__button--red animate__animated animate__bounceIn" to="/">加入我們
           </router-link>
-          <router-link class="info-area__button info-area__button--white animate__animated animate__bounceIn" to="/">
+          <router-link class="info-area__button info-area__button--white animate__animated animate__bounceIn"
+                       to="/redirect/chatOnline">
             線上聊天
           </router-link>
         </div>
@@ -71,13 +72,11 @@
         對程式有興趣的你，趕快加入我們的夢想藍圖吧！
       </template>
     </Article>
-    <Article title="Recent Activities 近期活動">
+    <Article title="【活動】NPC 新生茶會">
       <template #picture>
         <use xlink:href="#tea.svg"/>
       </template>
       <template #textContent>
-        【活動】NPC 新生茶會
-        <br/><br/>
         對程式設計有興趣卻不知道在哪裡學？
         想與其他同好交流但是怕自己不夠厲害？
         程式上遇到問題卻沒有辦法解決？
@@ -90,7 +89,6 @@
         時間：9/22(二) 晚上 18:30
         <br/>
         地點：綜合科館 B1 第三演講廳
-
       </template>
     </Article>
     <div class="footer">

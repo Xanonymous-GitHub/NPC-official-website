@@ -10,6 +10,15 @@ const routes: Array<RouteRecordRaw> = [
       '@/pages/Home.vue'
       )
   },
+  {
+    path: '/redirect/:externalUrl',
+    name: 'Redirect',
+    component: () => import(
+      /* webpackChunkName: "Redirect" */
+      /* webpackPrefetch: true */
+      '@/pages/Redirect.vue'
+      )
+  },
   // {
   //   path: '/dashboard',
   //   name: 'DashBoard',

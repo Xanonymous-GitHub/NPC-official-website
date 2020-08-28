@@ -32,7 +32,7 @@
         align-items: flex-start;
         position: relative;
         vertical-align: top;
-        margin: 0 2em;
+        margin: 0 3em;
         max-height: 300px;
 
         @media (max-width: 900px) {
@@ -57,6 +57,7 @@
         text-align: left;
         font-size: 1.2em;
         position: relative;
+        width: 70vw;
       }
     }
 
