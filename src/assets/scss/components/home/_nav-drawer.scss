@@ -52,12 +52,12 @@
 
     &__item {
       opacity: 0;
-      transition: all .3s cubic-bezier(0.000, 0.995, 0.990, 1.000) .3s;
+      transition: all .3s cubic-bezier(0.000, 0.995, 0.990, 1.000) .4s;
     }
 
     @for $i from 1 through 99 {
       &__item:nth-child(#{$i}) {
-        transform: translateX(40px * $i);
+        transform: translateY(-40px * $i);
       }
     }
 
@@ -121,13 +121,12 @@
 
   .splash {
     position: fixed;
-    right: -60vw;
+    right: 0;
     top: 0;
-    transform: translate(50%, -50%);
     height: 1px;
-    width: 1px;
+    width: 0;
     z-index: 10000;
-    transition: .5s ease-in-out .3s;
+    transition: .5s ease-in-out .5s;
 
     &::after {
       content: "";
@@ -135,11 +134,11 @@
       position: fixed;
       background-color: #206a5d;
       height: 101vh;
-      width: 60vw;
+      width: 0;
       top: 0;
-      left: -60vw;
+      right: 0;
       transform-origin: 50% 50%;
-      transition: transform .5s cubic-bezier(0.755, 0.050, 0.855, 0.060);
+      transition: .5s ease-in-out .5s;
       will-change: transform;
     }
   }
@@ -148,7 +147,11 @@
   .nav--open {
     > .splash {
       transition: .5s ease-in-out;
-      right: -1px;
+
+      &::after {
+        transition: .5s ease-in-out;
+        width: 60vw;
+      }
     }
 
     .menu-icon {

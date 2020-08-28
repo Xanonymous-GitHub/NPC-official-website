@@ -1,5 +1,5 @@
 <template>
-  <NavDrawer :navItems="menuItems"/>
+  <NavDrawer :navItems="menuItems" class="animate__animated animate__backInDown"/>
   <div class="nav-bar animate__animated animate__backInDown">
     <router-link to="/">
       <svg class="nav-logo" fill="black" viewBox="0 0 2703 630">
