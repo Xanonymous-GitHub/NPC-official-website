@@ -57,6 +57,31 @@
       color: white;
       font-weight: bolder;
       overflow: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &::before {
+        content: "‹";
+        position: fixed;
+        color: darkorange;
+        font-size: 1.5em;
+        font-weight: bolder;
+        transform: translateX(-2vw);
+      }
+
+      &::after {
+        content: "›";
+        position: fixed;
+        right: 0;
+        transform: translateX(2vw);
+        color: darkorange;
+        font-size: 1.5em;
+        font-weight: bolder;
+      }
 
       @media (max-width: 768px) {
         display: none;
