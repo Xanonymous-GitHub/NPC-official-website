@@ -1,0 +1,4 @@
+# robots.txt for https://ntut.club/
+
+User-agent: *
+Disallow:

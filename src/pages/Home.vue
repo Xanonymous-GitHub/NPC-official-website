@@ -92,6 +92,7 @@
       </template>
     </Article>
     <div class="footer">
+      <i class="fab fa-facebook"></i>
       <div class="copyright">
         Copyright <b style="font-family: sans-serif">&copy;</b> 2020 by NTUT Programming Club
       </div>
@@ -106,6 +107,7 @@ import '@/assets/images/npc_logo_Hans_Chiu.svg';
 import '@/assets/scss/pages/home.scss';
 import '@/assets/images/process.svg';
 import '@/assets/images/tea.svg';
+// import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default defineComponent({
   name: "Home",
