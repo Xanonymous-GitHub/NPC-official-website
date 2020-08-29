@@ -5,3 +5,4 @@ declare module '*.vue' {
 }
 
 declare module 'lodash.debounce';
+declare module 'body-scroll-lock';

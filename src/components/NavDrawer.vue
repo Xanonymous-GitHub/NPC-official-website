@@ -33,11 +33,15 @@ export default defineComponent({
     }
   },
   setup: () => {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const bodyScrollLock = require('body-scroll-lock');
     onMounted(() => {
       const nav = document.querySelector('#nav') as HTMLElement;
       const menu = document.querySelector('#menu') as HTMLUListElement;
       const menuToggle = document.querySelector('.nav__toggle') as HTMLLinkElement;
       const bottomLayer = document.querySelector('.bottom-layer') as HTMLDivElement;
+      const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+      const enableBodyScroll = bodyScrollLock.enableBodyScroll;
       let isMenuOpen = false;
 
       const toggleNavigationDrawer = () => {
@@ -46,6 +50,7 @@ export default defineComponent({
         menu.hidden = !isMenuOpen;
         nav.classList.toggle('nav--open');
         bottomLayer.classList.toggle('bottom-layer--open');
+        isMenuOpen ? disableBodyScroll(bottomLayer) : enableBodyScroll(bottomLayer)
       }
 
       menuToggle.addEventListener('click', e => {
@@ -60,6 +65,7 @@ export default defineComponent({
         menu.hidden = !isMenuOpen;
         nav.classList.remove('nav--open');
         bottomLayer.classList.remove('bottom-layer--open');
+        enableBodyScroll(bottomLayer)
       });
 
       nav.addEventListener('keydown', e => {
