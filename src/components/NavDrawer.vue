@@ -23,6 +23,7 @@
 
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue';
+import '@/assets/scss/components/nav-drawer.scss'
 
 export default defineComponent({
   name: "NavDrawer",

@@ -1,7 +1,7 @@
 <template>
   <main class="page-container" id="home">
     <div class="first-area">
-      <NavBar/>
+      <slot name="nav"></slot>
       <div class="clip-area">
         <svg class="waves" preserveAspectRatio="none" shape-rendering="auto"
              viewBox="0 24 150 28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -106,13 +106,11 @@ import '@/assets/images/npc_logo_Hans_Chiu.svg';
 import '@/assets/scss/pages/home.scss';
 import '@/assets/images/process.svg';
 import '@/assets/images/tea.svg';
-import NavBar from "@/components/home/NavBar.vue";
 
 export default defineComponent({
   name: "Home",
   props: {},
   components: {
-    NavBar,
     Article: defineAsyncComponent(() => import('@/components/home/Article.vue')),
   },
   data() {

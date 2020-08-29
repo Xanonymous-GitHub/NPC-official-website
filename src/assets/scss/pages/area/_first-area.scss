@@ -3,14 +3,10 @@
 @import "../../components/home/wavy";
 @import "../../components/home/top-picture-box";
 @import "../../components/home/buttons";
-@import "../../components/home/nav-bar";
-@import "../../components/home/nav-drawer";
 
 @mixin first-area {
   @include wavy;
   @include top-picture-box;
-  @include nav-bar;
-  @include nav-drawer;
 
   $main-title-font-size: calc((8vw + 9vh) / 2);
   $main-title-chinese-font-size: calc((4vw + 5vh) / 2.2);

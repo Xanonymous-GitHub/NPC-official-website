@@ -21,11 +21,12 @@
 <script lang="ts">
 import {defineComponent, defineAsyncComponent} from 'vue';
 import '@/assets/images/npc_text.svg';
+import '@/assets/scss/components/nav-bar.scss'
 
 export default defineComponent({
   name: "NavBar",
   components: {
-    NavDrawer: defineAsyncComponent(() => import('@/components/home/NavDrawer.vue'))
+    NavDrawer: defineAsyncComponent(() => import('@/components/NavDrawer.vue'))
   },
   setup() {
     const menuItems = [

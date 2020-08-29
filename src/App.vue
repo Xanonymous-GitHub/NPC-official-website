@@ -1,7 +1,11 @@
 <template>
   <router-view v-slot="{ Component }">
     <keep-alive>
-      <component :is="Component"/>
+      <component :is="Component">
+        <template #nav>
+          <NavBar/>
+        </template>
+      </component>
     </keep-alive>
   </router-view>
 </template>
@@ -10,11 +14,14 @@
 import "@/assets/scss/app.scss";
 import {defineComponent, onMounted, onBeforeUnmount} from "vue";
 import nyancat from "@/utils/nyancat";
+import NavBar from "@/components/NavBar.vue";
 
 export default defineComponent({
   name: "App",
   props: {},
-
+  components:{
+    NavBar
+  },
   setup() {
     // eslint-disable-next-line @typescript-eslint/ban-types
     function debounce(func: Function, delay = 250) {
