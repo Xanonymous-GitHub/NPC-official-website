@@ -31,8 +31,14 @@
 
     &:hover {
       transition-timing-function: ease-in-out;
-      background: linear-gradient(-45deg, #00204a, #005792, #00bbf0);
-      color: white;
+      //background: linear-gradient(-45deg, #00204a, #005792, #00bbf0);
+      color: deepskyblue;
+      transition: .3s;
+    }
+
+    &:active {
+      transition-timing-function: ease-in-out;
+      color: #0f4c75;
       transition: .3s;
     }
   }
@@ -49,6 +55,12 @@
     &:hover {
       transition-timing-function: ease-in-out;
       background: linear-gradient(-45deg, #086972, #17b978, #a7ff83);
+      transition: .3s;
+    }
+
+    &:active {
+      transition-timing-function: ease-in-out;
+      color: #0f4c75;
       transition: .3s;
     }
   }

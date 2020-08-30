@@ -18,11 +18,11 @@ const resolve = dir => path.join(__dirname, dir);
 const renderRoutes = (() => {
   const routes = [
     '/',
-    '/dashboard',
-    '/login',
-    '/registration',
-    '/admin',
-    '/fixing'
+    // '/dashboard',
+    // '/login',
+    // '/registration',
+    // '/admin',
+    // '/fixing'
   ].map((route) => route.replace(/\/$/, ''))
   routes.push(...routes.map((route) => `${route}/`))
   return routes
@@ -142,11 +142,11 @@ module.exports = {
       registry: undefined,
       renderRoutes: [
         '/',
-        '/dashboard',
-        '/login',
-        '/registration',
-        '/admin',
-        '/fixing'
+        // '/dashboard',
+        // '/login',
+        // '/registration',
+        // '/admin',
+        // '/fixing'
       ],
       useRenderEvent: true,
       headless: true,

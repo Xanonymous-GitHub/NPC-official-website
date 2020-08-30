@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
+  {path: "/:any", component: () => import('@/pages/NotFound.vue')},
   {
     path: '/',
     name: 'Home',
@@ -8,16 +9,47 @@ const routes: Array<RouteRecordRaw> = [
       /* webpackChunkName: "Home" */
       /* webpackPrefetch: true */
       '@/pages/Home.vue'
-      )
+      ),
   },
   {
-    path: '/redirect/:externalUrl',
-    name: 'Redirect',
-    component: () => import(
-      /* webpackChunkName: "Redirect" */
-      /* webpackPrefetch: true */
-      '@/pages/Redirect.vue'
-      )
+    path: '/github',
+    beforeEnter() {
+      const newWindow = open() as Window
+      (newWindow as Window).location.href = 'https://github.com/NTUT-NPC'
+    },
+    redirect: ''
+  },
+  {
+    path: '/chat-on-line',
+    beforeEnter() {
+      const newWindow = open() as Window
+      (newWindow as Window).location.href = 'https://m.me/NPC.OwO'
+    },
+    redirect: ''
+  },
+  {
+    path: '/facebook',
+    beforeEnter() {
+      const newWindow = open() as Window
+      (newWindow as Window).location.href = 'https://facebook.com/NPC.OwO'
+    },
+    redirect: ''
+  },
+  {
+    path: '/instagram',
+    beforeEnter() {
+      const newWindow = open() as Window
+      (newWindow as Window).location.href = 'https://instagram.com/npc.designer'
+    },
+    redirect: ''
+  },
+  {
+    path: '/youtube',
+    beforeEnter() {
+      const newWindow = open() as Window
+      (newWindow as Window).location.href = 'https://youtube.com/channel/UCzYSXfm15W7QNkomC6lLXxg'
+    },
+    redirect: ''
   },
   // {
   //   path: '/dashboard',

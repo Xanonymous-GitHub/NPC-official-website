@@ -48,7 +48,7 @@ export default defineComponent({
       },
       {
         name: "專案成果",
-        link: "/redirect/NPC-github",
+        link: "/github",
       },
       {
         name: "Mr. Coding",

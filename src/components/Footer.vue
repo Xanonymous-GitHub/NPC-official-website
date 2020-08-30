@@ -26,10 +26,10 @@ export default defineComponent({
   name: "Footer",
   setup() {
     const svgList = [
-      {name: 'facebook-brands', link: '/redirect/facebook'},
-      {name: 'instagram-brands', link: '/redirect/instagram'},
-      {name: 'youtube-brands', link: '/redirect/youtube'},
-      {name: 'github-brands', link: '/redirect/NPC-github'}
+      {name: 'facebook-brands', link: '/facebook'},
+      {name: 'instagram-brands', link: '/instagram'},
+      {name: 'youtube-brands', link: '/youtube'},
+      {name: 'github-brands', link: '/github'}
     ]
 
     return {svgList}

@@ -38,10 +38,17 @@
           </h2>
         </div>
         <div class="info-area__button--container">
-          <router-link class="info-area__button info-area__button--red animate__animated animate__bounceIn" to="/">加入我們
+          <router-link class="info-area__button info-area__button--red animate__animated animate__bounceIn" to="/">
+            <svg class="bottom-icon bottom-icon__white" viewBox="0 0 1 1">
+              <use xlink:href="#user-plus-solid.svg"/>
+            </svg>
+            加入我們
           </router-link>
           <router-link class="info-area__button info-area__button--white animate__animated animate__bounceIn"
-                       to="/redirect/chatOnline">
+                       to="/chat-on-line">
+            <svg class="bottom-icon bottom-icon__blue" viewBox="0 0 1 1">
+              <use xlink:href="#facebook-messenger-brands.svg"/>
+            </svg>
             線上聊天
           </router-link>
         </div>
@@ -102,6 +109,8 @@ import '@/assets/images/npc_logo_Hans_Chiu.svg';
 import '@/assets/scss/pages/home.scss';
 import '@/assets/images/process.svg';
 import '@/assets/images/tea.svg';
+import '@/assets/images/facebook-messenger-brands.svg'
+import '@/assets/images/user-plus-solid.svg'
 
 export default defineComponent({
   name: "Home",

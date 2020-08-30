@@ -145,7 +145,7 @@
         max-width: 100%;
       }
 
-      &__button--container{
+      &__button--container {
         align-content: center;
         vertical-align: center;
         display: flex;
@@ -158,6 +158,19 @@
       @include _button("&__button") {
         @include button__red("&__button");
         @include button__white("&__button");
+
+        .bottom-icon {
+          height: 30%;
+          width: auto;
+
+          &__blue {
+            fill: #0957ff;
+          }
+
+          &__white {
+            fill: white;
+          }
+        }
       }
     }
   }

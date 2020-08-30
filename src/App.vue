@@ -1,6 +1,6 @@
 <template>
   <router-view v-slot="{ Component }">
-    <keep-alive>
+    <keep-alive exclude="Redirect">
       <component :is="Component">
         <template #nav>
           <NavBar/>
@@ -23,7 +23,7 @@ import Footer from "@/components/Footer.vue";
 export default defineComponent({
   name: "App",
   props: {},
-  components:{
+  components: {
     NavBar,
     Footer
   },
