@@ -14,7 +14,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/github',
     beforeEnter() {
-      const newWindow = open() as Window
+      const newWindow = open('','') as Window
       (newWindow as Window).location.href = 'https://github.com/NTUT-NPC'
     },
     redirect: ''
