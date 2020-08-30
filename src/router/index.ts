@@ -28,21 +28,21 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/facebook',
     beforeEnter() {
-      open('https://facebook.com/NPC.OwO', '_blank')
+      open('https://www.facebook.com/NPC.OwO', '_blank')
     },
     redirect: ''
   },
   {
     path: '/instagram',
     beforeEnter() {
-      open('https://instagram.com/npc.designer', '_blank')
+      open('https://www.instagram.com/npc.designer', '_blank')
     },
     redirect: ''
   },
   {
     path: '/youtube',
     beforeEnter() {
-      open('https://youtube.com/channel/UCzYSXfm15W7QNkomC6lLXxg', '_blank')
+      open('https://www.youtube.com/channel/UCzYSXfm15W7QNkomC6lLXxg', '_blank')
     },
     redirect: ''
   },
