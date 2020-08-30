@@ -14,40 +14,35 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/github',
     beforeEnter() {
-      const newWindow = open('','') as Window
-      (newWindow as Window).location.href = 'https://github.com/NTUT-NPC'
+      open('https://github.com/NTUT-NPC', '_blank')
     },
     redirect: ''
   },
   {
     path: '/chat-on-line',
     beforeEnter() {
-      const newWindow = open() as Window
-      (newWindow as Window).location.href = 'https://m.me/NPC.OwO'
+      open('https://m.me/NPC.OwO', '_blank')
     },
     redirect: ''
   },
   {
     path: '/facebook',
     beforeEnter() {
-      const newWindow = open() as Window
-      (newWindow as Window).location.href = 'https://facebook.com/NPC.OwO'
+      open('https://facebook.com/NPC.OwO', '_blank')
     },
     redirect: ''
   },
   {
     path: '/instagram',
     beforeEnter() {
-      const newWindow = open() as Window
-      (newWindow as Window).location.href = 'https://instagram.com/npc.designer'
+      open('https://instagram.com/npc.designer', '_blank')
     },
     redirect: ''
   },
   {
     path: '/youtube',
     beforeEnter() {
-      const newWindow = open() as Window
-      (newWindow as Window).location.href = 'https://youtube.com/channel/UCzYSXfm15W7QNkomC6lLXxg'
+      open('https://youtube.com/channel/UCzYSXfm15W7QNkomC6lLXxg', '_blank')
     },
     redirect: ''
   },
