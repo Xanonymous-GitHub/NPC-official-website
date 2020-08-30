@@ -1,14 +1,15 @@
 <template>
   <NavDrawer :navItems="menuItems" class="animate__animated animate__backInDown"/>
   <div class="nav-bar animate__animated animate__backInDown">
-    <router-link to="/">
+    <router-link rel="noreferrer noopener" to="/">
       <svg class="nav-logo" fill="black" viewBox="0 0 2703 630">
-        <use xlink:href="#npc_text.svg"/>_
+        <use xlink:href="#npc_text.svg"/>
+        _
       </svg>
     </router-link>
     <div class="menu-box">
       <router-link :key="key" :to="item.link"
-                   v-for="(item, key) in menuItems">
+                   rel="noreferrer noopener" v-for="(item, key) in menuItems">
         <div class="item">
           &#9733;{{ item.name }}
         </div>

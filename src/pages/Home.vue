@@ -38,14 +38,14 @@
           </h2>
         </div>
         <div class="info-area__button--container">
-          <router-link class="info-area__button info-area__button--red animate__animated animate__bounceIn" to="/">
+          <router-link class="info-area__button info-area__button--red animate__animated animate__bounceIn" to="/" rel="noreferrer noopener">
             <svg class="bottom-icon bottom-icon__white" viewBox="0 0 1 1">
               <use xlink:href="#user-plus-solid.svg"/>
             </svg>
             加入我們
           </router-link>
           <router-link class="info-area__button info-area__button--white animate__animated animate__bounceIn"
-                       to="/chat-on-line">
+                       to="/chat-on-line" rel="noreferrer noopener">
             <svg class="bottom-icon bottom-icon__blue" viewBox="0 0 1 1">
               <use xlink:href="#facebook-messenger-brands.svg"/>
             </svg>

@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="icons">
-      <router-link :key="key" :to="svg.link" v-for="(svg, key) in svgList">
+      <router-link :key="key" :to="svg.link" rel="noreferrer noopener" v-for="(svg, key) in svgList">
         <svg fill="white" viewBox="0 0 1 1">
           <use :xlink:href="'#'+svg.name+'.svg'"/>
           _

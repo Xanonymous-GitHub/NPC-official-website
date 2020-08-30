@@ -2,7 +2,8 @@
   <nav class="nav" id="nav" role="navigation">
     <ul class="nav__menu" hidden id="menu" tabindex="-1">
       <li :key="key" class="nav__item" v-for="(navItem, key) in navItems">
-        <router-link :to="navItem.link" class="nav__link">&#9733;{{ navItem.name }}</router-link>
+        <router-link :to="navItem.link" class="nav__link" rel="noreferrer noopener">&#9733;{{ navItem.name }}
+        </router-link>
       </li>
     </ul>
     <a aria-controls="menu" aria-expanded="false" class="nav__toggle" role="button">
@@ -14,6 +15,7 @@
           <line class="menu-icon__bar" x1="13" x2="37" y1="32.5" y2="32.5"/>
           <circle class="menu-icon__circle" cx="25" cy="25" r="23"/>
         </g>
+        _
       </svg>
     </a>
     <div class="splash"/>
