@@ -18,6 +18,18 @@ export default defineComponent({
       {
         name: 'chatOnline',
         link: 'm.me/NPC.OwO'
+      },
+      {
+        name: 'facebook',
+        link: 'www.facebook.com/NPC.OwO'
+      },
+      {
+        name: 'instagram',
+        link: 'www.instagram.com/npc.designer'
+      },
+      {
+        name: 'youtube',
+        link: 'www.youtube.com/channel/UCzYSXfm15W7QNkomC6lLXxg'
       }
     ]
     const externalUrlName = route.params.externalUrl

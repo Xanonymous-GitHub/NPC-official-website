@@ -46,7 +46,6 @@ const isProduction = process.env.NODE_ENV === 'production'
 export default function (): void {
   if (isProduction) {
     nyan()
-    console.log('尼怎麼來ㄌ? 這裡不是尼該來的地方喵！！')
-    console.log('可4既然如此那就來破解我吧喵～')
+    console.log('喵喵嘻嘻喵喵！！')
   }
 }

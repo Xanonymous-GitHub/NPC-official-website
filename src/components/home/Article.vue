@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import '@/assets/scss/pages/area/_article-block.scss';
+import '@/assets/scss/pages/home-area/_article-block.scss';
 
 export default defineComponent({
   name: "Article",

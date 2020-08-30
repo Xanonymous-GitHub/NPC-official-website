@@ -1,0 +1,49 @@
+@mixin footer {
+  .footer {
+    margin-top: 3em;
+    background-color: dimgrey;
+    color: white;
+    z-index: 99999999;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: {
+      left: 2em;
+      right: 2em;
+      top: 2em;
+      bottom: 1em;
+    }
+
+    .icons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      svg {
+        height: 30px;
+        margin: .5em;
+        padding: .5em;
+        transition: .2s ease-in-out;
+
+        &:hover {
+          fill: lawngreen;
+          transition: .2s ease-in-out;
+        }
+
+        &:active {
+          fill: green;
+          transition: .2s ease-in-out;
+        }
+      }
+    }
+
+    .copyright {
+      width: 100%;
+      font-size: calc((2vw + 2vh) / 3);
+      text-align: center;
+    }
+  }
+}
+
+@include footer

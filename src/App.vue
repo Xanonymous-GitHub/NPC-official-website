@@ -5,6 +5,9 @@
         <template #nav>
           <NavBar/>
         </template>
+        <template #footer>
+          <Footer/>
+        </template>
       </component>
     </keep-alive>
   </router-view>
@@ -15,12 +18,14 @@ import "@/assets/scss/app.scss";
 import {defineComponent, onMounted, onBeforeUnmount} from "vue";
 import nyancat from "@/utils/nyancat";
 import NavBar from "@/components/NavBar.vue";
+import Footer from "@/components/Footer.vue";
 
 export default defineComponent({
   name: "App",
   props: {},
   components:{
-    NavBar
+    NavBar,
+    Footer
   },
   setup() {
     // eslint-disable-next-line @typescript-eslint/ban-types
