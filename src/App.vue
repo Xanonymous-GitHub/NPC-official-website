@@ -29,7 +29,7 @@ export default defineComponent({
   },
   setup() {
     // eslint-disable-next-line @typescript-eslint/ban-types
-    function debounce(func: Function, delay = 1) {
+    function debounce(func: Function, delay = 100) {
       let timer: number;
       return () => {
         let args = arguments;
@@ -41,14 +41,12 @@ export default defineComponent({
     }
 
     function onOrientationchange() {
+      window.removeEventListener("orientationchange", debounce(onOrientationchange))
       window.location.reload()
     }
 
     onMounted(() => {
-      setTimeout(
-          () => window.addEventListener("orientationchange", debounce(onOrientationchange)),
-          1000
-      )
+      window.addEventListener("orientationchange", debounce(onOrientationchange))
       nyancat()
       document.body.addEventListener('touchmove', function (e) {
         e.preventDefault();
