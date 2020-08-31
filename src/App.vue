@@ -17,8 +17,8 @@
 import "@/assets/scss/app.scss";
 import {defineComponent, onMounted, onBeforeUnmount} from "vue";
 import nyancat from "@/utils/nyancat";
-import NavBar from "@/components/NavBar.vue";
-import Footer from "@/components/Footer.vue";
+import NavBar from "@/components/App/NavBar.vue";
+import Footer from "@/components/App/Footer.vue";
 
 export default defineComponent({
   name: "App",

@@ -8,13 +8,12 @@
       </svg>
     </router-link>
     <div class="menu-box">
-      <router-link :key="key" :to="item.link"
-                   rel="noreferrer noopener" v-for="(item, key) in menuItems">
+      <to :key="key" :to="item.link" v-for="(item, key) in menuItems">
         <div class="item">
           &#9733;{{ item.name }}
         </div>
         <div class="underline"/>
-      </router-link>
+      </to>
     </div>
   </div>
 </template>
@@ -22,12 +21,12 @@
 <script lang="ts">
 import {defineComponent, defineAsyncComponent} from 'vue';
 import '@/assets/images/npc_text.svg';
-import '@/assets/scss/components/nav-bar.scss'
+import '@/assets/scss/components/App/nav-bar.scss'
 
 export default defineComponent({
   name: "NavBar",
   components: {
-    NavDrawer: defineAsyncComponent(() => import('@/components/NavDrawer.vue'))
+    NavDrawer: defineAsyncComponent(() => import('@/components/App/NavDrawer.vue'))
   },
   setup() {
     const menuItems = [

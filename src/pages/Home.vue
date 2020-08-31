@@ -38,19 +38,20 @@
           </h2>
         </div>
         <div class="info-area__button--container">
-          <router-link class="info-area__button info-area__button--red animate__animated animate__bounceIn" to="/" rel="noreferrer noopener">
+          <router-link class="info-area__button info-area__button--red animate__animated animate__bounceIn" rel="noreferrer noopener"
+                       to="/">
             <svg class="bottom-icon bottom-icon__white" viewBox="0 0 1 1">
               <use xlink:href="#user-plus-solid.svg"/>
             </svg>
             加入我們
           </router-link>
-          <router-link class="info-area__button info-area__button--white animate__animated animate__bounceIn"
-                       to="/chat-on-line" rel="noreferrer noopener">
+          <go class="info-area__button info-area__button--white animate__animated animate__bounceIn"
+              rel="noreferrer noopener" to="https://m.me/NPC.OwO">
             <svg class="bottom-icon bottom-icon__blue" viewBox="0 0 1 1">
               <use xlink:href="#facebook-messenger-brands.svg"/>
             </svg>
             線上聊天
-          </router-link>
+          </go>
         </div>
       </div>
       <div class="top-picture-box animate__animated animate__fadeIn">
