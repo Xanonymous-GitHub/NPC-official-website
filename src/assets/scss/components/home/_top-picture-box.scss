@@ -1,0 +1,26 @@
+@mixin top-picture-box {
+  .top-picture-box {
+    position: absolute;
+    left: 95%;
+    bottom: 5%;
+    transform: translateX(-95%);
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: calc((50vw + 40vh) / 2);
+      height: calc((50vw + 40vh) / 2);
+      transition-timing-function: ease-in-out;
+      transition: .3s;
+
+      @media (max-width: 800px) {
+        &{
+          width: calc((30vw + 30vh) / 2);
+          height: calc((30vw + 30vh) / 2);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,217 @@
+@function circumference($r) {
+  $pi: 3.141592653;
+  @return 2*$pi*$r;
+}
+
+@mixin nav-drawer {
+  .nav {
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    &__toggle {
+      display: inline-block;
+      position: absolute;
+      z-index: 10002;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      outline: 0;
+      right: 5vw;
+      top: 3vh;
+      transform: translate(-25%, -25%);
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color .15s linear;
+
+      &:hover,
+      &:focus {
+        background-color: rgba(0, 0, 0, .5);
+      }
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+      width: 60vw;
+      right: 0;
+      position: absolute;
+      z-index: 10001;
+      visibility: hidden;
+      margin: 0;
+      list-style: none;
+    }
+
+    &__item {
+      opacity: 0;
+      transition: all .3s cubic-bezier(0.000, 0.995, 0.990, 1.000) .4s;
+    }
+
+    @for $i from 1 through 99 {
+      &__item:nth-child(#{$i}) {
+        transform: translateY(-40px * $i);
+      }
+    }
+
+    &__link {
+      color: white;
+      display: block;
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: calc((5vw + 2vh) / 2);
+      text-decoration: none;
+      padding: 1rem;
+      margin: .3rem 1rem;
+      border-radius: 10px;
+      transition: .2s;
+      transition-timing-function: ease-in-out;
+
+      &:hover,
+      &:focus {
+        transition: .2s;
+        transition-timing-function: ease-in-out;
+        outline: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      &:active {
+        transition: .2s;
+        transition-timing-function: ease-in-out;
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    color: white;
+    transform: rotate(0deg);
+    transition: .3s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+
+    &__bar,
+    &__circle {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+
+    &__bar {
+      transform: rotate(0deg);
+      transform-origin: 50% 50%;
+      transition: transform .25s ease-in-out;
+    }
+
+    &__circle {
+      transition: stroke-dashoffset .3s linear;
+      stroke-dashoffset: circumference(23);
+      stroke-dasharray: circumference(23);
+    }
+  }
+
+  .splash {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 1px;
+    width: 0;
+    z-index: 10000;
+    transition: .5s ease-in-out .5s;
+
+    &::after {
+      content: "";
+      display: block;
+      position: fixed;
+      background-color: #206a5d;
+      height: 101vh;
+      width: 0;
+      top: 0;
+      right: 0;
+      transform-origin: 50% 50%;
+      transition: .5s ease-in-out .5s;
+      will-change: transform;
+    }
+  }
+
+  .nav:target,
+  .nav--open {
+    > .splash {
+      transition: .5s ease-in-out;
+
+      &::after {
+        transition: .5s ease-in-out;
+        width: 60vw;
+      }
+    }
+
+    .menu-icon {
+      color: white;
+      transform: rotate(180deg);
+
+      &__circle {
+        stroke-dashoffset: 0;
+      }
+
+      &__bar:nth-child(1),
+      &__bar:nth-child(4) {
+        opacity: 0;
+      }
+
+      &__bar:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &__bar:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+
+    .nav {
+      &__menu {
+        visibility: visible;
+        position: fixed;
+      }
+
+      &__toggle {
+        position: fixed;
+      }
+
+      &__item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .bottom-layer {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0);
+    visibility: hidden;
+    transition-timing-function: ease-in-out;
+    transition: .5s .5s;
+
+    &--open {
+      background: rgba(0, 0, 0, .6);
+      transition-timing-function: ease-in-out;
+      transition: .5s;
+      visibility: visible;
+    }
+  }
+}
+
+@include nav-drawer

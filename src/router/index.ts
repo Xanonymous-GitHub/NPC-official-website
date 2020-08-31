@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
+  {path: "/:any", component: () => import('@/pages/NotFound.vue')},
   {
     path: '/',
     name: 'Home',
@@ -8,7 +9,42 @@ const routes: Array<RouteRecordRaw> = [
       /* webpackChunkName: "Home" */
       /* webpackPrefetch: true */
       '@/pages/Home.vue'
-      )
+      ),
+  },
+  {
+    path: '/github',
+    beforeEnter() {
+      open('https://github.com/NTUT-NPC', '_blank')
+    },
+    redirect: ''
+  },
+  {
+    path: '/chat-on-line',
+    beforeEnter() {
+      open('https://m.me/NPC.OwO', '_blank')
+    },
+    redirect: ''
+  },
+  {
+    path: '/facebook',
+    beforeEnter() {
+      open('https://www.facebook.com/NPC.OwO', '_blank')
+    },
+    redirect: ''
+  },
+  {
+    path: '/instagram',
+    beforeEnter() {
+      open('https://www.instagram.com/npc.designer', '_blank')
+    },
+    redirect: ''
+  },
+  {
+    path: '/youtube',
+    beforeEnter() {
+      open('https://www.youtube.com/channel/UCzYSXfm15W7QNkomC6lLXxg', '_blank')
+    },
+    redirect: ''
   },
   // {
   //   path: '/dashboard',

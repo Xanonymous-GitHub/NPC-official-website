@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const CompressionWebpackPlugin = require("compression-webpack-plugin");
-const zopfli = require("@gfx/zopfli");
-const BrotliPlugin = require("brotli-webpack-plugin");
+// const CompressionWebpackPlugin = require("compression-webpack-plugin");
+// const zopfli = require("@gfx/zopfli");
+// const BrotliPlugin = require("brotli-webpack-plugin");
 const PrerenderSpaPlugin = require("prerender-spa-plugin");
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
@@ -11,18 +11,18 @@ const postcssPresetEnv = require('postcss-preset-env');
 const postcssImport = require('postcss-import');
 const postcssPlugin = require('postcss-plugin');
 const postcssAssets = require('postcss-assets');
-const productionGzipExtensions = /\.(js|css|json|txt|html)(\?.*)?$/i;
+// const productionGzipExtensions = /\.(js|css|json|txt|html)(\?.*)?$/i;
 const isProduction = process.env.NODE_ENV === 'production'
 const needBundleAnalysis = process.argv.includes('--analyze')
 const resolve = dir => path.join(__dirname, dir);
 const renderRoutes = (() => {
   const routes = [
     '/',
-    '/dashboard',
-    '/login',
-    '/registration',
-    '/admin',
-    '/fixing'
+    // '/dashboard',
+    // '/login',
+    // '/registration',
+    // '/admin',
+    // '/fixing'
   ].map((route) => route.replace(/\/$/, ''))
   routes.push(...routes.map((route) => `${route}/`))
   return routes
@@ -33,53 +33,48 @@ module.exports = {
     if (isProduction && needBundleAnalysis) {
       config.plugin('analyzer').use(new BundleAnalyzerPlugin())
     }
+    config.performance
+      .maxEntrypointSize(1000000)
+      .maxAssetSize(1000000)
+    // config.plugin('optimize-css').tap(([options]) => {
+    //   options.cssnanoOptions.preset[1].svgo = false
+    //   return [options]
+    // })
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()
-    svgRule
-      .use('babel-loader')
-      .loader('babel-loader')
+    config.module
+      .rule("svg-sprite-loader")
+      .test(/\.svg$/)
+      .include
+      .add(resolve("src/assets/images"))
+      .add(resolve("src/articles/articleResources"))
       .end()
-      .use('vue-svg-loader')
-      .loader('vue-svg-loader')
+      .use("svg-sprite-loader")
+      .loader("svg-sprite-loader")
+      .options({symbolId: "[name].svg"})
   },
+
   configureWebpack: config => {
     const plugins = [];
     if (isProduction) {
-      config.optimization = {
-        runtimeChunk: 'single',
-        splitChunks: {
-          chunks: 'all',
-          maxInitialRequests: Infinity,
-          maxSize: 100000,
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name(module) {
-                const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
-                return `${packageName.replace('@', '')}`
-              }
-            }
-          }
-        }
-      };
-      plugins.push(
-        new CompressionWebpackPlugin({
-          algorithm(input, compressionOptions, callback) {
-            return zopfli.gzip(input, compressionOptions, callback);
-          },
-          compressionOptions: {
-            numiterations: 15
-          },
-          minRatio: 0.99,
-          test: productionGzipExtensions
-        })
-      );
-      plugins.push(
-        new BrotliPlugin({
-          test: productionGzipExtensions,
-          minRatio: 0.99
-        })
-      );
+      // plugins.push(
+      //   new CompressionWebpackPlugin({
+      //     algorithm(input, compressionOptions, callback) {
+      //       return zopfli.gzip(input, compressionOptions, callback);
+      //     },
+      //     compressionOptions: {
+      //       numiterations: 15
+      //     },
+      //     minRatio: 0.99,
+      //     test: productionGzipExtensions
+      //   })
+      // );
+      // plugins.push(
+      //   new BrotliPlugin({
+      //     test: productionGzipExtensions,
+      //     minRatio: 0.99
+      //   })
+      // );
       plugins.push(
         new PrerenderSpaPlugin({
           staticDir: resolve("dist"),
@@ -102,8 +97,7 @@ module.exports = {
             sortAttributes: true
           },
           renderer: new PrerenderSpaPlugin.PuppeteerRenderer({
-            // renderAfterDocumentEvent: "app-rendered",
-            // renderAfterElementExists: "#app",
+            renderAfterDocumentEvent: "app-rendered",
             maxConcurrentRoutes: 20,
             headless: true,
           })
@@ -112,6 +106,7 @@ module.exports = {
     }
     config.plugins = [...config.plugins, ...plugins];
   },
+
   pages: {
     index: {
       entry: "src/main.ts",
@@ -121,7 +116,9 @@ module.exports = {
       chunks: ['chunk-vendors', 'chunk-common', 'index']
     }
   },
+
   productionSourceMap: false,
+
   css: {
     sourceMap: false,
     loaderOptions: {
@@ -138,5 +135,23 @@ module.exports = {
       },
     }
   },
+
   lintOnSave: process.env.NODE_ENV === 'development',
+
+  pluginOptions: {
+    prerenderSpa: {
+      registry: undefined,
+      renderRoutes: [
+        '/',
+        // '/dashboard',
+        // '/login',
+        // '/registration',
+        // '/admin',
+        // '/fixing'
+      ],
+      useRenderEvent: true,
+      headless: true,
+      onlyProduction: true
+    }
+  }
 }

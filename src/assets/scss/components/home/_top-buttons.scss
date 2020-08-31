@@ -1,0 +1,67 @@
+@mixin _button($selector) {
+  #{$selector} {
+    vertical-align: bottom;
+    font-weight: bolder;
+    margin: 1em 0.5em;
+    position: relative;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 35px;
+    width: 100px;
+    min-width: 100px;
+    display: inline-block;
+    border-radius: 50px;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+  }
+  transition-timing-function: ease-in-out;
+  transition: .3s;
+  @content;
+}
+
+@mixin button__white($selector) {
+  #{$selector}--white {
+    color: #0957ff;
+    font-size: 0.9em;
+    box-shadow: 0 7px 25px -4px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(205deg, #fafafa 30%, #e8f1f5 70%);
+    transition: .3s;
+
+    &:hover {
+      transition-timing-function: ease-in-out;
+      //background: linear-gradient(-45deg, #00204a, #005792, #00bbf0);
+      color: deepskyblue;
+      transition: .3s;
+    }
+
+    &:active {
+      transition-timing-function: ease-in-out;
+      color: #0f4c75;
+      transition: .3s;
+    }
+  }
+}
+
+@mixin button__red($selector) {
+  #{$selector}--red {
+    color: white;
+    font-size: 0.9em;
+    box-shadow: 0 7px 25px -4px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(-90deg, #ee1a43 30%, #ff4d13 70%);
+    transition: .3s;
+
+    &:hover {
+      transition-timing-function: ease-in-out;
+      background: linear-gradient(-45deg, #086972, #17b978, #a7ff83);
+      transition: .3s;
+    }
+
+    &:active {
+      transition-timing-function: ease-in-out;
+      color: #0f4c75;
+      transition: .3s;
+    }
+  }
+}

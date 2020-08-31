@@ -1,0 +1,178 @@
+@mixin nav-bar {
+  $nav-logo-height: calc((1vw + 5vh) / 2);
+
+  %flex-space-between-set {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  %nav-bar-base-rule {
+    @extend %flex-space-between-set;
+    top: 0;
+    z-index: 9998;
+    height: 4vh;
+    width: 86%;
+    margin: 3vh 7vw;
+  }
+
+  %nav-logo-base-rule {
+    height: $nav-logo-height;
+    width: auto;
+    fill: darkorange;
+    transition: .3s;
+    justify-content: center;
+    // responsive svg tip: set viewBox="0 0 [its width] [its height]" and height:100% + width:auto
+  }
+
+  .nav-bar {
+    @extend %nav-bar-base-rule;
+    position: absolute;
+    user-select: none;
+
+    &__sticky {
+      // TODO add sticky
+      @extend %nav-bar-base-rule;
+      position: fixed;
+    }
+
+    .nav-logo {
+      @extend %nav-logo-base-rule;
+
+      &:hover {
+        transition: .3s;
+        transition-timing-function: ease-in-out;
+        fill: lightgoldenrodyellow;
+      }
+
+      &:active {
+        transition: .3s;
+        fill: #ee1a43;
+      }
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      right: 0;
+      width: min-content;
+      max-width: 70%;
+
+      &-box {
+        @extend %flex-space-between-set;
+        color: white;
+        font-weight: bolder;
+        overflow: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+
+        .item {
+          margin: 0 20px;
+          text-wrap: none;
+          white-space: nowrap;
+
+          &:hover ~ .underline {
+            transition-timing-function: ease-in-out;
+            background: darkorange;
+            width: 95%;
+          }
+
+          &:active ~ .underline {
+            background: #b34400;
+            width: 100%;
+          }
+        }
+
+        .underline {
+          width: 80%;
+          height: 3px;
+          border-radius: 5px;
+          margin: 2px auto;
+          position: relative;
+          background: white;
+          transition: .3s;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      transition: .3s;
+      font-size: calc((1vw + 3.5vh) / 2);
+
+      &:hover {
+        transition: .3s;
+        transition-timing-function: ease-in-out;
+        color: darkorange;
+      }
+
+      &:active {
+        transition: .3s;
+        color: #b34400;
+      }
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: .7;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: .7;
+      }
+    }
+
+    .slide-button {
+      color: white;
+      font-size: 2.5em;
+      font-weight: bolder;
+      display: inline-block;
+      padding: 0 10px;
+      animation: blink infinite;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out;
+      transition: .2s ease-in-out;
+      cursor: pointer;
+      line-height: 4vh;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+
+      &__left {
+        left: 0;
+      }
+
+      &__right {
+        right: 0;
+      }
+
+      &:hover {
+        transition: .2s ease-in-out;
+        color: darkorange;
+        opacity: 1;
+      }
+
+      &:active {
+        transition: .2s ease-in-out;
+        color: red;
+      }
+    }
+  }
+}
+
+@include nav-bar
