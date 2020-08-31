@@ -47,6 +47,7 @@ module.exports = {
       .test(/\.svg$/)
       .include
       .add(resolve("src/assets/images"))
+      .add(resolve("src/articles/articleResources"))
       .end()
       .use("svg-sprite-loader")
       .loader("svg-sprite-loader")

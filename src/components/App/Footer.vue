@@ -9,7 +9,7 @@
       </go>
     </div>
     <div class="copyright">
-      Copyright <b style="font-family: sans-serif">&copy;</b> 2020 by NTUT Programming Club
+      Copyright <b style="font-family: sans-serif">&copy;</b> 2020 NTUT Programming Club, all rights reserved.
     </div>
   </div>
 </template>
