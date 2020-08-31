@@ -110,7 +110,7 @@
                       rgba(32, 100, 235, 0.9),
                       rgba(32, 160, 235, 0.9)
       );
-      background: $gradient-blue, url("~@/assets/images/Colorful-Plait-Background.jpg");
+      background: $gradient-blue, url("https://res.cloudinary.com/xanonymous/image/upload/q_auto/Colorful-Plait-Background_whxl5s.jpg");
       animation: gradient 20s forwards ease-in-out infinite;
       height: calc(#{$svg-width-fit-content});
 
