@@ -32,7 +32,7 @@
   </Article>
 
   <!-- 入社引導 <[MAIN]> -->
-  <Article id="join-us-article" title="如何加入社團?">
+  <Article button="線上聊天" button-link="https://m.me/NPC.OwO" id="join-us-article" title="如何加入社團?">
     <template #picture>
       <img alt="" src="https://i.imgur.com/rkobsqy.jpg">
     </template>
@@ -47,7 +47,7 @@
     </template>
   </Article>
 
-<!-- 關於 <[MAIN]> -->
+  <!-- 關於 <[MAIN]> -->
   <Article id="about-block" picture-flex-wrap="wrap" title="About us">
     <template #picture>
       <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
