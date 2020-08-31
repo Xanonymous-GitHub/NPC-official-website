@@ -45,7 +45,10 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      window.addEventListener("orientationchange", debounce(onOrientationchange), false);
+      setTimeout(
+          () => window.addEventListener("orientationchange", debounce(onOrientationchange)),
+          1000
+      )
       nyancat()
       document.body.addEventListener('touchmove', function (e) {
         e.preventDefault();
@@ -54,7 +57,7 @@ export default defineComponent({
     })
 
     onBeforeUnmount(() => {
-      window.removeEventListener("orientationchange", debounce(onOrientationchange), false)
+      window.removeEventListener("orientationchange", debounce(onOrientationchange))
     })
 
     return {}
