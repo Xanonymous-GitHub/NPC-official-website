@@ -2,7 +2,7 @@
 
   <!--  新生茶會  -->
   <Article badge="&#128293;HOT!!"
-           badge-bg="red"
+           badge-bg="#ff0000"
            bg-color="#16213e"
            button="立即報名"
            button-link="https://docs.google.com/forms/d/e/1FAIpQLSevx6CxohDSZkXJjJ2ymyydm-aTIVOmyGv7xB7oCtw5xdQr1w/viewform"
@@ -33,7 +33,7 @@
   <!--  關於  -->
   <Article title="About us">
     <template #picture>
-      <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+      <iframe title="介紹影片" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
               frameborder="0"
               src="https://www.youtube-nocookie.com/embed/qGNUgFJYMdI"/>
     </template>

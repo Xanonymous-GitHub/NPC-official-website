@@ -1,6 +1,6 @@
 <template>
   <div :style="{backgroundColor:bgColor || 'rgba(245, 245, 247, 1)', color:textColor || 'black'}" class="article-block">
-    <div class="ribbon ribbon-top-right" v-if="badge"><span :style="{background:badgeBg||null}">{{ badge }}</span></div>
+    <div class="ribbon ribbon-top-right" v-if="badge"><span :style="{backgroundColor:badgeBg||null}">{{ badge }}</span></div>
     <div class="title">
       {{ title }}
       <div class="divider"/>
