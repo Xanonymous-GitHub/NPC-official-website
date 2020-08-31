@@ -39,8 +39,8 @@
         </div>
         <div class="info-area__button--container">
           <router-link class="info-area__button info-area__button--red animate__animated animate__bounceIn"
-                       rel="noreferrer noopener"
-                       to="/">
+                       id="join-us"
+                       rel="noreferrer noopener" to="/">
             <svg class="bottom-icon bottom-icon__white" viewBox="0 0 1 1">
               <use xlink:href="#user-plus-solid.svg"/>
             </svg>

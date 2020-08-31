@@ -6,7 +6,7 @@
         </router-link>
       </li>
     </ul>
-    <a aria-controls="menu" aria-expanded="false" class="nav__toggle" role="button">
+    <a aria-controls="menu" aria-expanded="false" class="nav__toggle" role="button" rel="noreferrer noopener">
       <svg class="menu-icon" height="50" viewBox="0 0 50 50" width="50" xmlns="http://www.w3.org/2000/svg">
         <g>
           <line class="menu-icon__bar" x1="13" x2="37" y1="16.5" y2="16.5"/>

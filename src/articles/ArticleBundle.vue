@@ -7,7 +7,7 @@
            button="立即報名"
            button-link="https://docs.google.com/forms/d/e/1FAIpQLSevx6CxohDSZkXJjJ2ymyydm-aTIVOmyGv7xB7oCtw5xdQr1w/viewform"
            text-color="white"
-           title="2020 新生茶會">
+           title="⚡ 2020 新生茶會 ⚡">
     <template #picture>
       <svg fill="white">
         <use xlink:href="#tea.svg"/>
@@ -17,25 +17,43 @@
       對程式設計有興趣卻不知道在哪裡學？
       想與其他同好交流但是怕自己不夠厲害？
       程式上遇到問題卻沒有辦法解決？
+      <br/><br/>
       那你絕對要來參加程式設計研究社的新生茶會！
       <br/><br/>
       在 NPC 新生茶會介紹社團的精彩活動內容，
       還有有趣的解謎遊戲讓你和組員一起體驗程式設計的美好！
+      <br/><br/>
       提前報名的話還能領取美味的零食哦！
       <br/><br/>
       時間：9/22(二) 晚上 18:30
       <br/>
       地點：綜合科館 B1 第三演講廳
-
     </template>
   </Article>
 
-  <!--  關於  -->
-  <Article title="About us">
+  <!-- 入社引導 <[MAIN]> -->
+  <Article id="join-us-article" title="如何加入社團?">
     <template #picture>
-      <iframe title="介紹影片" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+      <img alt="" src="https://i.imgur.com/rkobsqy.jpg">
+    </template>
+    <template #textContent>
+      你也想成為 NPC 的一員嗎？
+      加入我們不但能聆聽精彩的社課內容，還能跟其他社員們一起交流程式設計，
+      甚至能和我們一起參加大型資訊年會和競賽！
+      <br/><br/>
+      您可以在我們的社課或定期聚找 NPC 的工作人員，或者私訊 Facebook 粉專說要入社，我們就會和您接洽幫您處理入社事宜。
+      <br/><br/>
+      記得在當天準備 500 元社費，你就能享有終生的社員資格囉！
+    </template>
+  </Article>
+
+<!-- 關於 <[MAIN]> -->
+  <Article id="about-block" picture-flex-wrap="wrap" title="About us">
+    <template #picture>
+      <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
               frameborder="0"
-              src="https://www.youtube-nocookie.com/embed/qGNUgFJYMdI"/>
+              src="https://www.youtube-nocookie.com/embed/qGNUgFJYMdI"
+              title="介紹影片"/>
     </template>
     <template #textContent>
       為了使更多人能夠體會程式的魅力，我們致力於北科校園推廣資訊技術，開設不同語言的課程，讓彼此體驗程式的美好。
@@ -66,6 +84,6 @@ export default defineComponent({
   name: "ArticleBundle",
   components: {
     Article: defineAsyncComponent(() => import('@/components/home/Article.vue')),
-  },
+  }
 })
 </script>

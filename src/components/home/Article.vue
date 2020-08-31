@@ -1,11 +1,12 @@
 <template>
   <div :style="{backgroundColor:bgColor || 'rgba(245, 245, 247, 1)', color:textColor || 'black'}" class="article-block">
-    <div class="ribbon ribbon-top-right" v-if="badge"><span :style="{backgroundColor:badgeBg||null}">{{ badge }}</span></div>
+    <div class="ribbon ribbon-top-right" v-if="badge"><span :style="{backgroundColor:badgeBg||null}">{{ badge }}</span>
+    </div>
     <div class="title">
       {{ title }}
       <div class="divider"/>
     </div>
-    <div class="content">
+    <div :style="{flexWrap:pictureFlexWrap || null}" class="content">
       <div class="article-picture animate__animated animate__bounceIn">
         <slot name="picture"></slot>
       </div>
@@ -26,9 +27,9 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, onMounted} from 'vue';
 import '@/assets/scss/pages/home-area/_article-block.scss';
-import '@/articles/articleResources/arrow-right-solid.svg'
+import '@/assets/images/arrow-right-solid.svg'
 
 export default defineComponent({
   name: "Article",
@@ -54,7 +55,23 @@ export default defineComponent({
     },
     buttonLink: {
       type: String
+    },
+    pictureFlexWrap: {
+      type: String
     }
+  },
+  setup() {
+    onMounted(() => {
+      const joinUsButton = document.getElementById('join-us') as HTMLLinkElement
+      const joinUsArticle = document.getElementById('join-us-article') as HTMLDivElement
+      joinUsButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        joinUsArticle.scrollIntoView({
+          behavior: 'smooth'
+        })
+      });
+    });
+    return
   }
 });
 </script>

@@ -7,6 +7,7 @@ import store from './store'
 import animated from 'animate.css'
 import ExternalLink from '@/components/App/ExternalLink.vue'
 import InnerLink from '@/components/App/InnerLink.vue'
+import VueProgressiveImage from 'vue-progressive-image'
 
 const app = createApp(App)
 
@@ -17,6 +18,7 @@ app
   .use(store)
   .use(router)
   .use(animated)
+  .use(VueProgressiveImage)
 
 document.addEventListener('DOMContentLoaded', () => {
   app.mount('#app')
