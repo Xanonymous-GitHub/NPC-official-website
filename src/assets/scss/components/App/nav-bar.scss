@@ -149,6 +149,10 @@
       cursor: pointer;
       line-height: 4vh;
 
+      @media (max-width: 768px) {
+        display: none;
+      }
+
       &__left {
         left: 0;
       }
