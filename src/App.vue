@@ -29,7 +29,7 @@ export default defineComponent({
   },
   setup() {
     // eslint-disable-next-line @typescript-eslint/ban-types
-    function debounce(func: Function, delay = 250) {
+    function debounce(func: Function, delay = 1) {
       let timer: number;
       return () => {
         let args = arguments;
