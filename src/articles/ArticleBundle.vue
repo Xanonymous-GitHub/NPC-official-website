@@ -32,7 +32,7 @@
   </Article>
 
   <!-- 入社引導 <[MAIN]> -->
-  <Article button="線上聊天" button-link="https://m.me/NPC.OwO" id="join-us-article" title="如何加入社團?">
+  <Article button="線上聊天" button-link="https://m.me/NPC.OwO" id="join-us-article" title="如何加入我們?">
     <template #picture>
       <img alt="" src="https://i.imgur.com/rkobsqy.jpg">
     </template>

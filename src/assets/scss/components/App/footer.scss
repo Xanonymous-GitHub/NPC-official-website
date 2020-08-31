@@ -39,6 +39,7 @@
     }
 
     .copyright {
+      user-select: none;
       width: 100%;
       font-size: calc((2vw + 2vh) / 3);
       text-align: center;

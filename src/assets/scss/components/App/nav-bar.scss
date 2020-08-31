@@ -29,6 +29,7 @@
   .nav-bar {
     @extend %nav-bar-base-rule;
     position: absolute;
+    user-select: none;
 
     &__sticky {
       // TODO add sticky
@@ -51,67 +52,57 @@
       }
     }
 
-    .menu-box {
-      @extend %flex-space-between-set;
-      width: 70%;
-      color: white;
-      font-weight: bolder;
-      overflow: auto;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+    .menu {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      right: 0;
+      width: min-content;
+      max-width: 70%;
 
-      &::-webkit-scrollbar {
-        display: none;
-      }
-
-      &::before {
-        content: "‹";
-        position: fixed;
-        color: darkorange;
-        font-size: 1.5em;
+      &-box {
+        @extend %flex-space-between-set;
+        color: white;
         font-weight: bolder;
-        transform: translateX(-2vw);
-      }
+        overflow: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
 
-      &::after {
-        content: "›";
-        position: fixed;
-        right: 0;
-        transform: translateX(2vw);
-        color: darkorange;
-        font-size: 1.5em;
-        font-weight: bolder;
-      }
-
-      @media (max-width: 768px) {
-        display: none;
-      }
-
-      .item {
-        margin: 0 20px;
-        text-wrap: none;
-        white-space: nowrap;
-
-        &:hover ~ .underline {
-          transition-timing-function: ease-in-out;
-          background: darkorange;
-          width: 95%;
+        &::-webkit-scrollbar {
+          display: none;
         }
 
-        &:active ~ .underline {
-          background: #b34400;
-          width: 100%;
-        }
-      }
 
-      .underline {
-        width: 80%;
-        height: 3px;
-        border-radius: 5px;
-        margin: 2px auto;
-        position: relative;
-        background: white;
-        transition: .3s;
+        @media (max-width: 768px) {
+          display: none;
+        }
+
+        .item {
+          margin: 0 20px;
+          text-wrap: none;
+          white-space: nowrap;
+
+          &:hover ~ .underline {
+            transition-timing-function: ease-in-out;
+            background: darkorange;
+            width: 95%;
+          }
+
+          &:active ~ .underline {
+            background: #b34400;
+            width: 100%;
+          }
+        }
+
+        .underline {
+          width: 80%;
+          height: 3px;
+          border-radius: 5px;
+          margin: 2px auto;
+          position: relative;
+          background: white;
+          transition: .3s;
+        }
       }
     }
 
@@ -130,6 +121,51 @@
       &:active {
         transition: .3s;
         color: #b34400;
+      }
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: .7;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: .7;
+      }
+    }
+
+    .slide-button {
+      color: white;
+      font-size: 2.5em;
+      font-weight: bolder;
+      display: inline-block;
+      padding: 0 10px;
+      animation: blink infinite;
+      animation-duration: 3s;
+      animation-timing-function: ease-in-out;
+      transition: .2s ease-in-out;
+      cursor: pointer;
+      line-height: 4vh;
+
+      &__left {
+        left: 0;
+      }
+
+      &__right {
+        right: 0;
+      }
+
+      &:hover {
+        transition: .2s ease-in-out;
+        color: darkorange;
+        opacity: 1;
+      }
+
+      &:active {
+        transition: .2s ease-in-out;
+        color: red;
       }
     }
   }

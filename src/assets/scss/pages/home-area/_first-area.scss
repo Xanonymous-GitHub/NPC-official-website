@@ -63,6 +63,7 @@
       max-width: 90%;
       transition-timing-function: ease-in-out;
       transition: .3s;
+      user-select: none;
 
       &__chinese {
         color: #1b262c;
