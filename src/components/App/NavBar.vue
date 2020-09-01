@@ -40,26 +40,26 @@ export default defineComponent({
         name: "首頁",
         link: "/",
       },
-      {
-        name: "關於",
-        link: "/"
-      },
-      {
-        name: "幹部介紹",
-        link: "/"
-      },
-      {
-        name: "社團歷史",
-        link: "/"
-      },
+      // {
+      //   name: "關於",
+      //   link: "/"
+      // },
+      // {
+      //   name: "幹部介紹",
+      //   link: "/"
+      // },
+      // {
+      //   name: "社團歷史",
+      //   link: "/"
+      // },
       {
         name: "專案成果",
         link: "/github",
       },
-      {
-        name: "Mr. Coding",
-        link: "/"
-      }
+      // {
+      //   name: "Mr. Coding",
+      //   link: "/"
+      // }
     ];
     onMounted(() => {
       const leftSlideButton = document.querySelector('.slide-button__left') as HTMLDivElement
