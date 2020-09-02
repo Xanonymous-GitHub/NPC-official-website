@@ -12,9 +12,13 @@ const firebaseConfig = {
   storageBucket: "npc-official-site.appspot.com",
   messagingSenderId: "884659801390",
   appId: "1:884659801390:web:1c69cdcf4ceffdc9837ebf",
-  measurementId: "G-TXSKM15E02"
+  measurementId: "G-TXSKM15E02",
 };
 
 firebase.initializeApp(firebaseConfig);
 
+export type firebaseType = firebase.app.App
+export type dbType = firebase.firestore.Firestore
+
 export default firebase;
+export const db = firebase.firestore();

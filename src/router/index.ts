@@ -20,6 +20,15 @@ const routes: Array<RouteRecordRaw> = [
       '@/pages/Welcome.vue'
       )
   },
+  // {
+  //   path: '/login',
+  //   name: 'Login',
+  //   component: () => import(
+  //     /* webpackChunkName: "Login" */
+  //     /* webpackPrefetch: true */
+  //     '@/pages/Login.vue'
+  //     )
+  // },
   {
     path: '/github',
     beforeEnter() {
@@ -62,15 +71,6 @@ const routes: Array<RouteRecordRaw> = [
   //     /* webpackChunkName: "DashBoard" */
   //     /* webpackPrefetch: true */
   //     '@/pages/DashBoard.vue'
-  //     )
-  // },
-  // {
-  //   path: '/login',
-  //   name: 'Login',
-  //   component: () => import(
-  //     /* webpackChunkName: "Login" */
-  //     /* webpackPrefetch: true */
-  //     '@/pages/Login.vue'
   //     )
   // },
   // {

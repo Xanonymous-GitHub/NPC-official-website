@@ -19,7 +19,7 @@ import {defineComponent, onMounted, onBeforeUnmount, provide} from "vue";
 import nyancat from "@/utils/nyancat";
 import NavBar from "@/components/App/NavBar.vue";
 import Footer from "@/components/App/Footer.vue";
-import firebase from "@/utils/firebase";
+import firebase, {db} from "@/utils/firebase";
 
 export default defineComponent({
   name: "App",
@@ -27,9 +27,6 @@ export default defineComponent({
   components: {
     NavBar,
     Footer
-  },
-  provide: {
-    firebase: firebase
   },
   setup() {
     // eslint-disable-next-line @typescript-eslint/ban-types
@@ -61,6 +58,9 @@ export default defineComponent({
     onBeforeUnmount(() => {
       window.removeEventListener("orientationchange", debounce(onOrientationchange))
     })
+
+    provide('firebase', firebase)
+    provide('db', db)
 
     return {}
   }
