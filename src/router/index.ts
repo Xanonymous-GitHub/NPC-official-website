@@ -12,6 +12,15 @@ const routes: Array<RouteRecordRaw> = [
       ),
   },
   {
+    path: '/welcome',
+    name: 'Welcome',
+    component: () => import(
+      /* webpackChunkName: "Welcome" */
+      /* webpackPrefetch: true */
+      '@/pages/Welcome.vue'
+      )
+  },
+  {
     path: '/github',
     beforeEnter() {
       open('https://github.com/NTUT-NPC', '_blank')

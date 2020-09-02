@@ -15,10 +15,11 @@
 
 <script lang="ts">
 import "@/assets/scss/app.scss";
-import {defineComponent, onMounted, onBeforeUnmount} from "vue";
+import {defineComponent, onMounted, onBeforeUnmount, provide} from "vue";
 import nyancat from "@/utils/nyancat";
 import NavBar from "@/components/App/NavBar.vue";
 import Footer from "@/components/App/Footer.vue";
+import firebase from "@/utils/firebase";
 
 export default defineComponent({
   name: "App",
@@ -26,6 +27,9 @@ export default defineComponent({
   components: {
     NavBar,
     Footer
+  },
+  provide: {
+    firebase: firebase
   },
   setup() {
     // eslint-disable-next-line @typescript-eslint/ban-types
