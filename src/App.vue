@@ -55,8 +55,9 @@ export default defineComponent({
       document.dispatchEvent(new Event('app-rendered'));
     })
 
-    onBeforeUnmount(() => {
+    onBeforeUnmount(async () => {
       window.removeEventListener("orientationchange", debounce(onOrientationchange))
+      await firebase.auth().signOut()
     })
 
     provide('firebase', firebase)
