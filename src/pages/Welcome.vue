@@ -24,7 +24,7 @@
             {{ msg }}
           </p>
           <p class="rank" v-if="showRank">你的名次：{{ rank }}
-            <br/><span style="font-size: 0.2rem">{{ verificationCode }}</span></p>
+            <br/><span style="font-size: 0.5rem">{{ verificationCode }}</span></p>
         </div>
         <p class="regards">NPC 北科程式設計研究社</p>
       </div>
