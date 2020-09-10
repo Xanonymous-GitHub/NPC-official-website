@@ -32,14 +32,13 @@
   </Article>
 
   <!-- 入社引導 <[MAIN]> -->
-  <Article button="線上聊天" button-link="https://m.me/NPC.OwO" id="join-us-article" title="如何加入我們?">
+  <Article button="線上聊天" button-link="https://m.me/NPC.OwO" id="join-us-article" title="如何加入我們？">
     <template #picture>
       <img alt="" src="https://i.imgur.com/rkobsqy.jpg">
     </template>
     <template #textContent>
       你也想成為 NPC 的一員嗎？
-      加入我們不但能聆聽精彩的社課內容，還能跟其他社員們一起交流程式設計，
-      甚至能和我們一起參加大型資訊年會和競賽！
+      加入我們不但能聆聽精彩的社課內容，還能跟其他社員們一起交流程式設計， 甚至能和我們一起參加大型資訊年會和競賽！
       <br/><br/>
       您可以在我們的社課或定期聚找 NPC 的工作人員，或者私訊 Facebook 粉專說要入社，我們就會和您接洽幫您處理入社事宜。
       <br/><br/>

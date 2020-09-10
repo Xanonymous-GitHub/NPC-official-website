@@ -10,8 +10,7 @@
             <use :xlink:href="displayMessages.icon"/>
           </svg>
           <svg id="tick" style="enable-background:new 0 0 37 37;" version="1.1" viewBox="0 0 37 37"
-               x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-               xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+               x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" y="0px">
           <path class="circle path"
                 d="M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"
                 style="fill:#0cdcc7;stroke:#07a796;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;"/>
@@ -38,6 +37,7 @@ import {defineComponent, inject, onMounted, reactive, toRefs} from 'vue';
 import '@/assets/scss/pages/welcome.scss'
 import '@/assets/images/kiss-regular.svg'
 import '@/assets/images/exclamation-circle-solid.svg'
+import '@/assets/images/question-circle-regular.svg'
 import {
   firebaseType,
   firebaseDocumentType,
@@ -69,6 +69,7 @@ export default defineComponent({
     enum gameResults {
       WINNER = 'WINNER',
       LOSER = 'LOSER',
+      CLOSED = 'CLOSED',
       UNKNOWN = 'UNKNOWN'
     }
 
@@ -120,6 +121,16 @@ export default defineComponent({
       }
     }
 
+    const isGameAvailable = async (): Promise<boolean> => {
+      try {
+        await anonymousLogin(firebase)
+        const freshmenPartyAvailableDocuments = (await (await getFirebaseDocuments('/public/events/freshmen_party/', 'event_status')).get()).data() as { available: boolean }
+        return freshmenPartyAvailableDocuments.available || false
+      } catch (_) {
+        return true // throw this connection error to getFreshmenPartyGameResult() function -> result will be UNKNOWN
+      }
+    }
+
     const displayMessages = {
       win: {
         title: '',
@@ -141,14 +152,22 @@ export default defineComponent({
       connecting: {
         title: 'Connecting...',
         content: [
-          '判定獎項中',
-          '正在連接至遊戲伺服器'
+          '連線中',
+          '正在連接至伺服器'
         ]
+      },
+      closed: {
+        title: '404 Not Found',
+        content: [
+          '連線已終止',
+          '該頁面不存在，未知的請求'
+        ],
+        icon: '#question-circle-regular.svg'
       },
       error: {
         title: 'Oh No!',
         content: [
-          '連線至遊戲伺服器時發生問題！',
+          '連線至伺服器時發生問題！',
           '請重新整理頁面或洽詢工作人員！'
         ],
         icon: '#exclamation-circle-solid.svg'
@@ -165,7 +184,7 @@ export default defineComponent({
     })
 
     onMounted(async () => {
-      const gameResult = await getFreshmenPartyGameResult()
+      const gameResult = (await isGameAvailable() && await getFreshmenPartyGameResult()) || gameResults.CLOSED
       setTimeout(() => {
         data.showProgressbar = false;
         switch (gameResult) {
@@ -181,6 +200,10 @@ export default defineComponent({
             (document.querySelector('.contain') as HTMLDivElement).classList.remove('contain__default-bg');
             (document.querySelector('.contain') as HTMLDivElement).classList.add('contain__loser-bg')
             data.displayMessages = displayMessages.loss;
+            break;
+          case gameResults.CLOSED:
+            (document.querySelector('.congrats') as HTMLDivElement).classList.add('congrats__error-color')
+            data.displayMessages = displayMessages.closed;
             break;
           case gameResults.UNKNOWN:
             (document.querySelector('.congrats') as HTMLDivElement).classList.add('congrats__error-color')
