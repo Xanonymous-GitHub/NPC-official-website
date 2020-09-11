@@ -1,7 +1,9 @@
 <template>
+  <div>
     <router-link :to="to" rel="noreferrer noopener">
       <slot></slot>
     </router-link>
+  </div>
 </template>
 
 <script lang="ts">
