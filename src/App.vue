@@ -49,6 +49,9 @@ export default defineComponent({
     onMounted(() => {
       window.addEventListener("orientationchange", debounce(onOrientationchange))
       nyancat()
+      document.addEventListener('touchstart', function () {
+        return
+      }, {passive: false})
       document.dispatchEvent(new Event('app-rendered'));
     })
 
