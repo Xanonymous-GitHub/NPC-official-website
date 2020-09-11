@@ -129,8 +129,7 @@
     z-index: 10000;
     transition: .5s ease-in-out .5s;
 
-    &::after {
-      content: "";
+    .drawer {
       display: block;
       position: fixed;
       background-color: #40a8c4;
@@ -149,7 +148,7 @@
     > .splash {
       transition: .5s ease-in-out;
 
-      &::after {
+      .drawer {
         transition: .5s ease-in-out;
         width: 60vw;
       }

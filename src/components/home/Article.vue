@@ -13,14 +13,14 @@
       <div class="text-content">
         <slot name="textContent"></slot>
 
-        <go :to="buttonLink" class="button animate__animated animate__bounceIn"
+        <ExternalLink :to="buttonLink" class="button animate__animated animate__bounceIn"
             rel="noreferrer noopener"
             v-if="button">
           <svg class="bottom-icon bottom-icon__white" viewBox="0 0 1 1">
             <use xlink:href="#arrow-right-solid.svg"/>
           </svg>
           {{ button }}
-        </go>
+        </ExternalLink>
       </div>
     </div>
   </div>
@@ -30,9 +30,13 @@
 import {defineComponent, onMounted} from 'vue';
 import '@/assets/scss/pages/home-area/_article-block.scss';
 import '@/assets/images/arrow-right-solid.svg'
+import ExternalLink from "@/components/App/ExternalLink.vue";
 
 export default defineComponent({
   name: "Article",
+  components:{
+    ExternalLink
+  },
   props: {
     title: {
       type: String,

@@ -19,7 +19,9 @@
         _
       </svg>
     </a>
-    <div class="splash"/>
+    <div class="splash">
+      <div class="drawer"/>
+    </div>
   </nav>
   <div class="bottom-layer"/>
 </template>

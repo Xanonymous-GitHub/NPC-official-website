@@ -53,8 +53,6 @@ export default defineComponent({
         return
       }, {passive: false})
       document.dispatchEvent(new Event('app-rendered'));
-
-      console.log(document.querySelector('.splash'))
     })
 
     onBeforeUnmount(async () => {
