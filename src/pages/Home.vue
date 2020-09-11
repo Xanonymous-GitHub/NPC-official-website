@@ -46,13 +46,13 @@
             </svg>
             加入我們
           </router-link>
-          <go class="info-area__button info-area__button--white"
+          <ExternalLink class="info-area__button info-area__button--white"
               rel="noreferrer noopener" to="https://m.me/NPC.OwO">
             <svg class="bottom-icon bottom-icon__blue" viewBox="0 0 1 1">
               <use xlink:href="#facebook-messenger-brands.svg"/>
             </svg>
             線上聊天
-          </go>
+          </ExternalLink>
         </div>
       </div>
       <div class="top-picture-box">
@@ -74,11 +74,13 @@ import '@/assets/scss/pages/home.scss';
 import '@/assets/images/process.svg';
 import '@/assets/images/facebook-messenger-brands.svg'
 import '@/assets/images/user-plus-solid.svg'
+import ExternalLink from "@/components/App/ExternalLink.vue";
 
 export default defineComponent({
   name: "Home",
   props: {},
   components: {
+    ExternalLink,
     ArticleBundle: defineAsyncComponent(() => import('@/articles/ArticleBundle.vue')),
   },
   data() {
