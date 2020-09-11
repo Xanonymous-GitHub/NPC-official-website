@@ -1,12 +1,12 @@
 <template>
   <div class="footer">
     <div class="icons">
-      <go :key="key" :to="svg.link" v-for="(svg, key) in svgList">
+      <ExternalLink :key="key" :to="svg.link" v-for="(svg, key) in svgList">
         <svg fill="white" viewBox="0 0 1 1">
           <use :xlink:href="'#'+svg.name+'.svg'"/>
           _
         </svg>
-      </go>
+      </ExternalLink>
     </div>
     <div class="copyright">
       Copyright <b style="font-family: sans-serif">&copy;</b> 2020 NTUT Programming Club, All rights reserved.
@@ -21,9 +21,13 @@ import '@/assets/images/facebook-brands.svg'
 import '@/assets/images/instagram-brands.svg'
 import '@/assets/images/youtube-brands.svg'
 import '@/assets/images/github-brands.svg'
+import ExternalLink from "@/components/App/ExternalLink.vue";
 
 export default defineComponent({
   name: "Footer",
+  components: {
+    ExternalLink
+  },
   setup() {
     const svgList = [
       {name: 'facebook-brands', link: 'https://www.facebook.com/NPC.OwO'},

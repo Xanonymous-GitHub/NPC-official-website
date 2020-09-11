@@ -16,7 +16,7 @@
           </g>
         </svg>
       </div>
-      <div class="main-title animate__animated animate__fadeInLeft animate__lightSpeedInLeft">
+      <div class="main-title">
         {{ mainTitle.line1 }}
         <br/>
         {{ mainTitle.line2 }}
@@ -25,20 +25,20 @@
       </div>
       <div class="info-area">
         <div class="info-area__text">
-          <h1 class="main-title main-title__chinese animate__animated animate__fadeIn">
+          <h1 class="main-title main-title__chinese">
             <svg class="logo logo__npc" viewBox="0 0 1 1">
               <use xlink:href="#npc_logo_Hans_Chiu.svg"/>
             </svg>
             {{ mainTitleChinese }}
           </h1>
-          <h2 class="main-title main-title__sub-title animate__animated animate__fadeIn">
+          <h2 class="main-title main-title__sub-title">
             {{ subTitle.line1 }}
             <br/>
             {{ subTitle.line2 }}
           </h2>
         </div>
         <div class="info-area__button--container">
-          <router-link class="info-area__button info-area__button--red animate__animated animate__bounceIn"
+          <router-link class="info-area__button info-area__button--red"
                        id="join-us"
                        rel="noreferrer noopener" to="/">
             <svg class="bottom-icon bottom-icon__white" viewBox="0 0 1 1">
@@ -46,7 +46,7 @@
             </svg>
             加入我們
           </router-link>
-          <go class="info-area__button info-area__button--white animate__animated animate__bounceIn"
+          <go class="info-area__button info-area__button--white"
               rel="noreferrer noopener" to="https://m.me/NPC.OwO">
             <svg class="bottom-icon bottom-icon__blue" viewBox="0 0 1 1">
               <use xlink:href="#facebook-messenger-brands.svg"/>
@@ -55,7 +55,7 @@
           </go>
         </div>
       </div>
-      <div class="top-picture-box animate__animated animate__fadeIn">
+      <div class="top-picture-box">
         <svg>
           <use xlink:href="#programmer.svg"/>
         </svg>

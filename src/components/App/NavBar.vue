@@ -1,6 +1,6 @@
 <template>
-  <NavDrawer :navItems="menuItems" class="animate__animated animate__backInDown"/>
-  <div class="nav-bar animate__animated animate__backInDown">
+  <NavDrawer :navItems="menuItems"/>
+  <div class="nav-bar">
     <router-link rel="noreferrer noopener" to="/">
       <svg class="nav-logo" fill="black" viewBox="0 0 2703 630">
         <use xlink:href="#npc_text.svg"/>
