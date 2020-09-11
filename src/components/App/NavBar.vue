@@ -11,12 +11,13 @@
       <div class="slide-button slide-button__left">‹</div>
 
       <div class="menu-box">
-        <to :key="key" :to="item.link" v-for="(item, key) in menuItems">
+        <component :is="item.external?ExternalLink:InnerLink" :key="key" :to="item.link"
+                   v-for="(item, key) in menuItems">
           <div class="item">
             &#9733;{{ item.name }}
           </div>
           <div class="underline"/>
-        </to>
+        </component>
       </div>
 
       <div class="slide-button slide-button__right">›</div>
@@ -28,6 +29,8 @@
 import {defineComponent, defineAsyncComponent, onMounted} from 'vue';
 import '@/assets/images/npc_text.svg';
 import '@/assets/scss/components/App/nav-bar.scss'
+import InnerLink from "@/components/App/InnerLink.vue";
+import ExternalLink from "@/components/App/ExternalLink.vue";
 
 export default defineComponent({
   name: "NavBar",
@@ -39,10 +42,11 @@ export default defineComponent({
       {
         name: "首頁",
         link: "/",
+        external: false
       },
       // {
       //   name: "關於",
-      //   link: "/"
+      //   link: "/",
       // },
       // {
       //   name: "幹部介紹",
@@ -54,7 +58,8 @@ export default defineComponent({
       // },
       {
         name: "專案成果",
-        link: "/github",
+        link: "https://github.com/NTUT-NPC",
+        external: true
       },
       // {
       //   name: "Mr. Coding",
@@ -86,7 +91,11 @@ export default defineComponent({
       leftSlideButton.addEventListener('click', () => scrollMove(false))
       rightSlideButton.addEventListener('click', () => scrollMove(true))
     })
-    return {menuItems}
+    return {
+      menuItems,
+      ExternalLink,
+      InnerLink
+    }
   }
 });
 </script>

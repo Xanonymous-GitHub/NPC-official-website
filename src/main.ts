@@ -8,6 +8,8 @@ import animated from 'animate.css'
 import ExternalLink from '@/components/App/ExternalLink.vue'
 import InnerLink from '@/components/App/InnerLink.vue'
 
+// eslint-disable-next-line
+// @ts-ignore
 const app = createApp(App)
 
 app.component('go', ExternalLink)
