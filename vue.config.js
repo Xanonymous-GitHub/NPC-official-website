@@ -18,7 +18,6 @@ const resolve = dir => path.join(__dirname, dir);
 const renderRoutes = (() => {
   const routes = [
     '/',
-    '/welcome',
     // '/dashboard',
     // '/login',
     // '/registration',
@@ -144,7 +143,6 @@ module.exports = {
       registry: undefined,
       renderRoutes: [
         '/',
-        '/welcome',
         // '/dashboard',
         // '/login',
         // '/registration',

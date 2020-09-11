@@ -1,16 +1,13 @@
 <template>
-  <main class="page-container" id="login">
-  </main>
-  <slot name="footer"></slot>
+  <div>login</div>
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
-import '@/assets/scss/pages/login.scss';
+  import {defineComponent} from 'vue';
 
-export default defineComponent({
-  name: "Login"
-});
+  export default defineComponent({
+    name: "Login"
+  });
 </script>
 
 <style scoped>
