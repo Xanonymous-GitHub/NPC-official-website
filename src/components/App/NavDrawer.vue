@@ -2,12 +2,11 @@
   <nav class="nav" id="nav" role="navigation">
     <ul class="nav__menu" hidden id="menu" tabindex="-1">
       <li :key="key" class="nav__item" v-for="(navItem, key) in navItems">
-        <component :is="navItem.external?ExternalLink:InnerLink" :to="navItem.link" class="nav__link"
-                   rel="noreferrer noopener">&#9733;{{ navItem.name }}
-        </component>
+        <router-link :to="navItem.link" class="nav__link" rel="noreferrer noopener">&#9733;{{ navItem.name }}
+        </router-link>
       </li>
     </ul>
-    <a aria-controls="menu" aria-expanded="false" class="nav__toggle" rel="noreferrer noopener" role="button">
+    <a aria-controls="menu" aria-expanded="false" class="nav__toggle" role="button" rel="noreferrer noopener">
       <svg class="menu-icon" height="50" viewBox="0 0 50 50" width="50" xmlns="http://www.w3.org/2000/svg">
         <g>
           <line class="menu-icon__bar" x1="13" x2="37" y1="16.5" y2="16.5"/>
@@ -27,8 +26,6 @@
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue';
 import '@/assets/scss/components/App/nav-drawer.scss'
-import ExternalLink from "@/components/App/ExternalLink.vue";
-import InnerLink from "@/components/App/InnerLink.vue";
 
 export default defineComponent({
   name: "NavDrawer",
@@ -37,7 +34,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup() {
+  setup: () => {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const bodyScrollLock = require('body-scroll-lock');
     onMounted(() => {
@@ -91,10 +88,6 @@ export default defineComponent({
         }
       });
     })
-    return {
-      InnerLink,
-      ExternalLink
-    }
   }
 });
 </script>
