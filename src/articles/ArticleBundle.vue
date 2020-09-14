@@ -1,5 +1,40 @@
 <template>
 
+  <!-- 社博有獎徵答 line bot -->
+  <Article button="加好友" button-link="https://line.me/R/ti/p/%40798aqjam" title="有獎徵答">
+    <template #picture>
+      <img alt="" src="https://i.imgur.com/gJQ9kXW.png">
+    </template>
+    <template #textContent>
+      歡迎來到社團博覽會！
+      <br/><br/>
+      只要加入我們的LINE官方帳號，就可以玩超簡單的有獎徵答！
+      <br/><br/>
+      遊戲很好玩歐 記得玩 ～～～ 會有精美獎品歐 XD ！
+      <br/><br/>
+    </template>
+  </Article>
+
+  <Article button="立即參加" button-link="http://34.122.163.157:4000/" title="CTF 搶旗賽">
+    <template #picture>
+      <img alt="" src="https://imgur.com/gs3j7cz.jpg">
+    </template>
+    <template #textContent>
+      在許多的競賽遊戲中，奪下對手的旗幟是一種勝利的宣告。
+      <br/><br/>
+      而CTF(Capture The Flag)是資訊安全領域的競賽，玩家必須要有能力分析系統漏洞， 且利用該漏洞撰寫攻擊程式。
+      <br/><br/>
+      而漏洞包含了網頁安全、密碼學、逆向工程等等，攻擊成功後可取得該題的旗幟(Flag)，玩家將拿到的 Flag 上交到伺服器後就可得分。
+      <br/><br/>
+      現在，我們社團也有一些的題目，給對資安有興趣卻不知道從何著手的同學。
+      <br/><br/>
+      歡迎各位來小試身手，而若各位在解題中遇到任何問題，也可以直接私訊粉專，我們將會有專人來為你解答。
+      <br/><br/>
+      而若拿到所有的 Flag 並來我們社博攤位，即可獲得額外的獎勵！
+    </template>
+  </Article>
+
+
   <!--  新生茶會  -->
   <Article badge="&#128293;HOT!!"
            badge-bg="#ff0000"
