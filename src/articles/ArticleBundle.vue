@@ -1,20 +1,5 @@
 <template>
 
-  <!-- 社博有獎徵答 line bot -->
-  <Article button="加好友" button-link="https://line.me/R/ti/p/%40798aqjam" title="有獎徵答">
-    <template #picture>
-      <img alt="" src="https://i.imgur.com/gJQ9kXW.png">
-    </template>
-    <template #textContent>
-      歡迎來到社團博覽會！
-      <br/><br/>
-      只要加入我們的LINE官方帳號，就可以玩超簡單的有獎徵答！
-      <br/><br/>
-      遊戲很好玩歐 記得玩 ～～～ 會有精美獎品歐 XD ！
-      <br/><br/>
-    </template>
-  </Article>
-
   <Article button="立即參加" button-link="http://34.122.163.157:4000/" title="CTF 搶旗賽">
     <template #picture>
       <img alt="" src="https://imgur.com/gs3j7cz.jpg">
