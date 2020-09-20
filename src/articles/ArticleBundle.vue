@@ -1,6 +1,6 @@
 <template>
 
-  <Article button="立即參加" button-link="http://34.122.163.157:4000/" title="CTF 搶旗賽">
+  <Article button="立即參加" button-link="https://ctf.ntut.club" title="CTF 搶旗賽">
     <template #picture>
       <img alt="" src="https://imgur.com/gs3j7cz.jpg">
     </template>
