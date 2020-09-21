@@ -14,7 +14,7 @@
         <component :is="item.external?ExternalLink:InnerLink" :key="key" :to="item.link"
                    v-for="(item, key) in menuItems">
           <div class="item">
-            &#9733;{{ item.name }}
+            &#9733; {{ item.name }}
           </div>
           <div class="underline"/>
         </component>
@@ -40,7 +40,7 @@ export default defineComponent({
   setup() {
     const menuItems = [
       {
-        name: "首頁",
+        name: "Home",
         link: "/",
         external: false
       },
@@ -62,12 +62,12 @@ export default defineComponent({
         external: true
       },
       {
-        name: "HEY! PTT",
+        name: "HEY！ PTT",
         link: "https://ptt.npc-go.com/",
         external: true
       },
       {
-        name: "專案成果",
+        name: "GitHub",
         link: "https://github.com/NTUT-NPC",
         external: true
       },

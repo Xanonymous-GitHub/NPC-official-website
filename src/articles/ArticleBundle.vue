@@ -51,8 +51,40 @@
     </template>
   </Article>
 
+  <!-- TAT <[MAIN]> -->
+  <Article title="TAT - 北科生活" badge="FREE"
+           badge-bg="#00C33A">
+    <template #picture>
+      <img alt="" src="https://imgur.com/pMSmPA8.png" style="border-radius: 30px;box-shadow: #a9a9a9 1px 1px 40px">
+    </template>
+    <template #textContent>
+      方便，簡潔，快速，強大，豐富您的北科生活！
+      <br/><br/>
+      迅速查詢北科學生課表與行事曆，查看北科 i 學園公告，下載北科 i 學園檔案
+      <br/><br/>
+      查閱北科學生成績與學分資訊，並主動推播重要消息
+      <br/><br/>
+      支援中文、英文顯示，老師亦可使用
+      <br/><br/>
+      即刻安裝，北科生活無煩惱～
+      <br/><br/>
+      <div style="display: flex;flex-wrap: wrap">
+        <span style="margin: 0 1em;">
+          <a href="https://apps.apple.com/tw/app/tat-北科生活/id1513875597" target="_blank" rel="noreferrer noopener">
+          <img alt="available on the appStore" src="https://imgur.com/S12KIOz.png" style="width: 200px">
+        </a>
+        </span>
+        <span style="margin: 0 1em;">
+          <a href="https://play.google.com/store/apps/details?id=club.ntut.npc.tat" target="_blank" rel="noreferrer noopener">
+          <img alt="get it on google play" src="https://imgur.com/2ClcPEL.png" style="width: 200px">
+        </a>
+        </span>
+      </div>
+    </template>
+  </Article>
+
   <!-- 入社引導 <[MAIN]> -->
-  <Article button="線上聊天" button-link="https://m.me/NPC.OwO" id="join-us-article" title="如何加入我們？">
+  <Article id="join-us-article" button="線上聊天" button-link="https://m.me/NPC.OwO" title="如何加入我們？">
     <template #picture>
       <img alt="" src="https://i.imgur.com/rkobsqy.jpg">
     </template>
