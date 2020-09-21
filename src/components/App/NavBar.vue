@@ -62,6 +62,11 @@ export default defineComponent({
         external: true
       },
       {
+        name: "HEY! PTT",
+        link: "https://ptt.npc-go.com/",
+        external: true
+      },
+      {
         name: "專案成果",
         link: "https://github.com/NTUT-NPC",
         external: true
