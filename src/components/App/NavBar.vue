@@ -57,6 +57,11 @@ export default defineComponent({
       //   link: "/"
       // },
       {
+        name: "CTF",
+        link: "https://ctf.ntut.club",
+        external: true
+      },
+      {
         name: "專案成果",
         link: "https://github.com/NTUT-NPC",
         external: true
