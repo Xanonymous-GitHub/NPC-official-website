@@ -24,8 +24,8 @@
   <Article badge="&#128293;HOT!!"
            badge-bg="#ff0000"
            bg-color="#16213e"
-           button="立即報名"
-           button-link="https://docs.google.com/forms/d/e/1FAIpQLSevx6CxohDSZkXJjJ2ymyydm-aTIVOmyGv7xB7oCtw5xdQr1w/viewform"
+           button="觀看直播"
+           button-link="https://youtu.be/vmOlfH4O0C4"
            text-color="white"
            title="⚡ 2020 新生茶會 ⚡">
     <template #picture>
@@ -42,8 +42,6 @@
       <br/><br/>
       在 NPC 新生茶會介紹社團的精彩活動內容，
       還有有趣的解謎遊戲讓你和組員一起體驗程式設計的美好！
-      <br/><br/>
-      提前報名的話還能領取美味的零食哦！
       <br/><br/>
       時間：9/22(二) 晚上 18:30
       <br/>
