@@ -64,11 +64,12 @@
         img {
           width: auto;
           height: 300px;
+          border-radius: 5px;
 
           @media (max-width: 800px) {
             & {
-              width: inherit;
-              height: 200px;
+              width: calc(100vw - 6em);
+              height: auto;
               margin: 1em 0;
             }
           }

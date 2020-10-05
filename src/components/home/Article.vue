@@ -7,13 +7,13 @@
       <div class="divider"/>
     </div>
     <div :style="{flexWrap:pictureFlexWrap || null}" class="content">
-      <div class="article-picture animate__animated animate__bounceIn">
+      <div class="article-picture">
         <slot name="picture"></slot>
       </div>
       <div class="text-content">
         <slot name="textContent"></slot>
 
-        <ExternalLink :to="buttonLink" class="button animate__animated animate__bounceIn"
+        <ExternalLink :to="buttonLink" class="button"
             rel="noreferrer noopener"
             v-if="button">
           <svg class="bottom-icon bottom-icon__white" viewBox="0 0 1 1">

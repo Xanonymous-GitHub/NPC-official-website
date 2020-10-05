@@ -1,5 +1,49 @@
 <template>
 
+  <Article bg-color="#16213e" button="立即報名" button-link="https://forms.gle/DXi6EfgFgRSLtvj87" text-color="white"
+           title="Python 基礎課程 (一)">
+    <template #picture>
+      <img alt="" src="https://i.imgur.com/Uj9vMxS.jpg">
+    </template>
+    <template #textContent>
+      想學程式卻不知如何下手？ 那你一定要來這次的課程！
+      <br/>
+      此次課程經由 Python 好上手且易於編寫的特性， 帶你快速了解與程式設計有關的基礎觀念，
+      <br/>
+      別再猶豫了～趕快報名參加吧！
+      <br/>
+      <br/>
+      【課程介紹】
+      <br/>
+      • Python 基礎語法，資料型態
+      <br/>
+      <br/>
+      【課程資訊】
+      <br/>
+      • 時 間：10/06 (二) 19:30~21:30 ( 19:20 入場 )
+      <br/>
+      • 地 點：共同科館 312 教室
+      <br/>
+      • 主辦單位：北科程式設計研究社
+      <br/>
+      <br/>
+      【備註】
+      <br/>
+      1. 教室內請勿飲食
+      <br/>
+      2. 非社員需繳交 50 元課程費用，或者繳交 500 元直接入社
+      <br/>
+      3. 進入教室前務必戴上口罩，體溫異常者不得進場
+      <br/>
+      4. 此堂課為基礎課程，適合無程式經驗或是不熟悉 Python 的學生，有一定基礎者請斟酌參加
+      <br/>
+      5. 上課地點為電腦教室，不過歡迎各位學員攜帶自己的筆電
+      <br/>
+      6. 學校網路有可能會阻擋特並連結，若無法開啟建議開啟自己網路
+      <br/>
+    </template>
+  </Article>
+
   <Article button="立即參加" button-link="https://ctf.ntut.club" title="CTF 搶旗賽">
     <template #picture>
       <img alt="" src="https://imgur.com/gs3j7cz.jpg">
@@ -20,8 +64,8 @@
   </Article>
 
   <!-- TAT <[MAIN]> -->
-  <Article title="TAT - 北科生活" badge="FREE"
-           badge-bg="#00C33A">
+  <Article badge="FREE" badge-bg="#00C33A"
+           title="TAT - 北科生活">
     <template #picture>
       <img alt="" src="https://imgur.com/pMSmPA8.png" style="border-radius: 30px;box-shadow: #a9a9a9 1px 1px 40px">
     </template>
@@ -38,12 +82,13 @@
       <br/><br/>
       <div style="display: flex;flex-wrap: wrap">
         <span style="margin: 0 1em;">
-          <a href="https://apps.apple.com/tw/app/tat-北科生活/id1513875597" target="_blank" rel="noreferrer noopener">
+          <a href="https://apps.apple.com/tw/app/tat-北科生活/id1513875597" rel="noreferrer noopener" target="_blank">
           <img alt="available on the appStore" src="https://imgur.com/S12KIOz.png" style="width: 200px">
         </a>
         </span>
         <span style="margin: 0 1em;">
-          <a href="https://play.google.com/store/apps/details?id=club.ntut.npc.tat" target="_blank" rel="noreferrer noopener">
+          <a href="https://play.google.com/store/apps/details?id=club.ntut.npc.tat" rel="noreferrer noopener"
+             target="_blank">
           <img alt="get it on google play" src="https://imgur.com/2ClcPEL.png" style="width: 200px">
         </a>
         </span>
