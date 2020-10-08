@@ -20,7 +20,7 @@ const renderRoutes = (() => {
     '/',
     '/welcome',
     // '/dashboard',
-    // '/login',
+    '/login',
     // '/registration',
     // '/admin',
     // '/fixing'
@@ -146,7 +146,7 @@ module.exports = {
         '/',
         '/welcome',
         // '/dashboard',
-        // '/login',
+        '/login',
         // '/registration',
         // '/admin',
         // '/fixing'
