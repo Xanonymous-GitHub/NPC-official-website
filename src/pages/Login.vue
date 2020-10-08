@@ -1,5 +1,6 @@
 <template>
   <main class="page-container" id="login">
+    login page
   </main>
   <slot name="footer"></slot>
 </template>

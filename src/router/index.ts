@@ -20,15 +20,15 @@ const routes: Array<RouteRecordRaw> = [
       '@/pages/Welcome.vue'
       )
   },
-  // {
-  //   path: '/login',
-  //   name: 'Login',
-  //   component: () => import(
-  //     /* webpackChunkName: "Login" */
-  //     /* webpackPrefetch: true */
-  //     '@/pages/Login.vue'
-  //     )
-  // },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import(
+      /* webpackChunkName: "Login" */
+      /* webpackPrefetch: true */
+      '@/pages/Login.vue'
+      )
+  },
   // {
   //   path: '/dashboard',
   //   name: 'DashBoard',
