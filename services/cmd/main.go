@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", services.HelloGet)
+	http.HandleFunc("/me", services.DecodeJwt)
 
 	port := os.Getenv("PORT")
 	if port == "" {
