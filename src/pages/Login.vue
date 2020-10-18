@@ -6,32 +6,52 @@
       </div>
       <div class="input-area">
         <label for="username-input"/>
-        <input id="username-input" name="username" placeholder="帳號" type="email"/>
+        <input id="username-input" v-model.trim.lazy="email" name="username" placeholder="帳號" type="email"/>
         <label for="password-input"/>
-        <input id="password-input" name="password" placeholder="密碼" type="password"/>
+        <input id="password-input" v-model.trim.lazy="password" name="password" placeholder="密碼" type="password"/>
       </div>
       <div class="action">
-        <InnerLink class="button login" to="/">
+        <div class="button login" @click="login">
           登入
-        </InnerLink>
+        </div>
       </div>
       <div class="bottom"></div>
     </div>
     <div class="bg"/>
   </main>
-<!--  <slot name="footer"></slot>-->
+  <!--  <slot name="footer"></slot>-->
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, inject, reactive, toRefs} from 'vue';
 import '@/assets/scss/pages/login.scss';
 import '@/assets/scss/components/App/buttons.scss'
-import InnerLink from "@/components/App/InnerLink.vue";
+import {firebaseLogout, firebaseType, getCurrentUser, loginWithEmailAndPassword} from "@/utils/firebase";
 
 export default defineComponent({
   name: "Login",
-  components: {
-    InnerLink
+  setup() {
+    const firebase = inject<firebaseType>('firebase') as firebaseType
+
+    const identityCredentials = reactive({
+      email: '',
+      password: ''
+    })
+
+    const login = async () => {
+      await firebaseLogout(firebase)
+      await loginWithEmailAndPassword(
+          firebase,
+          identityCredentials.email,
+          identityCredentials.password
+      )
+      console.log(await getCurrentUser(firebase)?.getIdToken())
+    }
+
+    return {
+      login,
+      ...toRefs(identityCredentials)
+    }
   }
 });
 </script>

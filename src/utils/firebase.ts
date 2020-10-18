@@ -21,13 +21,24 @@ export type dbType = firebase.firestore.Firestore
 export type firebaseDocumentType = firebase.firestore.DocumentReference
 export type firebaseTimeStampType = firebase.firestore.Timestamp
 export type firebaseUserType = firebase.User
+export type firebaseInternalProcessError = void | { errorCode: string, errorMessage: string }
 
-export const anonymousLogin = async (firebase: firebaseType): Promise<void | { errorCode: string, errorMessage: string }> => {
+export const anonymousLogin = async (firebase: firebaseType): Promise<firebaseInternalProcessError> => {
   await firebase.auth().signInAnonymously().catch(function (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
     return {errorCode, errorMessage}
   });
+  return
+}
+
+export const loginWithEmailAndPassword = async (firebase: firebaseType, email: string, password: string): Promise<firebaseInternalProcessError> => {
+  await firebase.auth().signInWithEmailAndPassword(email, password)
+    .catch(error => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      return {errorCode, errorMessage}
+    });
   return
 }
 
