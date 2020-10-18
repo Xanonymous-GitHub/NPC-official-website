@@ -2,6 +2,7 @@ package utils
 
 import (
 	"encoding/json"
+	"errors"
 	"io"
 	"net/http"
 )
@@ -27,4 +28,12 @@ func ParseJSONBody(r *http.Request, target interface{}) (int, string) {
 	}
 
 	return http.StatusOK, ""
+}
+
+func ParseRequestParameters(r *http.Request, key string) (string, error) {
+	keys, ok := r.URL.Query()[key]
+	if !ok || len(keys[0]) < 1 {
+		return "", errors.New("not found this parameter")
+	}
+	return keys[0], nil
 }

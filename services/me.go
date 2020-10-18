@@ -13,33 +13,33 @@ var (
 	app *firebase.App
 )
 
-type result struct {
-	Jwt string `json:"jwt"`
-}
-
 func init() {
 	app = InitializeApp(ctx)
 }
 
 func Me(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
-	case "POST":
-		requestData := &result{}
-
-		code, msg := utils.ParseJSONBody(r, requestData)
-		if msg != "" {
-			utils.HandleErrorMsg(w, msg, code)
+	case "GET":
+		jwt, err := utils.ParseRequestParameters(r, "jwt")
+		if err != nil {
+			utils.HandleErrorMsg(w, "please provide jwt", http.StatusForbidden)
 			return
 		}
 
-		decodedJwtData, err := utils.DecodeJwt(requestData.Jwt, ctx, app)
+		decodedJwtData, err := utils.DecodeJwt(jwt, ctx, app)
 		if err != nil {
 			utils.HandleErrorMsg(w, "Invalid jwt", http.StatusInternalServerError)
 			return
 		}
 
+		user, err := utils.FindUserData(decodedJwtData.UID, []string{"root", "administrator"}, ctx, app)
+		if err != nil {
+			utils.HandleErrorMsg(w, "user not found!", http.StatusNotFound)
+			return
+		}
+
 		w.Header().Set("Content-Type", "application/json")
-		err = json.NewEncoder(w).Encode(decodedJwtData)
+		err = json.NewEncoder(w).Encode(user)
 		if err != nil {
 			utils.HandleError(w, err, http.StatusInternalServerError)
 			return

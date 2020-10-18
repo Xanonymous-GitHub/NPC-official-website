@@ -1,6 +1,4 @@
-package services
-
-import "github.com/golang/protobuf/ptypes/timestamp"
+package models
 
 type Role string
 
@@ -29,6 +27,6 @@ type User struct {
 	HasBlueVerify bool                   `json:"has_blue_verify"`
 	HasGreyVerify bool                   `json:"has_grey_verify"`
 	IsGetClothes  bool                   `json:"is_get_clothes"`
-	RegisterTime  timestamp.Timestamp    `json:"register_time"`
+	RegisterTime  int                    `json:"register_time"`
 	Additional    map[string]interface{} `json:"additional"`
 }
