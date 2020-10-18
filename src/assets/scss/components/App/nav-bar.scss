@@ -52,6 +52,43 @@
       }
     }
 
+    .qrcode-logo {
+      height: 4vh;
+      width: auto;
+      transition: .3s;
+      justify-content: center;
+      cursor: pointer;
+
+      @media (max-width: 768px) {
+        position: absolute;
+        top: -2vh;
+        right: 60px;
+        height: 25px;
+      }
+
+      &:hover {
+        transition: .3s;
+        transition-timing-function: ease-in-out;
+        fill: darkorange;
+      }
+
+      &:active {
+        transition: .3s;
+        fill: #600b1e;
+      }
+    }
+
+    .login-button {
+      margin: 0 1em;
+      justify-self: center;
+      height: min-content;
+      opacity: .5;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
     .menu {
       display: flex;
       flex-direction: row;
@@ -59,6 +96,8 @@
       right: 0;
       width: min-content;
       max-width: 70%;
+      justify-content: center;
+      align-items: center;
 
       &-box {
         @extend %flex-space-between-set;

@@ -11,8 +11,8 @@
       <div class="slide-button slide-button__left">‹</div>
 
       <div class="menu-box">
-        <component :is="item.external?ExternalLink:InnerLink" :key="key" :to="item.link"
-                   v-for="(item, key) in menuItems">
+        <component :is="item.external?ExternalLink:InnerLink" v-for="(item, key) in menuItems" :key="key"
+                   :to="item.link">
           <div class="item">
             &#9733; {{ item.name }}
           </div>
@@ -21,6 +21,15 @@
       </div>
 
       <div class="slide-button slide-button__right">›</div>
+      <ExternalLink to="https://qrcode.ntut.club">
+        <svg class="qrcode-logo" fill="white" viewBox="0 0 1 1">
+          <use xlink:href="#qr-code.svg"/>
+          _
+        </svg>
+      </ExternalLink>
+      <button class="small regular-button login-button" disabled>
+        登入
+      </button>
     </div>
   </div>
 </template>
@@ -28,22 +37,25 @@
 <script lang="ts">
 import {defineComponent, defineAsyncComponent, onMounted} from 'vue';
 import '@/assets/images/npc_text.svg';
+import '@/assets/images/qr-code.svg';
 import '@/assets/scss/components/App/nav-bar.scss'
+import '@/assets/scss/components/App/regular-buttons.scss'
 import InnerLink from "@/components/App/InnerLink.vue";
 import ExternalLink from "@/components/App/ExternalLink.vue";
 
 export default defineComponent({
   name: "NavBar",
   components: {
+    ExternalLink,
     NavDrawer: defineAsyncComponent(() => import('@/components/App/NavDrawer.vue'))
   },
   setup() {
     const menuItems = [
-      {
-        name: "Home",
-        link: "/",
-        external: false
-      },
+      // {
+      //   name: "Home",
+      //   link: "/",
+      //   external: false
+      // },
       // {
       //   name: "關於",
       //   link: "/",
@@ -56,6 +68,11 @@ export default defineComponent({
       //   name: "社團歷史",
       //   link: "/"
       // },
+      {
+        name: "Facebook",
+        link: "https://www.facebook.com/NPC.OwO",
+        external: true
+      },
       {
         name: "CTF",
         link: "https://ctf.ntut.club",
