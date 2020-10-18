@@ -32,7 +32,7 @@ func Me(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		user, err := utils.FindUserData(decodedJwtData.UID, []string{"root", "administrator"}, ctx, app)
+		user, err := utils.FindUserData(decodedJwtData.UID, []string{"root", "administrator", "supervisor", "staff", "member", "guest"}, ctx, app)
 		if err != nil {
 			utils.HandleErrorMsg(w, "user not found!", http.StatusNotFound)
 			return
