@@ -1,6 +1,6 @@
 <template>
 
-  <Article bg-color="#16213e" button="立即報名" button-link="https://forms.gle/XMHSvUhFdztEAt5A6" text-color="white"
+  <Article bg-color="#16213e" button="立即報名" picture-flex-wrap="wrap" button-link="https://forms.gle/XMHSvUhFdztEAt5A6" text-color="white"
            title="Python 爬蟲應用">
     <template #picture>
       <img alt="" src="https://imgur.com/PjcmMdu.jpg">

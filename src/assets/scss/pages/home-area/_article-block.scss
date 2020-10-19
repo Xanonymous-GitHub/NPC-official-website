@@ -41,7 +41,7 @@
         border-radius: 15px;
         vertical-align: top;
         margin: 2em 3em;
-        max-height: 400px;
+        max-height: 450px;
         max-width: 450px;
 
         @media (max-width: 1100px) {
@@ -62,8 +62,8 @@
         }
 
         img {
-          width: auto;
-          height: 300px;
+          width: 100%;
+          height: auto;
           border-radius: 5px;
 
           @media (max-width: 800px) {
