@@ -22,14 +22,15 @@ func FindUserDocumentSnapshotAndRole(uid string, ctx Context, app *firebase.App)
 		return result, myRole, err
 	}
 
-	wg.Add(len(RoleList)) // set task number to sync.
 	for _, role := range RoleList {
+		wg.Add(1)
 		go func(wg *sync.WaitGroup, role Role) {
-			result, err = client.Collection(string(role)).Doc(uid).Get(ctx)
-			if err != nil {
+			snap, err := client.Collection(string(role)).Doc(uid).Get(ctx)
+			if err != nil || len(snap.Data()) == 0 {
 				wg.Done()
 				return
 			}
+			result = snap
 			founded = true
 			myRole = role
 			wg.Done()
@@ -46,7 +47,6 @@ func FindUserDocumentSnapshotAndRole(uid string, ctx Context, app *firebase.App)
 
 func ParseUserData(snapshot *firestore.DocumentSnapshot) (User, error) {
 	result := &User{}
-
 	jsonString, err := json.Marshal(snapshot.Data())
 	if err != nil {
 		return *result, err
