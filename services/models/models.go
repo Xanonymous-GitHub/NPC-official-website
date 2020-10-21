@@ -3,13 +3,18 @@ package models
 type Role string
 
 const (
-	ROOT          Role = "ROOT"
-	ADMINISTRATOR Role = "ADMINISTRATOR"
-	SUPERVISOR    Role = "SUPERVISOR"
-	STAFF         Role = "STAFF"
-	MEMBER        Role = "MEMBER"
-	GUEST         Role = "GUEST"
+	ROOT          Role = "root"
+	ADMINISTRATOR Role = "administrator"
+	SUPERVISOR    Role = "supervisor"
+	STAFF         Role = "staff"
+	MEMBER        Role = "member"
+	GUEST         Role = "guest"
+	UNKNOWN       Role = "unknown"
 )
+
+var RoleList = []Role{
+	ROOT, ADMINISTRATOR, SUPERVISOR, STAFF, MEMBER, GUEST,
+}
 
 type User struct {
 	Uid           string                 `json:"uid"`
