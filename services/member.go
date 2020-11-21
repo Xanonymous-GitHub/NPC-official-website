@@ -6,18 +6,18 @@ import (
 	"net/http"
 )
 
-type requestBody struct {
+type memberPostRequestBody struct {
 	Jwt string `json:"jwt"`
 }
 
 func Member(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
-	case "POST": /// @api => this api is for supervisors+ to create a club member. [Activity: CreateMember]
+	case http.MethodPost: /// @api => this api is for supervisors+ to create a club member. [Activity: CreateMember]
 		// get request body and parse.
-		requestData := &requestBody{}
-		code, msg := utils.ParseJSONBody(r, requestData)
-		if msg != "" {
-			utils.HandleErrorMsg(w, msg, code)
+		requestData := &memberPostRequestBody{}
+		err := utils.ParseJSONBody(r.Body, requestData)
+		if err != nil {
+			utils.HandleErrorMsg(w, "Invalid Request Body", http.StatusBadRequest)
 			return
 		}
 

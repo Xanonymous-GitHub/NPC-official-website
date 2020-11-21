@@ -8,7 +8,7 @@ import (
 
 func Me(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
-	case "GET": /// @api => this api is for everyone to get their user-data. [Activity: QuerySelf]
+	case http.MethodGet: /// @api => this api is for everyone to get their user-data. [Activity: QuerySelf]
 		// get jwt from request parameter.
 		jwt, err := utils.ParseRequestParameters(r, "jwt")
 		if err != nil {

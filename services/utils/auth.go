@@ -7,18 +7,26 @@ import (
 	. "github.com/Xanonymous-GitHub/NPC-official-website/services/models"
 )
 
+// initialized the user role as a unknown user.
 var CurrentUserRole = UNKNOWN
 
+// check if the currentUser has the privilege to execute the specific activity.
 func getPrivilege(activity Activity) bool {
+	// all activities and their privilege is defined in ActivityAuthMap
 	for _, role := range ActivityAuthMap[activity] {
+		// if currentUser's role is declared in this activity's privilege list, approve operation.
 		if role == CurrentUserRole {
 			return true
 		}
 	}
+
+	// can't found currentUser's role in privilege list, operation denied.
 	return false
 }
 
+// set CurrentUserRole, origin data from db.
 func grantPrivilege(uid string, ctx Context, app *firebase.App) error {
+	// find the role using uid from db.
 	_, role, err := FindUserDocumentSnapshotAndRole(uid, ctx, app)
 	if err != nil {
 		return err
