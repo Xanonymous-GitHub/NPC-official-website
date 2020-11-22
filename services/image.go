@@ -13,6 +13,14 @@ type ImagePostRequestBody struct {
 
 func Image(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
+	case http.MethodOptions:
+		// Set CORS headers for the preflight request
+		w.Header().Set("Access-Control-Allow-Origin", "*")
+		w.Header().Set("Access-Control-Allow-Methods", "POST")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+		w.Header().Set("Access-Control-Max-Age", "3600")
+		w.WriteHeader(http.StatusNoContent)
+		return
 	case http.MethodPost: /// @api => this api is for everyone to upload image to imagur.com. [Activity: UploadImage]
 		// request Content-Type must be multipart/form-data.
 
@@ -77,6 +85,8 @@ func Image(w http.ResponseWriter, r *http.Request) {
 				}
 			}
 		}
+		// Set CORS headers for request.
+		w.Header().Set("Access-Control-Allow-Origin", "*")
 
 		// response the url to client.
 		w.Header().Set("Content-Type", "application/json")
