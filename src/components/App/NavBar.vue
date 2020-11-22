@@ -111,7 +111,7 @@ export default defineComponent({
         for (let i = 0; i < steps + 1; i++) {
           const stepValue = easeInOutQuad(i, 0, speed * steps, steps);
           menuBox.scrollLeft += (stepValue - lastStepValue) * (type ? 1 : -1)
-          await new Promise(resolve => setTimeout(() => resolve(), 1))
+          await new Promise<void>(resolve => setTimeout(() => resolve(), 1))
           lastStepValue = stepValue
         }
       }

@@ -1,21 +1,21 @@
 <template>
-  <div :style="{backgroundColor:bgColor || 'rgba(245, 245, 247, 1)', color:textColor || 'black'}" class="article-block">
-    <div class="ribbon ribbon-top-right" v-if="badge"><span :style="{backgroundColor:badgeBg||null}">{{ badge }}</span>
+  <div :style="{background:bgColor || 'rgba(245, 245, 247, 1)', color:textColor || 'black'}" class="article-block">
+    <div v-if="badge" class="ribbon ribbon-top-right"><span :style="{backgroundColor:badgeBg||null}">{{ badge }}</span>
     </div>
     <div class="title">
       {{ title }}
       <div class="divider"/>
     </div>
-    <div :style="{flexWrap:pictureFlexWrap || null}" class="content">
-      <div class="article-picture">
+    <div :style="{flexWrap:pictureFlexWrap || null, flexDirection:pictureFlexDirection || null}" class="content">
+      <div :style="{maxWidth:pictureWidth || null, maxHeight:pictureHeight || null}" class="article-picture">
         <slot name="picture"></slot>
       </div>
       <div class="text-content">
         <slot name="textContent"></slot>
 
-        <ExternalLink :to="buttonLink" class="button"
-            rel="noreferrer noopener"
-            v-if="button">
+        <ExternalLink v-if="button" :to="buttonLink"
+                      class="button"
+                      rel="noreferrer noopener">
           <svg class="bottom-icon bottom-icon__white" viewBox="0 0 1 1">
             <use xlink:href="#arrow-right-solid.svg"/>
           </svg>
@@ -34,7 +34,7 @@ import ExternalLink from "@/components/App/ExternalLink.vue";
 
 export default defineComponent({
   name: "Article",
-  components:{
+  components: {
     ExternalLink
   },
   props: {
@@ -61,6 +61,15 @@ export default defineComponent({
       type: String
     },
     pictureFlexWrap: {
+      type: String
+    },
+    pictureFlexDirection: {
+      type: String
+    },
+    pictureWidth: {
+      type: String
+    },
+    pictureHeight: {
       type: String
     }
   },

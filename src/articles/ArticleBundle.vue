@@ -1,56 +1,49 @@
 <template>
 
-<!--  <Article bg-color="#16213e" button="立即報名" picture-flex-wrap="wrap" button-link="https://forms.gle/XMHSvUhFdztEAt5A6" text-color="white"-->
-<!--           title="Python 爬蟲應用">-->
-<!--    <template #picture>-->
-<!--      <img alt="" src="https://imgur.com/PjcmMdu.jpg">-->
-<!--    </template>-->
-<!--    <template #textContent>-->
-<!--      上完基礎課程之後，接下來當然就是好玩的應用課程啦～-->
-<!--      <br/>-->
-<!--      這堂課中講師會一步一步的從套件安裝，講解到網頁的分析方法-->
-<!--      <br/>-->
-<!--      讓你能夠自由自在的爬取網頁，擷取任何你想獲得的內容！-->
-<!--      <br/>-->
-<!--      心動了嗎？趕緊來報名參加吧！-->
-<!--      <br/>-->
-<!--      <br/>-->
-<!--      【課程介紹】-->
-<!--      <br/>-->
-<!--      • 網頁分析-->
-<!--      <br/>-->
-<!--      • 使用套件擷取網頁內容-->
-<!--      <br/>-->
-<!--      • 此堂課為應用課程，建議有 Python 基礎知識再來參加-->
-<!--      <br/>-->
-<!--      <br/>-->
-<!--      【課程資訊】-->
-<!--      <br/>-->
-<!--      • 時 間：10/20 (二) 19:30~21:30 ( 19:20 入場 )-->
-<!--      <br/>-->
-<!--      • 地 點：共同科館 312 教室-->
-<!--      <br/>-->
-<!--      • 主辦單位：北科程式設計研究社-->
-<!--      <br/>-->
-<!--      <br/>-->
-<!--      【備註】-->
-<!--      <br/>-->
-<!--      1. 教室內請勿飲食-->
-<!--      <br/>-->
-<!--      2. 非社員需繳交 50 元課程費用，或者繳交 500 元直接入社-->
-<!--      <br/>-->
-<!--      3. 進入教室前務必戴上口罩，體溫異常者不得進場-->
-<!--      <br/>-->
-<!--      4. 上課地點為電腦教室，不過歡迎各位學員攜帶自己的筆電-->
-<!--      <br/>-->
-<!--      5. 學校網路有可能會阻擋特並連結，若無法開啟建議開啟自己網路-->
-<!--      <br/>-->
-<!--    </template>-->
-<!--  </Article>-->
-
-  <Article button="立即參加" button-link="https://ctf.ntut.club" title="CTF 搶旗賽">
+  <Article
+      badge="HOT!!"
+      badge-bg="red"
+      bg-color="linear-gradient(315deg, hsla(0, 0%, 0%, 1) 0%, hsla(253, 100%, 10%, 1) 34%, hsla(235, 100%, 17%, 1) 67%, hsla(240, 100%, 23%, 1) 100%)"
+      button="立即報名"
+      button-link="https://forms.gle/LN9VbY3xhXrGknpW6"
+      picture-flex-direction="column"
+      picture-flex-wrap="wrap"
+      picture-height="640px"
+      picture-width="1240px"
+      text-color="white"
+      title="Unity 連續社課"
+  >
     <template #picture>
-      <img alt="" src="https://imgur.com/gs3j7cz.jpg">
+      <img alt="" src="https://i.imgur.com/2A6EfpL.webp">
+    </template>
+    <template #textContent>
+      你是否十分熱愛遊玩遊戲，而想嘗試看看自己製作遊戲？
+      <br/>
+      若你有這個念頭，但還未付諸行動，那就快來參加這次的 Unity 社課吧～
+      <br/>
+      本次課程為期四周，每周一堂，將利用四堂課的時間，教你如何完成一個小型的射擊遊戲！
+      <br/>
+      <br/>
+      <span style="white-space: pre-line;word-break: break-word">
+        時 間：11/24 (二)、12/01 (二) 、12/08 (二) 、12/15 (二)，
+        <span style="color: yellow">
+          19:30~21:30 ( 19:20 入場 )
+        </span>
+        <br/>
+        地 點：共同科館 312 教室
+        <br/>
+      </span>
+      <p style="font-size: xx-small;color: darkorange">
+        四堂課程皆有關聯性，且因為名額限制，為了確保出席率，首次上課需
+        <span style="color: red;font-size: medium;font-weight: bolder">現場繳交</span>
+        400 元保證金，詳情請見報名表單
+      </p>
+    </template>
+  </Article>
+
+  <Article button="開始挑戰" button-link="https://ctf.ntut.club" title="CTF 搶旗賽">
+    <template #picture>
+      <img alt="" src="https://i.imgur.com/gs3j7cz.webp">
     </template>
     <template #textContent>
       在許多的競賽遊戲中，奪下對手的旗幟是一種勝利的宣告。
@@ -71,7 +64,7 @@
   <Article badge="FREE" badge-bg="#00C33A"
            title="TAT - 北科生活">
     <template #picture>
-      <img alt="" src="https://imgur.com/pMSmPA8.png" style="border-radius: 30px;box-shadow: #a9a9a9 1px 1px 40px">
+      <img alt="" src="https://i.imgur.com/pMSmPA8.webp" style="border-radius: 30px;box-shadow: #a9a9a9 1px 1px 40px">
     </template>
     <template #textContent>
       方便，簡潔，快速，強大，豐富您的北科生活！
@@ -87,13 +80,13 @@
       <div style="display: flex;flex-wrap: wrap">
         <span style="margin: 0 1em;">
           <a href="https://apps.apple.com/tw/app/tat-北科生活/id1513875597" rel="noreferrer noopener" target="_blank">
-          <img alt="available on the appStore" src="https://imgur.com/S12KIOz.png" style="width: 200px">
+          <img alt="available on the appStore" src="https://i.imgur.com/S12KIOz.webp" style="width: 200px">
         </a>
         </span>
         <span style="margin: 0 1em;">
           <a href="https://play.google.com/store/apps/details?id=club.ntut.npc.tat" rel="noreferrer noopener"
              target="_blank">
-          <img alt="get it on google play" src="https://imgur.com/2ClcPEL.png" style="width: 200px">
+          <img alt="get it on google play" src="https://i.imgur.com/2ClcPEL.webp" style="width: 200px">
         </a>
         </span>
       </div>
@@ -103,7 +96,7 @@
   <!-- 入社引導 <[MAIN]> -->
   <Article id="join-us-article" button="線上聊天" button-link="https://m.me/NPC.OwO" title="如何加入我們？">
     <template #picture>
-      <img alt="" src="https://i.imgur.com/rkobsqy.jpg">
+      <img alt="" src="https://i.imgur.com/rkobsqy.webp">
     </template>
     <template #textContent>
       你也想成為 NPC 的一員嗎？
