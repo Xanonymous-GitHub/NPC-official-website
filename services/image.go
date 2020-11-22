@@ -58,8 +58,6 @@ func Image(w http.ResponseWriter, r *http.Request) {
 			fileType = string(JPG)
 		case "image/png":
 			fileType = string(PNG)
-		case "image/svg+xml":
-			fileType = string(SVG)
 		case "image/gif":
 			fileType = string(GIF)
 		default:
@@ -75,7 +73,7 @@ func Image(w http.ResponseWriter, r *http.Request) {
 
 		// make file url by the file type that user want.
 		var url string
-		supportedTypesInResponseUrl := []FileType{JPG, PNG, SVG, GIF, WEBP}
+		supportedTypesInResponseUrl := []FileType{JPG, PNG, GIF, WEBP}
 		url = uploadResult.Data.Link
 		if preferredFileType != FileType(fileType) {
 			for _, _type := range supportedTypesInResponseUrl {
