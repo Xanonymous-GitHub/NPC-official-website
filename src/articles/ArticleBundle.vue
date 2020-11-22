@@ -3,25 +3,36 @@
   <Article
       badge="HOT!!"
       badge-bg="red"
-      bg-color="linear-gradient(315deg, hsla(0, 0%, 0%, 1) 0%, hsla(253, 100%, 10%, 1) 34%, hsla(235, 100%, 17%, 1) 67%, hsla(240, 100%, 23%, 1) 100%)"
+      bg-color="
+        linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
+        linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
+        linear-gradient(315deg, black 25%, transparent 25%),
+        linear-gradient(45deg, black 25%, transparent 25%)
+      "
       button="立即報名"
       button-link="https://forms.gle/LN9VbY3xhXrGknpW6"
       picture-flex-direction="column"
       picture-flex-wrap="wrap"
-      picture-height="640px"
-      picture-width="1240px"
+      picture-height="620px"
+      picture-width="960px"
       text-color="white"
       title="Unity 連續社課"
+      style="background-size: 2em 2em;background-color: #111111"
   >
     <template #picture>
-      <img alt="" src="https://i.imgur.com/2A6EfpL.webp">
+      <img alt="" src="https://i.imgur.com/BbSEXoL.webp">
     </template>
     <template #textContent>
       你是否十分熱愛遊玩遊戲，而想嘗試看看自己製作遊戲？
       <br/>
+      <br/>
+      <br/>
       若你有這個念頭，但還未付諸行動，那就快來參加這次的 Unity 社課吧～
       <br/>
+      <br/>
+      <br/>
       本次課程為期四周，每周一堂，將利用四堂課的時間，教你如何完成一個小型的射擊遊戲！
+      <br/>
       <br/>
       <br/>
       <span style="white-space: pre-line;word-break: break-word">
