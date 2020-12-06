@@ -1,7 +1,13 @@
 <template>
   <div class="footer">
+    <div class="npc-logo">
+      <svg fill="white" viewBox="0 0 2703 630">
+        <use xlink:href="#npc_text.svg"/>
+        _
+      </svg>
+    </div>
     <div class="icons">
-      <ExternalLink :key="key" :to="svg.link" v-for="(svg, key) in svgList">
+      <ExternalLink v-for="(svg, key) in svgList" :key="key" :to="svg.link">
         <svg fill="white" viewBox="0 0 1 1">
           <use :xlink:href="'#'+svg.name+'.svg'"/>
           _
@@ -21,6 +27,8 @@ import '@/assets/images/facebook-brands.svg'
 import '@/assets/images/instagram-brands.svg'
 import '@/assets/images/youtube-brands.svg'
 import '@/assets/images/github-brands.svg'
+import '@/assets/images/linkedln.svg'
+import '@/assets/images/npc_text.svg'
 import ExternalLink from "@/components/App/ExternalLink.vue";
 
 export default defineComponent({
@@ -33,7 +41,8 @@ export default defineComponent({
       {name: 'facebook-brands', link: 'https://www.facebook.com/NPC.OwO'},
       {name: 'instagram-brands', link: 'https://www.instagram.com/npc.designer'},
       {name: 'youtube-brands', link: 'https://www.youtube.com/channel/UCzYSXfm15W7QNkomC6lLXxg'},
-      {name: 'github-brands', link: 'https://github.com/NTUT-NPC'}
+      {name: 'github-brands', link: 'https://github.com/NTUT-NPC'},
+      {name: 'linkedln', link: 'https://www.linkedin.com/groups/13905422'}
     ]
 
     return {svgList}

@@ -14,6 +14,16 @@
       bottom: 1em;
     }
 
+    .npc-logo {
+      position: relative;
+      margin: auto;
+
+      svg {
+        height: 10px;
+        width: auto;
+      }
+    }
+
     .icons {
       display: flex;
       flex-direction: row;
@@ -21,7 +31,7 @@
 
       svg {
         height: 30px;
-        margin: .5em;
+        margin: .3em;
         padding: .5em;
         transition: .2s ease-in-out;
 

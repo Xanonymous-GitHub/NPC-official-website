@@ -20,7 +20,14 @@
       </svg>
     </a>
     <div class="splash">
-      <div class="drawer"/>
+      <div class="drawer">
+        <div class="npc-logo">
+          <svg fill="white" viewBox="0 0 2703 630">
+            <use xlink:href="#npc_text.svg"/>
+            _
+          </svg>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="bottom-layer"/>

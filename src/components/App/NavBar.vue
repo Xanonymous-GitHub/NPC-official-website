@@ -78,11 +78,11 @@ export default defineComponent({
         link: "https://ctf.ntut.club",
         external: true
       },
-      {
-        name: "HEY！ PTT",
-        link: "https://ptt.npc-go.com/",
-        external: true
-      },
+      // {
+      //   name: "HEY！ PTT",
+      //   link: "https://ptt.npc-go.com/",
+      //   external: true
+      // },
       {
         name: "GitHub",
         link: "https://github.com/NTUT-NPC",

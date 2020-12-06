@@ -20,7 +20,6 @@ import nyancat from "@/utils/nyancat";
 import NavBar from "@/components/App/NavBar.vue";
 import Footer from "@/components/App/Footer.vue";
 import firebase, {db} from "@/utils/firebase";
-
 export default defineComponent({
   name: "App",
   props: {},
@@ -40,12 +39,10 @@ export default defineComponent({
         }, delay)
       }
     }
-
     function onOrientationchange() {
       window.removeEventListener("orientationchange", debounce(onOrientationchange))
       window.location.reload()
     }
-
     onMounted(() => {
       window.addEventListener("orientationchange", debounce(onOrientationchange))
       nyancat()
@@ -54,15 +51,12 @@ export default defineComponent({
       }, {passive: false})
       document.dispatchEvent(new Event('app-rendered'));
     })
-
     onBeforeUnmount(async () => {
       window.removeEventListener("orientationchange", debounce(onOrientationchange))
       await firebase.auth().signOut()
     })
-
     provide('firebase', firebase)
     provide('db', db)
-
     return {}
   }
 });
