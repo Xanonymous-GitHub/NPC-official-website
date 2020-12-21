@@ -31,6 +31,7 @@ import {defineComponent, onMounted} from 'vue';
 import '@/assets/scss/pages/home-area/_article-block.scss';
 import '@/assets/images/arrow-right-solid.svg'
 import ExternalLink from "@/components/App/ExternalLink.vue";
+import {scrollToId} from "@/utils/scroll";
 
 export default defineComponent({
   name: "Article",
@@ -76,12 +77,9 @@ export default defineComponent({
   setup() {
     onMounted(() => {
       const joinUsButton = document.getElementById('join-us') as HTMLLinkElement
-      const joinUsArticle = document.getElementById('join-us-article') as HTMLDivElement
       joinUsButton.addEventListener('click', function (e) {
         e.preventDefault();
-        joinUsArticle.scrollIntoView({
-          behavior: 'smooth'
-        })
+        scrollToId(document.querySelector('#app') as HTMLBodyElement, 'join-us-article', 300)
       });
     });
     return

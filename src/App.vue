@@ -15,11 +15,11 @@
 
 <script lang="ts">
 import "@/assets/scss/app.scss";
-import {defineComponent, onMounted, onBeforeUnmount, provide} from "vue";
+import {defineComponent, onMounted, onBeforeUnmount} from "vue";
 import nyancat from "@/utils/nyancat";
 import NavBar from "@/components/App/NavBar.vue";
 import Footer from "@/components/App/Footer.vue";
-import firebase, {db} from "@/utils/firebase";
+// import firebase, {db} from "@/utils/firebase";
 export default defineComponent({
   name: "App",
   props: {},
@@ -53,10 +53,10 @@ export default defineComponent({
     })
     onBeforeUnmount(async () => {
       window.removeEventListener("orientationchange", debounce(onOrientationchange))
-      await firebase.auth().signOut()
+      // await firebase.auth().signOut()
     })
-    provide('firebase', firebase)
-    provide('db', db)
+    // provide('firebase', firebase)
+    // provide('db', db)
     return {}
   }
 });
