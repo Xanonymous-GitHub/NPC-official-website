@@ -39,10 +39,12 @@ export default defineComponent({
         }, delay)
       }
     }
+
     function onOrientationchange() {
       window.removeEventListener("orientationchange", debounce(onOrientationchange))
       window.location.reload()
     }
+
     onMounted(() => {
       window.addEventListener("orientationchange", debounce(onOrientationchange))
       nyancat()

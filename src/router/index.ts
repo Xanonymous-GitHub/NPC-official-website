@@ -21,7 +21,7 @@ const routes: Array<RouteRecordRaw> = [
       )
   },
   {
-    path: '/img',
+    path: '/imgur',
     name: 'UploadImg',
     component: () => import(
       /* webpackChunkName: "UploadImg" */

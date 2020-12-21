@@ -7,11 +7,16 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint --fix",
     "build-analyze": "vue-cli-service build --analyze",
-    "upgrade": "npm upgrade --all && ncu -u",
-    "deploy:dev": "sh ./deploy-to-preview.sh"
+    "deploy:dev": "sh ./deploy-to-preview.sh",
+    "upgrade": "npm upgrade --all && ncu -u"
   },
   "dependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "autoprefixer": "^9.8.6",
     "core-js": "^3.8.1",
+    "postcss": "^7.0.35",
+    "postcss-import": "12.0.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.2",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-beta.13",
     "vuex": "^4.0.0-0"
@@ -19,7 +24,6 @@
   "devDependencies": {
     "@babel/polyfill": "^7.12.1",
     "@gfx/zopfli": "^1.0.15",
-    "@tailwindcss/postcss7-compat": "^2.0.2",
     "@types/body-scroll-lock": "^2.6.1",
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
@@ -31,7 +35,6 @@
     "@vue/cli-service": "^4.5.9",
     "@vue/compiler-sfc": "^3.0.4",
     "@vue/eslint-config-typescript": "^7.0.0",
-    "autoprefixer": "9.8.6",
     "body-scroll-lock": "^3.1.5",
     "brotli-webpack-plugin": "^1.1.0",
     "compression-webpack-plugin": "^7.1.0",
@@ -44,7 +47,6 @@
     "lint-staged": "^10.5.3",
     "patch-package": "^6.2.2",
     "postcss-assets": "^5.0.0",
-    "postcss-import": "12.0.1",
     "postcss-load-config": "^3.0.0",
     "postcss-loader": "^4.1.0",
     "postcss-nested": "^5.0.3",
@@ -56,9 +58,9 @@
     "sass-loader": "^10.1.0",
     "stylelint": "^13.8.0",
     "svg-sprite-loader": "^5.2.1",
-    "tailwindcss": "^2.0.2",
     "three-dots": "^0.2.0",
     "typescript": "^4.1.3",
+    "vue-cli-plugin-tailwind": "^2.0.1",
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.12",
     "webpack-bundle-analyzer": "^4.3.0"

@@ -90,7 +90,7 @@ export default defineComponent({
       },
       {
         name: "UploadImg",
-        link: "/img"
+        link: "/imgur"
       },
       // {
       //   name: "Mr. Coding",

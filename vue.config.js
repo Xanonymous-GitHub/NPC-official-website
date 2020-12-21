@@ -19,6 +19,7 @@ const renderRoutes = (() => {
   const routes = [
     '/',
     '/welcome',
+    '/imgur'
     // '/dashboard',
     // '/login',
     // '/registration',
@@ -145,6 +146,7 @@ module.exports = {
       renderRoutes: [
         '/',
         '/welcome',
+        '/imgur'
         // '/dashboard',
         // '/login',
         // '/registration',

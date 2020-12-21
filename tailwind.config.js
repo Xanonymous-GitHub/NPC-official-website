@@ -1,15 +1,12 @@
-import colors from '@tailwindcss/postcss7-compat/colors'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   purge: {
-    enabled: process.env.ENV === 'production',
-    content: [
-      './index.html',
-      './src/**/*.{vue,js,ts,jsx,tsx}'
-    ]
+    content: ['./public/**/*.html', './src/**/*.vue']
   },
   presets: [],
-  darkMode: false,
+  darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
       sm: '640px',
@@ -746,7 +743,7 @@ module.exports = {
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
     backgroundClip: ['responsive'],
-    backgroundColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus', 'active'],
+    backgroundColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
     backgroundImage: ['responsive'],
     backgroundOpacity: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus'],
     backgroundPosition: ['responsive'],
