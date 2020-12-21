@@ -1,5 +1,10 @@
 @import "./shared";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
 @include _font;
 
 html,

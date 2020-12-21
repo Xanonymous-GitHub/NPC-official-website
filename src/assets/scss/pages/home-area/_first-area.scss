@@ -161,9 +161,12 @@
         @include button__white("&__button");
 
         .bottom-icon {
-          margin: auto 0;
+          top: 50%;
+          transform: translateY(-50%);
           height: 30%;
+          position: relative;
           width: auto;
+          //margin: 0 0 0 .7em;
 
           &__blue {
             fill: #0957ff;
