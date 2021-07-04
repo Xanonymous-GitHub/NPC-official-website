@@ -15,7 +15,7 @@
       </ExternalLink>
     </div>
     <div class="copyright">
-      Copyright <b style="font-family: sans-serif">&copy;</b> 2020 NTUT Programming Club, All rights reserved.
+      Copyright <b style="font-family: sans-serif">&copy;</b> 2021 NTUT Programming Club, All rights reserved.
     </div>
   </div>
 </template>
