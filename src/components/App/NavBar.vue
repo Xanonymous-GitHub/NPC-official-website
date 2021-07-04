@@ -88,6 +88,10 @@ export default defineComponent({
         link: "https://github.com/NTUT-NPC",
         external: true
       },
+      {
+        name: "UploadImg",
+        link: "/imgur"
+      },
       // {
       //   name: "Mr. Coding",
       //   link: "/"

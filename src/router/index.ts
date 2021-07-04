@@ -20,6 +20,15 @@ const routes: Array<RouteRecordRaw> = [
       '@/pages/Welcome.vue'
       )
   },
+  {
+    path: '/imgur',
+    name: 'UploadImg',
+    component: () => import(
+      /* webpackChunkName: "UploadImg" */
+      /* webpackPrefetch: true */
+      '@/pages/UploadImg.vue'
+      )
+  },
   // {
   //   path: '/login',
   //   name: 'Login',

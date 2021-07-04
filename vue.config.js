@@ -5,12 +5,6 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 // const zopfli = require("@gfx/zopfli");
 // const BrotliPlugin = require("brotli-webpack-plugin");
 const PrerenderSpaPlugin = require("prerender-spa-plugin");
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-const postcssPresetEnv = require('postcss-preset-env');
-const postcssImport = require('postcss-import');
-const postcssPlugin = require('postcss-plugin');
-const postcssAssets = require('postcss-assets');
 // const productionGzipExtensions = /\.(js|css|json|txt|html)(\?.*)?$/i;
 const isProduction = process.env.NODE_ENV === 'production'
 const needBundleAnalysis = process.argv.includes('--analyze')
@@ -19,6 +13,7 @@ const renderRoutes = (() => {
   const routes = [
     '/',
     '/welcome',
+    '/imgur'
     // '/dashboard',
     // '/login',
     // '/registration',
@@ -122,19 +117,6 @@ module.exports = {
 
   css: {
     sourceMap: false,
-    loaderOptions: {
-      postcss: {
-        map: false,
-        plugins: [
-          autoprefixer,
-          cssnano,
-          postcssPresetEnv,
-          postcssImport,
-          postcssPlugin,
-          postcssAssets
-        ]
-      },
-    }
   },
 
   lintOnSave: process.env.NODE_ENV === 'development',
@@ -145,6 +127,7 @@ module.exports = {
       renderRoutes: [
         '/',
         '/welcome',
+        '/imgur'
         // '/dashboard',
         // '/login',
         // '/registration',

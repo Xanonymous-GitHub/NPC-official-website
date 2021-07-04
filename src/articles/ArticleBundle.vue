@@ -1,31 +1,56 @@
 <template>
 
-  <Article
-      badge="WE NEED YOU"
-      badge-bg="orange"
-      bg-color="
-        linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
-        linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
-        linear-gradient(315deg, black 25%, transparent 25%),
-        linear-gradient(45deg, black 25%, transparent 25%)
-      "
-      button="填寫表單"
-      button-link="https://forms.gle/Ce3bVvZptmjZeufE8"
-      text-color="white"
-      pictureWidth="600px"
-      title="NPC 儲備幹部"
-      style="background-size: 2em 2em;background-color: #111111"
-  >
-    <template #picture>
-      <img alt="" src="https://i.imgur.com/PvjHIc6.webp">
-    </template>
-    <template #textContent>
-      NPC 徵幹部啦～<br/><br/>
-      想要在大學四年間有不一樣的體驗嘛！想要認識更多志同道合的好夥伴嗎？<br/><br/>
-      成為 NPC 的幹部你就全部都能擁有！<br/><br/>
-      更多詳細資訊都隱藏在表單內！<br/><br/>想擔任 NPC 幹部的人絕對不能錯過這份表單喔！<br/><br/>
-    </template>
-  </Article>
+  <!--  <Article-->
+  <!--      badge="HOT!!"-->
+  <!--      badge-bg="red"-->
+  <!--      bg-color="-->
+  <!--        linear-gradient(135deg, black 25%, transparent 25%) -50px 0,-->
+  <!--        linear-gradient(225deg, black 25%, transparent 25%) -50px 0,-->
+  <!--        linear-gradient(315deg, black 25%, transparent 25%),-->
+  <!--        linear-gradient(45deg, black 25%, transparent 25%)-->
+  <!--      "-->
+  <!--      button="立即報名"-->
+  <!--      button-link="https://forms.gle/LN9VbY3xhXrGknpW6"-->
+  <!--      picture-flex-direction="column"-->
+  <!--      picture-flex-wrap="wrap"-->
+  <!--      picture-height="620px"-->
+  <!--      picture-width="960px"-->
+  <!--      text-color="white"-->
+  <!--      title="Unity 連續社課"-->
+  <!--      style="background-size: 2em 2em;background-color: #111111"-->
+  <!--  >-->
+  <!--    <template #picture>-->
+  <!--      <img alt="" src="https://i.imgur.com/BbSEXoL.webp">-->
+  <!--    </template>-->
+  <!--    <template #textContent>-->
+  <!--      你是否十分熱愛遊玩遊戲，而想嘗試看看自己製作遊戲？-->
+  <!--      <br/>-->
+  <!--      <br/>-->
+  <!--      <br/>-->
+  <!--      若你有這個念頭，但還未付諸行動，那就快來參加這次的 Unity 社課吧～-->
+  <!--      <br/>-->
+  <!--      <br/>-->
+  <!--      <br/>-->
+  <!--      本次課程為期四周，每周一堂，將利用四堂課的時間，教你如何完成一個小型的射擊遊戲！-->
+  <!--      <br/>-->
+  <!--      <br/>-->
+  <!--      <br/>-->
+  <!--      <span style="white-space: pre-line;word-break: break-word">-->
+  <!--        時 間：11/24 (二)、12/01 (二) 、12/08 (二) 、12/15 (二)，-->
+  <!--        <span style="color: yellow">-->
+  <!--          19:30~21:30 ( 19:20 入場 )-->
+  <!--        </span>-->
+  <!--        <br/>-->
+  <!--        地 點：共同科館 312 教室-->
+  <!--        <br/>-->
+  <!--      </span>-->
+  <!--      <p style="font-size: xx-small;color: darkorange">-->
+  <!--        四堂課程皆有關聯性，且因為名額限制，為了確保出席率，首次上課需-->
+  <!--        <span style="color: red;font-size: medium;font-weight: bolder">現場繳交</span>-->
+  <!--        400 元保證金，詳情請見報名表單-->
+  <!--      </p>-->
+  <!--    </template>-->
+  <!--  </Article>-->
 
   <Article button="開始挑戰" button-link="https://ctf.ntut.club" title="CTF 搶旗賽">
     <template #picture>
@@ -98,9 +123,8 @@
   <Article id="about-block" picture-flex-wrap="wrap" title="About us">
     <template #picture>
       <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-              frameborder="0"
               src="https://www.youtube-nocookie.com/embed/qGNUgFJYMdI"
-              title="介紹影片"/>
+              style="border: 0" title="介紹影片"/>
     </template>
     <template #textContent>
       為了使更多人能夠體會程式的魅力，我們致力於北科校園推廣資訊技術，開設不同語言的課程，讓彼此體驗程式的美好。
