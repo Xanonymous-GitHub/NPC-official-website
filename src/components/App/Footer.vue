@@ -29,7 +29,9 @@ import '@/assets/images/youtube-brands.svg'
 import '@/assets/images/github-brands.svg'
 import '@/assets/images/linkedln.svg'
 import '@/assets/images/npc_text.svg'
+import '@/assets/images/discord.svg'
 import ExternalLink from "@/components/App/ExternalLink.vue";
+import {joinDiscordLink} from "@/utils/discordLinkLoader";
 
 export default defineComponent({
   name: "Footer",
@@ -39,6 +41,7 @@ export default defineComponent({
   setup() {
     const svgList = [
       {name: 'facebook-brands', link: 'https://www.facebook.com/NPC.OwO'},
+      {name: 'discord', link: joinDiscordLink},
       {name: 'instagram-brands', link: 'https://www.instagram.com/npc.designer'},
       {name: 'youtube-brands', link: 'https://www.youtube.com/channel/UCzYSXfm15W7QNkomC6lLXxg'},
       {name: 'github-brands', link: 'https://github.com/NTUT-NPC'},
