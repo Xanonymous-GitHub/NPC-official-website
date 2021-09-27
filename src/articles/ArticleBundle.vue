@@ -52,7 +52,7 @@
   <!--    </template>-->
   <!--  </Article>-->
 
-  <Article button="開始挑戰" button-link="https://entroy.tk" title="CTF 搶旗賽">
+  <Article :buttons="ctfArticleButtons" title="CTF 搶旗賽">
     <template #picture>
       <img alt="" src="https://i.imgur.com/gs3j7cz.webp">
     </template>
@@ -105,7 +105,7 @@
   </Article>
 
   <!-- 入社引導 <[MAIN]> -->
-  <Article id="join-us-article" button="線上聊天" button-link="https://m.me/NPC.OwO" title="如何加入我們？">
+  <Article id="join-us-article" :buttons="joinUsArticleButtons" title="如何加入我們？" bg-color="#5865F2" textColor="white">
     <template #picture>
       <img alt="" src="https://i.imgur.com/rkobsqy.webp">
     </template>
@@ -116,6 +116,9 @@
       您可以在我們的社課或定期聚找 NPC 的工作人員，或者私訊 Facebook 粉專說要入社，我們就會和您接洽幫您處理入社事宜。
       <br/><br/>
       記得在當天準備 500 元社費，你就能享有終生的社員資格囉！
+    </template>
+    <template #Discord-svg-slot>
+      <use xlink:href="#discord-white.svg"/>
     </template>
   </Article>
 
@@ -144,17 +147,46 @@
   </Article>
 </template>
 <script lang="ts">
-import {defineComponent, defineAsyncComponent} from 'vue';
+import {defineComponent, defineAsyncComponent, reactive, toRefs} from 'vue';
 import '@/assets/scss/components/App/buttons.scss'
+import {joinDiscordLink} from "@/utils/discordLinkLoader";
 
 // import SVGs here ================
 import '@/articles/articleResources/tea.svg';
+import '@/articles/articleResources/discord-white.svg'
 // =================================
 
 export default defineComponent({
   name: "ArticleBundle",
   components: {
     Article: defineAsyncComponent(() => import('@/components/home/Article.vue')),
+  },
+  setup(){
+    const articleButtons = reactive({
+      joinUsArticleButtons: [
+        {
+          displayText: 'Discord',
+          link: joinDiscordLink,
+          colorClasses: 'dark',
+          specialSVG: true
+        },
+        {
+          displayText: '線上聊天',
+          link: 'https://m.me/NPC.OwO',
+          colorClasses: 'white'
+        }
+      ],
+      ctfArticleButtons: [
+        {
+          displayText: '開始挑戰',
+          link: 'https://entroy.tk'
+        }
+      ]
+    })
+
+    return {
+      ...toRefs(articleButtons),
+    }
   }
 })
 </script>

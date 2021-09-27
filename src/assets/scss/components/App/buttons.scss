@@ -76,9 +76,25 @@
     }
   }
 
+  &.dark:hover {
+    background-color: red;
+  }
+
+  &.white:hover {
+    background-color: orange;
+  }
+
   &:active {
     transition: .3s ease-in-out;
     background-color: darkblue;
+  }
+
+  &.dark:active {
+    background-color: darkred;
+  }
+
+  &.white:active {
+    background-color: darkorange;
   }
 
   &.smoke {

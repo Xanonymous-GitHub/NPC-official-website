@@ -13,25 +13,35 @@
       <div class="text-content">
         <slot name="textContent"></slot>
 
-        <ExternalLink v-if="button" :to="buttonLink"
-                      class="button"
-                      rel="noreferrer noopener">
+        <span v-if="buttons" class="flex flex-auto flex-wrap">
+          <ExternalLink v-for="(button, key) in buttons" :key="key+'_article_button'" :class="'button '+button.colorClasses"
+                        :to="button.link"
+                        rel="noreferrer noopener">
           <svg class="bottom-icon bottom-icon__white" viewBox="0 0 1 1">
-            <use xlink:href="#arrow-right-solid.svg"/>
+            <slot v-if="button.specialSVG" :name="button.displayText+'-svg-slot'"></slot>
+            <use v-else xlink:href="#arrow-right-solid.svg"/>
           </svg>
-          {{ button }}
+          {{ button.displayText }}
         </ExternalLink>
+        </span>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted} from 'vue';
+import {defineComponent, onMounted, PropType} from 'vue';
 import '@/assets/scss/pages/home-area/_article-block.scss';
 import '@/assets/images/arrow-right-solid.svg'
 import ExternalLink from "@/components/App/ExternalLink.vue";
 import {scrollToId} from "@/utils/scroll";
+
+export interface ArticleButton {
+  displayText: string
+  link: string
+  colorClasses: string
+  specialSVG: boolean
+}
 
 export default defineComponent({
   name: "Article",
@@ -40,38 +50,35 @@ export default defineComponent({
   },
   props: {
     title: {
-      type: String,
+      type: Object as PropType<string>,
       required: true
     },
     bgColor: {
-      type: String,
+      type: Object as PropType<string>,
     },
     textColor: {
-      type: String
+      type: Object as PropType<string>
     },
     badge: {
-      type: String
+      type: Object as PropType<string>
     },
     badgeBg: {
-      type: String
+      type: Object as PropType<string>
     },
-    button: {
-      type: String
-    },
-    buttonLink: {
-      type: String
+    buttons: {
+      type: Object as PropType<Array<ArticleButton>>
     },
     pictureFlexWrap: {
-      type: String
+      type: Object as PropType<string>
     },
     pictureFlexDirection: {
-      type: String
+      type: Object as PropType<string>
     },
     pictureWidth: {
-      type: String
+      type: Object as PropType<string>
     },
     pictureHeight: {
-      type: String
+      type: Object as PropType<string>
     }
   },
   setup() {
