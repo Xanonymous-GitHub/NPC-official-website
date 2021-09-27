@@ -44,6 +44,7 @@ import InnerLink from "@/components/App/InnerLink.vue";
 import ExternalLink from "@/components/App/ExternalLink.vue";
 import {scrollToId} from "@/utils/scroll";
 import uaParser from "ua-parser-js";
+import {joinDiscordLink} from "@/utils/discordLinkLoader";
 
 export default defineComponent({
   name: "NavBar",
@@ -96,6 +97,11 @@ export default defineComponent({
       {
         name: "Facebook",
         link: "https://www.facebook.com/NPC.OwO",
+        external: true
+      },
+      {
+        name: "Discord",
+        link: joinDiscordLink,
         external: true
       },
       {
