@@ -8,8 +8,11 @@ branches:
   only:
     - master
 script: skip
-before_deploy:
+before_install:
   - npm i -g pnpm
+install:
+  - pnpm i --frozen-lockfile
+before_deploy:
   - pnpm build
 deploy:
   provider: pages
