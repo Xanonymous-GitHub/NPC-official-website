@@ -66,13 +66,11 @@
       現在，我們社團也有一些的題目，給對資安有興趣卻不知道從何著手的同學。
       <br/><br/>
       歡迎各位來小試身手，而若各位在解題中遇到任何問題，也可以直接私訊粉專，我們將會有專人來為你解答。
-      <br/><br/>
-      而若拿到所有的 Flag 並來我們社博攤位，即可獲得額外的獎勵！
     </template>
   </Article>
 
   <!-- TAT <[MAIN]> -->
-  <Article id="tat-article" badge="FREE" badge-bg="#00C33A"
+  <Article id="tat-article" :buttons="tatArticleButtons" badge="FREE" badge-bg="#00C33A"
            title="TAT - 北科生活">
     <template #picture>
       <img alt="" src="https://i.imgur.com/pMSmPA8.webp" style="border-radius: 30px;box-shadow: #a9a9a9 1px 1px 40px">
@@ -88,13 +86,17 @@
       <br/><br/>
       即刻安裝，北科生活無煩惱～
       <br/><br/>
-      <div style="display: flex;flex-wrap: wrap">
-        <span style="margin: 0 1em;">
+      歡迎您提供寶貴的意見、錯誤回報、創意點子給我們。你的想法，我們實現！
+      <br/><br/>
+      <b class="text-red-600">新功能全力製作中，敬請期待！！</b>
+      <br/><br/>
+      <div class="flex flex-wrap">
+        <span class="m-1">
           <a href="https://apps.apple.com/tw/app/tat-北科生活/id1513875597" rel="noreferrer noopener" target="_blank">
           <img alt="available on the appStore" src="https://i.imgur.com/S12KIOz.webp" style="width: 200px">
         </a>
         </span>
-        <span style="margin: 0 1em;">
+        <span class="m-1">
           <a href="https://play.google.com/store/apps/details?id=club.ntut.npc.tat" rel="noreferrer noopener"
              target="_blank">
           <img alt="get it on google play" src="https://i.imgur.com/2ClcPEL.webp" style="width: 200px">
@@ -105,7 +107,7 @@
   </Article>
 
   <!-- 入社引導 <[MAIN]> -->
-  <Article id="join-us-article" :buttons="joinUsArticleButtons" title="如何加入我們？" bg-color="#5865F2" textColor="white">
+  <Article id="join-us-article" :buttons="joinUsArticleButtons" bg-color="#5865F2" textColor="white" title="如何加入我們？">
     <template #picture>
       <img alt="" src="https://i.imgur.com/rkobsqy.webp">
     </template>
@@ -151,7 +153,7 @@
   </Article>
 </template>
 <script lang="ts">
-import {defineComponent, defineAsyncComponent, reactive, toRefs} from 'vue';
+import {defineAsyncComponent, defineComponent, reactive, toRefs} from 'vue';
 import '@/assets/scss/components/App/buttons.scss'
 import {joinDiscordLink} from "@/utils/discordLinkLoader";
 
@@ -165,7 +167,7 @@ export default defineComponent({
   components: {
     Article: defineAsyncComponent(() => import('@/components/home/Article.vue')),
   },
-  setup(){
+  setup() {
     const articleButtons = reactive({
       joinUsArticleButtons: [
         {
@@ -184,6 +186,12 @@ export default defineComponent({
         {
           displayText: '開始挑戰',
           link: 'https://entroy.tk'
+        }
+      ],
+      tatArticleButtons: [
+        {
+          displayText: '意見反饋',
+          link: 'https://docs.google.com/forms/d/e/1FAIpQLSeOxTzhSrfdMQIkZ-iY4kM_ZgVXSVkEagGxwkEyk6YBd4pEJA/viewform?usp=sf_link'
         }
       ]
     })
