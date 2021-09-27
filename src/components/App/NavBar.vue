@@ -12,7 +12,7 @@
 
       <div class="menu-box">
         <component :is="item.external?ExternalLink:InnerLink" v-for="(item, key) in menuItems" :key="key"
-                   :to="item.link">
+                   :name="item.name+'-nav-link'" :to="item.link">
           <div class="item">
             &#9733; {{ item.name }}
           </div>
@@ -35,13 +35,15 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, defineAsyncComponent, onMounted} from 'vue';
+import {defineAsyncComponent, defineComponent, onMounted, ref} from 'vue';
 import '@/assets/images/npc_text.svg';
 import '@/assets/images/qr-code.svg';
 import '@/assets/scss/components/App/nav-bar.scss'
 import '@/assets/scss/components/App/regular-buttons.scss'
 import InnerLink from "@/components/App/InnerLink.vue";
 import ExternalLink from "@/components/App/ExternalLink.vue";
+import {scrollToId} from "@/utils/scroll";
+import uaParser from "ua-parser-js";
 
 export default defineComponent({
   name: "NavBar",
@@ -50,7 +52,30 @@ export default defineComponent({
     NavDrawer: defineAsyncComponent(() => import('@/components/App/NavDrawer.vue'))
   },
   setup() {
-    const menuItems = [
+    let shouldUseExternalTabToOpenTATUrl = true
+
+    const generateTATDownloadUrl = (): string => {
+      const os = uaParser().os.name
+
+      // iOS
+      if (os === 'iOS') {
+        return 'https://apps.apple.com/tw/app/tat-%E5%8C%97%E7%A7%91%E7%94%9F%E6%B4%BB/id1513875597'
+      }
+
+      // AOS
+      if (os === 'Android') {
+        return 'https://play.google.com/store/apps/details?id=club.ntut.npc.tat'
+      }
+
+      shouldUseExternalTabToOpenTATUrl = false
+      return ''
+    }
+
+    const tatNavigationUrl = generateTATDownloadUrl()
+
+    const scrollToTatArticle = () => scrollToId(document.querySelector('#app') as HTMLElement, 'tat-article', 300)
+
+    const menuItems = ref([
       // {
       //   name: "Home",
       //   link: "/",
@@ -78,11 +103,11 @@ export default defineComponent({
         link: "https://entroy.tk",
         external: true
       },
-      // {
-      //   name: "HEY！ PTT",
-      //   link: "https://ptt.npc-go.com/",
-      //   external: true
-      // },
+      {
+        name: "TAT",
+        link: tatNavigationUrl,
+        external: shouldUseExternalTabToOpenTATUrl
+      },
       {
         name: "GitHub",
         link: "https://github.com/NTUT-NPC",
@@ -96,7 +121,8 @@ export default defineComponent({
       //   name: "Mr. Coding",
       //   link: "/"
       // }
-    ];
+    ]);
+
     onMounted(() => {
       const leftSlideButton = document.querySelector('.slide-button__left') as HTMLDivElement
       const rightSlideButton = document.querySelector('.slide-button__right') as HTMLDivElement
@@ -121,6 +147,13 @@ export default defineComponent({
       }
       leftSlideButton.addEventListener('click', () => scrollMove(false))
       rightSlideButton.addEventListener('click', () => scrollMove(true))
+
+      if (!shouldUseExternalTabToOpenTATUrl) {
+        const tatNavLinks = document.querySelectorAll('[name=TAT-nav-link]') as unknown as Array<HTMLLinkElement>
+        for (const link of tatNavLinks) {
+          link.addEventListener('click', scrollToTatArticle)
+        }
+      }
     })
     return {
       menuItems,

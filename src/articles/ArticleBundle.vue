@@ -72,7 +72,7 @@
   </Article>
 
   <!-- TAT <[MAIN]> -->
-  <Article badge="FREE" badge-bg="#00C33A"
+  <Article id="tat-article" badge="FREE" badge-bg="#00C33A"
            title="TAT - 北科生活">
     <template #picture>
       <img alt="" src="https://i.imgur.com/pMSmPA8.webp" style="border-radius: 30px;box-shadow: #a9a9a9 1px 1px 40px">

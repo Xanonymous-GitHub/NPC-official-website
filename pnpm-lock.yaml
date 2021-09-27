@@ -5,6 +5,7 @@ specifiers:
   '@gfx/zopfli': ^1.0.15
   '@tailwindcss/postcss7-compat': ^2.2.16
   '@types/body-scroll-lock': ^3.1.0
+  '@types/ua-parser-js': ^0.7.36
   '@typescript-eslint/eslint-plugin': ^4.31.2
   '@typescript-eslint/parser': ^4.31.2
   '@vue/cli-plugin-babel': ^4.5.13
@@ -46,6 +47,7 @@ specifiers:
   tailwindcss: npm:@tailwindcss/postcss7-compat@^2.2.16
   three-dots: ^0.2.1
   typescript: ^4.4.3
+  ua-parser-js: ^0.7.28
   vue: ^3.2.19
   vue-cli-plugin-tailwind: ^2.0.6
   vue-router: ^4.0.11
@@ -69,6 +71,7 @@ devDependencies:
   '@babel/polyfill': 7.12.1
   '@gfx/zopfli': 1.0.15
   '@types/body-scroll-lock': 3.1.0
+  '@types/ua-parser-js': 0.7.36
   '@typescript-eslint/eslint-plugin': 4.31.2_3815fab247b4312be6d1f55eb1f81298
   '@typescript-eslint/parser': 4.31.2_eslint@7.32.0+typescript@4.4.3
   '@vue/cli-plugin-babel': 4.5.13_dfd957c7912cc59e9811c9d4125adfb0
@@ -105,6 +108,7 @@ devDependencies:
   svg-sprite-loader: 6.0.9
   three-dots: 0.2.1
   typescript: 4.4.3
+  ua-parser-js: 0.7.28
   vue-cli-plugin-tailwind: 2.0.6
   vue-svg-loader: 0.16.0_vue-template-compiler@2.6.14
   vue-template-compiler: 2.6.14
@@ -2278,6 +2282,10 @@ packages:
 
   /@types/tapable/1.0.8:
     resolution: {integrity: sha512-ipixuVrh2OdNmauvtT51o3d8z12p6LtFW9in7U79der/kwejjdNchQC5UMn5u/KxNoM7VHHOs/l8KS8uHxhODQ==}
+    dev: true
+
+  /@types/ua-parser-js/0.7.36:
+    resolution: {integrity: sha512-N1rW+njavs70y2cApeIw1vLMYXRwfBy+7trgavGuuTfOd7j1Yh7QTRc/yqsPl6ncokt72ZXuxEU0PiCp9bSwNQ==}
     dev: true
 
   /@types/uglify-js/3.13.1:
@@ -12088,6 +12096,10 @@ packages:
     resolution: {integrity: sha512-4xfscpisVgqqDfPaJo5vkd+Qd/ItkoagnHpufr+i2QCHBsNYp+G7UAoyFl8aPtx879u38wPV65rZ8qbGZijalA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: true
+
+  /ua-parser-js/0.7.28:
+    resolution: {integrity: sha512-6Gurc1n//gjp9eQNXjD9O3M/sMwVtN5S8Lv9bvOYBfKfDNiIIhqiyi01vMBO45u4zkDE420w/e0se7Vs+sIg+g==}
     dev: true
 
   /uglify-js/3.4.10:
