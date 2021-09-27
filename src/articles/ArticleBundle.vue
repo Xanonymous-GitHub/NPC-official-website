@@ -52,7 +52,7 @@
   <!--    </template>-->
   <!--  </Article>-->
 
-  <Article button="開始挑戰" button-link="https://ctf.ntut.club" title="CTF 搶旗賽">
+  <Article button="開始挑戰" button-link="https://entroy.tk" title="CTF 搶旗賽">
     <template #picture>
       <img alt="" src="https://i.imgur.com/gs3j7cz.webp">
     </template>

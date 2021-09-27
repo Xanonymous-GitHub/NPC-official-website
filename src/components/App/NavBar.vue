@@ -75,7 +75,7 @@ export default defineComponent({
       },
       {
         name: "CTF",
-        link: "https://ctf.ntut.club",
+        link: "https://entroy.tk",
         external: true
       },
       // {
@@ -88,10 +88,10 @@ export default defineComponent({
         link: "https://github.com/NTUT-NPC",
         external: true
       },
-      {
-        name: "UploadImg",
-        link: "/imgur"
-      },
+      // {
+      //   name: "UploadImg",
+      //   link: "/imgur"
+      // },
       // {
       //   name: "Mr. Coding",
       //   link: "/"
