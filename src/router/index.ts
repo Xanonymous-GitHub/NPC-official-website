@@ -11,24 +11,24 @@ const routes: Array<RouteRecordRaw> = [
       '@/pages/Home.vue'
       ),
   },
-  {
-    path: '/welcome',
-    name: 'Welcome',
-    component: () => import(
-      /* webpackChunkName: "Welcome" */
-      /* webpackPrefetch: true */
-      '@/pages/Welcome.vue'
-      )
-  },
-  {
-    path: '/imgur',
-    name: 'UploadImg',
-    component: () => import(
-      /* webpackChunkName: "UploadImg" */
-      /* webpackPrefetch: true */
-      '@/pages/UploadImg.vue'
-      )
-  },
+  // {
+  //   path: '/welcome',
+  //   name: 'Welcome',
+  //   component: () => import(
+  //     /* webpackChunkName: "Welcome" */
+  //     /* webpackPrefetch: true */
+  //     '@/pages/Welcome.vue'
+  //     )
+  // },
+  // {
+  //   path: '/imgur',
+  //   name: 'UploadImg',
+  //   component: () => import(
+  //     /* webpackChunkName: "UploadImg" */
+  //     /* webpackPrefetch: true */
+  //     '@/pages/UploadImg.vue'
+  //     )
+  // },
   // {
   //   path: '/login',
   //   name: 'Login',

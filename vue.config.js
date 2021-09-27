@@ -12,8 +12,8 @@ const resolve = dir => path.join(__dirname, dir);
 const renderRoutes = (() => {
   const routes = [
     '/',
-    '/welcome',
-    '/imgur'
+    // '/welcome',
+    // '/imgur'
     // '/dashboard',
     // '/login',
     // '/registration',
@@ -126,8 +126,8 @@ module.exports = {
       registry: undefined,
       renderRoutes: [
         '/',
-        '/welcome',
-        '/imgur'
+        // '/welcome',
+        // '/imgur'
         // '/dashboard',
         // '/login',
         // '/registration',

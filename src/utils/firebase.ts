@@ -1,9 +1,12 @@
 import firebase from "firebase/app";
 
-import "firebase/auth";
-import "firebase/firestore";
+import {getAuth, signInAnonymously, signOut} from "firebase/auth";
+import type {User, Auth} from "firebase/auth"
 
-const firebaseConfig = {
+import {getFirestore, Timestamp, collection, doc, getDoc, setDoc} from "firebase/firestore";
+import type {Firestore, DocumentSnapshot} from "firebase/firestore"
+
+const firebaseConfig: firebase.FirebaseOptions = {
   apiKey: "AIzaSyDH1QcPwg_hRWdMsM71o196lJfqVPOGkDA",
   authDomain: "npc-services.firebaseapp.com",
   databaseURL: "https://npc-services.firebaseio.com",
@@ -16,14 +19,18 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-export type firebaseType = firebase.app.App
-export type dbType = firebase.firestore.Firestore
-export type firebaseDocumentType = firebase.firestore.DocumentReference
-export type firebaseTimeStampType = firebase.firestore.Timestamp
-export type firebaseUserType = firebase.User
+export const auth = getAuth();
+export const db = getFirestore();
 
-export const anonymousLogin = async (firebase: firebaseType): Promise<void | { errorCode: string, errorMessage: string }> => {
-  await firebase.auth().signInAnonymously().catch(function (error) {
+export type firebaseType = firebase.FirebaseApp
+export type dbType = Firestore
+export type authType = Auth
+export type firebaseDocumentType = DocumentSnapshot
+export type firebaseTimeStampType = Timestamp
+export type firebaseUserType = User
+
+export const anonymousLogin = async (): Promise<void | { errorCode: string, errorMessage: string }> => {
+  await signInAnonymously(auth).catch(function (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
     return {errorCode, errorMessage}
@@ -31,21 +38,24 @@ export const anonymousLogin = async (firebase: firebaseType): Promise<void | { e
   return
 }
 
-export const firebaseLogout = async (firebase: firebaseType): Promise<void> => {
-  await firebase.auth().signOut()
+export const firebaseLogout = async (): Promise<void> => {
+  await signOut(auth)
 }
 
 export const getTimeStamp = (): firebaseTimeStampType => {
-  return firebase.firestore.Timestamp.now()
+  return Timestamp.now()
 }
 
-export const getFirebaseDocuments = async (collectionPath: string, documentPath: string): Promise<firebaseDocumentType> => {
-  return (await db.collection(collectionPath).doc(documentPath))
+export const getFirebaseDocument = async (collectionPath: string, documentPath: string): Promise<DocumentSnapshot> => {
+  return await getDoc(doc(collection(db, collectionPath), documentPath))
 }
 
-export const getCurrentUser = (firebase: firebaseType): firebaseUserType | null => {
-  return firebase.auth().currentUser;
+export async function setFirebaseDocument<T>(collectionPath: string, documentPath: string, data: T): Promise<void> {
+  return await setDoc(doc(collection(db, collectionPath), documentPath), data)
+}
+
+export const getCurrentUser = (): firebaseUserType | null => {
+  return auth.currentUser;
 }
 
 export default firebase;
-export const db = firebase.firestore();
