@@ -26,6 +26,8 @@ jobs:
       - run: npm i -g pnpm
       - run: pnpm i --frozen-lockfile
       - run: pnpm run build
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
