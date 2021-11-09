@@ -77,7 +77,7 @@ import '@/assets/images/user-plus-solid.svg'
 import ExternalLink from "@/components/App/ExternalLink.vue";
 
 export default defineComponent({
-  name: "Home",
+  name: "Home-Page",
   props: {},
   components: {
     ExternalLink,

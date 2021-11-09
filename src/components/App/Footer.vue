@@ -34,7 +34,7 @@ import ExternalLink from "@/components/App/ExternalLink.vue";
 import {joinDiscordLink} from "@/utils/discordLinkLoader";
 
 export default defineComponent({
-  name: "Footer",
+  name: "Footer-Component",
   components: {
     ExternalLink
   },

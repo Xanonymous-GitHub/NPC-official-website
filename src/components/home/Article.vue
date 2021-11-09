@@ -44,41 +44,41 @@ export interface ArticleButton {
 }
 
 export default defineComponent({
-  name: "Article",
+  name: "Article-Component",
   components: {
     ExternalLink
   },
   props: {
     title: {
-      type: Object as PropType<string>,
+      type: String as PropType<string>,
       required: true
     },
     bgColor: {
-      type: Object as PropType<string>,
+      type: String as PropType<string>,
     },
     textColor: {
-      type: Object as PropType<string>
+      type: String as PropType<string>
     },
     badge: {
-      type: Object as PropType<string>
+      type: String as PropType<string>
     },
     badgeBg: {
-      type: Object as PropType<string>
+      type: String as PropType<string>
     },
     buttons: {
       type: Object as PropType<Array<ArticleButton>>
     },
     pictureFlexWrap: {
-      type: Object as PropType<string>
+      type: String as PropType<string>
     },
     pictureFlexDirection: {
-      type: Object as PropType<string>
+      type: String as PropType<string>
     },
     pictureWidth: {
-      type: Object as PropType<string>
+      type: String as PropType<string>
     },
     pictureHeight: {
-      type: Object as PropType<string>
+      type: String as PropType<string>
     }
   },
   setup() {
