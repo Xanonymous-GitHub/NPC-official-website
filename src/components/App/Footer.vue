@@ -15,7 +15,7 @@
       </ExternalLink>
     </div>
     <div class="copyright">
-      Copyright <b style="font-family: sans-serif">&copy;</b> 2021 NTUT Programming Club, All rights reserved.
+      Copyright <b style="font-family: sans-serif">&copy;</b> {{ currentYear }} NTUT Programming Club, All rights reserved.
     </div>
   </div>
 </template>
@@ -48,7 +48,9 @@ export default defineComponent({
       {name: 'linkedln', link: 'https://www.linkedin.com/groups/13905422'}
     ]
 
-    return {svgList}
+    const currentYear = new Date().getFullYear().toString()
+
+    return {svgList, currentYear}
   }
 });
 </script>
